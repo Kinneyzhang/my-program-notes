@@ -1,0 +1,30 @@
+* git-command
+  git init 初始化仓库
+  git config (--global) user.name 'Kinney' 配置文件
+  cat .gitconfig 查看配置文件
+  cat .git/config
+  git checkout -f HEAD 找回文件
+  git add <file>
+  dgit commit -m "commit message" 提交更改的文件
+  git hash-object main.c 计算hash值
+  find .git/objects/ -type f 列出object中所有文件。
+  git cat-file -t （hash值）列出文件类型
+  git show (hash值) 显示某个hash文件的内容
+
+  git commit -a -m "commit meessage" 一键提交
+  git tag v1.0 打标签，stag引用
+  git tag -a v1.0 -m "this is first tag object" 创建tag对象
+  git archive --format=tar --prefix=ruby/ v1.0 | gzip > /tmp/ruby1.0.tar.gz  根据tag提取文件
+
+  git branch 查看分支
+  git branch <分支名> 创建分支
+  git checkout <分支名> 切换分支
+  git merge <分支名：合并到另一个> 合并分支
+  git branch -D <分支名> 删除分支
+
+  git remote add origin https://github.com/Kinneyzhang/.emacs.d.git
+  git push -u origin master
+
+  相同内容的文件只保存一份，因为文件内容与名称分开存储。内容存在blob中，名称存在tree中。
+  commit文件与tree对应，commit链表保存历史记录。
+  HEAD始终指向当前活动分支

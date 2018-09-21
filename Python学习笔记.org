@@ -1,0 +1,258 @@
+* Python 学习笔记 
+** 基础语法
+*** 列表
+    * list.append('') 向列表最后添加元素
+    * list.insert(1,'') 在某个位置插入元素
+    * del list[0] 彻底删除某个元素
+    * list.pop() 删除并返回某个元素的值
+    * list.remove('') 按值删除某个元素并返回该值
+    * list.sort() 排序
+    * list.sort(reverse=True) 倒序排序
+    * sorted(list) 暂时排序，不改变列表顺序
+    * sorted(list,reverse=True) 暂时倒序排序
+    * list.reverse() 倒序原列表
+    * len(list) 列表长度
+    * range(num1,num2) 产生一定范围的数字，左闭右开
+    * range(num1,num2,step) 每个一个 step 取数
+    * list(range(num1,num2)) 产生一个列表
+    * min();max();sum(); 最小值，最大值，总和
+    * squares = [value**2 for value in range(1,11)]
+      print(squares) #直接在列表里写循环
+    * 列表 slice: list[0:3],list[2:],list[:6] 左闭右开
+    * 复制列表：newlist = list[:]
+    * tuple 元组：不可以通过下标改变值的特殊列表，可以赋值改变 tuple=(1,2,3);tuple=(1,);
+
+*** 字典
+    * dic = { key1:value1, key2:value2, ...}
+    * dic[key3] = value3 #添加值 dic[key1]=value0; #修改值
+    * del dic[key1] 删除值
+
+    * 遍历字典，获得一对对键，值
+      for key, value in dic.items(): 
+          print("\nKey: " + key)
+          print("Value: " + value)
+    * 遍历键，获得键的列表
+      for name in dic.keys():
+          print(name.title())
+
+    * #按序遍历键
+      for name in sorted(dic.keys()):
+          print(name.title())
+
+    * #遍历值，获得值的列表
+      for value in dic.values():
+          print(value.title())
+
+    * #遍历值，去除重复项
+      for value in set(dic.values()):
+          print(value.title())
+
+    * #a list of dic
+       alien_0 = {'color': 'green', 'points': 5}
+       alien_1 = {'color': 'yellow', 'points': 10}
+       alien_2 = {'color': 'red', 'points': 15}
+       ualiens = [alien_0, alien_1, alien_2]
+       for alien in aliens:
+           print(alien)
+
+    * #a list in a dic
+       pizza = {
+	'crust': 'thick',
+	'toppings': ['mushrooms', 'extra cheese'],
+	}
+
+    * #a dic in a dic
+       users = {
+         'aeinstein': {
+           'first': 'albert',
+           'last': 'einstein',
+           'location': 'princeton',
+           },
+	 'mcurie': {
+            'first': 'marie',
+            'last': 'curie',
+            'location': 'paris',
+            },
+       }
+
+    * 字典，列表中存在中文直接打印时的处理：
+	设置全局编码 # encoding=utf-8
+	import json
+	p1 = json.dumps(p1,ensure_ascii=False)
+    * 打印时，可以把列表转成字符串：str(list);
+
+*** 函数
+    * 关键字实参：describe_pet(pet_name='harry', animal_type='hamster')
+      准确的指定形参的类型，顺序便无所谓
+
+    * 默认值：def describe_pet(pet_name, /*animal_type='dog'*/):
+         describe_pet('willie')
+         describe_pet('willie'，'cat')
+         describe_pet(pet_name='harry', animal_type='hamster')
+      形参中有默认值时，默认值写在后面，实参调用时，可以重新修改默认值。
+
+    * 实参可选：def get_formatted_name(first_name, last_name, *middle_name=''*):
+         musician = get_formatted_name('jimi', 'hendrix')
+         musician = get_formatted_name('john', 'hooker', 'lee')
+      可选的形参赋值为空，放在最后，可以实现在实参调用时可选
+
+    * 函数中修改列表(不改变原列表)：
+      实参调用时，调用列表的一个副本，整个列表的切片 list[:],
+      如：print_models(unprinted_designs[:], completed_models)
+
+    * 传递任意数量的实参：def make_pizza(*toppings):
+         make_pizza('mushrooms', 'green peppers', 'extra cheese')
+      实际上 toppings 是一个元组
+
+    * 使用任意数量的关键字实参：def build_profile(first, last, **user_info):
+         for key, value in user_info.items():
+            profile[key] = value
+      实际上 user_info 是一个字典
+
+    * 导入模块
+      - 导入整个模块：import pizza #模块名与模块的文件名一致
+           pizza.make_pizza(16, 'pepperoni') #通过点号调用模块中的函数
+      - 导入特定函数：from pizza import make_pizza
+           make_pizza(16, 'pepperoni') #不用点号，直接使用函数
+      - 使用 as 给函数指定别名：from pizza import make_pizza as mp
+      - 使用 as 给模块指定别名：import pizza as p
+      - 不建议导入模块中的所有函数，建议按需选择或者导入整个模块，防止命名冲突
+      - 从模块中导入类，就可以直接使用该类：from car import Car
+
+*** 类
+    - 初始化函数前后为双下划线 def __init__():
+    - 继承：用 super().__init__(par1,par2,...)
+
+*** 文件与异常
+    - 读写文件：
+      * 读全部文件
+	with open('pi_digits.txt') as file_object:
+         contents = file_object.read()
+         print(contents.rstrip()) #末尾多一空行
+	with 表示让 python 自己决定打开和关闭的状态
+
+      * 逐行读文件
+	filename='aa.txt'
+	with open(filename) as file_object:
+           for line in file_object:
+              print(line.rstrip()) #末尾多两行(文件和 print)
+
+      * 将文件的每一行保存在列表中：readlines()函数
+	filename = 'pi_digits.txt'
+	with open(filename) as file_object:
+           lines = file_object.readlines()
+           for line in lines:
+              print(line.rstrip())
+
+      * 写文件
+	filename = 'programming.txt'
+	with open(filename, 'w') as file_object:
+           file_object.write("I love programming.")
+	多行写时，字符连在一起，用\n 换行
+	写数字时，用 str()转成字符
+
+      * with open(filename, mode)中的第二个参数指定对文件的操作模式
+	'r'为读，'w'为写，'a'为附加，默认为只读
+
+    - 异常
+      * ZeroDivisionError
+      * FileNotFoundError
+      * 使用 try-except-else 代码块
+	try:
+           answer = int(first_number) / int(second_number)
+	except ZeroDivisionError: 
+           print("You can't divide by 0!")
+	else: 
+           print(answer)
+       ----------------------------------------------------
+	try:
+           with open('pi_digits.txt') as file_object:
+	except FileNotFoundError:
+           msg = "Sorry, the file " + filename + " does not exist." 
+           print(msg)
+	else:
+           contents = file_object.read()
+           print(contents.rstrip())
+
+    - 存储数据
+      * 使用 json.dump()和 json.load()
+	json.dump(data,f_obj)写数据
+	json.load(f_obj)读数据
+
+      * 存储用户的信息
+	filename = 'username.json'
+	try:
+           with open(filename) as f_obj:
+              username = json.load(f_obj)
+	except FileNotFoundError:
+           username = input("What is your name? ")
+           with open(filename, 'w') as f_obj:
+              json.dump(username, f_obj)
+              print("We'll remember you when you come back, " + username + "!")
+	else:
+              print("Welcome back, " + username + "!")
+
+      * 重构：根据功能划分成不同的函数
+
+    - 测试代码
+      *
+*** 注意点：
+   * 在打印时注意格式的转换，字符串，数字，列表等类型要转成一致
+   * 引号前用"\"进行转义，一句话前用"r"对"\"进行转义
+   * 注意 input()与 raw_input()的区别
+     *Python 2.x 写法*
+       input 必须输入 python 表达式，形如 qwer 非法，必须加引号，且表达式类型与原类型一致
+       raw_input()的输入一律当作 str 类型处理！
+     *Python 3.x 写法*
+       input()的一切输入当作字符类型处理，并返回字符类型！
+       不存在 raw_input!
+
+   * 注意继承在不同版本中的区别
+     *Python 2.x*
+       父类括号中要写(object)
+       super()括号中要写(Function_name,self)
+     *Python 3*
+       以上两个括号中均为空！
+
+   * 给形参指定默认值和调用实参时，等号两边不要有空格:
+       def function_name(parameter_0, parameter_1='default value')
+       function_name(value_0, parameter_1='value')
+
+** 网络爬虫
+   - BeautifulSoup 对象
+     * find()和 findAll()
+        通过标签的名称和属性来查找标签
+        findAll(tag, attributes, recursive, text, limit, keywords)
+        find(tag, attributes, recursive, text, keywords)
+   
+     * 导航数
+       - 子标签和后代标签：.children，.descendants
+       - 兄弟标签:next_siblings, previous_siblings, next_sibling, previous_sibling
+       - 父标签：.parent, .parens
+   
+     * 正则表达式
+	 import re
+	 re.compile("\.\.\/img\/gifts/img.*\.jpg")
+
+     * 获取属性
+	 myImgTag.attrs["src"]
+	 返回一个字典
+
+     * Lambda 表达式
+
+     * 采集数据
+       - 单个网站采集，链接去重
+       - 通过互联网采集(内链，外链)
+
+   - Scrapy 框架
+     * 创建虚拟目录
+       $ virtualenv venv
+       $ virtualenv -p /usr/local/bin/python2.7 venv  #指定 python 版本
+       $ source venv/bin/activate
+       从现在起，任何你使用 pip 安装的包将会放在 venv 文件夹中，与全局安装的 Python 隔绝开，
+       像平常一样安装包，比如：$ pip install requests
+       $ deactivate
+
+   - API 
+
+*** 

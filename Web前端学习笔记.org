@@ -1,0 +1,388 @@
+* web前端学习笔记
+
+** PS基础
+   - 不同图片格式在网页中的使用：
+   - JPG 网页高清大图
+   - GIF 网页小图标（支持动画，透明）
+   - PNG8 网页小图标，透明
+   - PNG24 支持透明，半透明
+   - ctr+t 自由变换
+   - 盖印可见图层
+
+** HTML和CSS基础
+   - 图片标签
+     <img src=".." alt="图片名字" />
+	
+   - a标签：
+     - 链接
+       <a href="http://www.baidu.com/">a标签 链接</a>
+       <a href="http://www.baidu.com/" target="_blank">a标签 跳转新页面 _self为当前页面</a>
+       统一在头部定义页面跳转方式: <base target="_blank" />
+     - 下载
+       <a href="文件路径">下载文件</a>
+     - 锚点（页内跳转）
+       <a href="#box">通过div中的id识别跳转不同的块</a>
+
+   - strong标签：<strong>中间文字强调为粗体</strong>
+
+   - em标签：<em>中间文字强调为斜体</em>
+
+   - span标签: <span ...>区分样式</span>
+
+   - 列表标签：
+    有序列表 <ol><li>内容</li>....</ol>
+    无序列表 <ul><li>内容</li>....</ul>
+    定义列表 <dl><dt>标题</dt><dd>内容</dd></dl>
+
+   - 基础选择符：
+     id选择符 #box{..}
+     群组选择符 #box1,#box2,#box3{...}
+     class选择符 .box{...} .box1{...}  <div class="box box1"></div>
+     类型选择符 div p{..} //div包含的p标签
+     通配符 *{..} //所有元素
+
+   - 样式优先级：
+     同级样式后者覆盖前者
+     类型选择符(1)< class(10)< id(100)< style行间样式(1000)< js
+
+   - 伪类详解:
+     link 链接未访问
+     hover 鼠标悬停
+     active 链接激活
+     visited 访问过后
+     a伪类全部支持，其他标签一般只支持hover
+     形如a:hover{...} div:hover{...}
+
+   - 标签特性：
+     默认样式重置，确保兼容性(css reset)
+     <style>
+	 body,p,h1,h2,h3,h4,h5,h6,dl,dd{margin:0; font-size:12px;/* font-family:XX; */}
+	 ol,ul{list-style:none;padding:0;margin:0;}
+	 a{text-decoration:none;}
+	 img{border:none;}
+     </style>
+
+     text-indent:20px;缩进
+  
+   - 标签分类：
+     - 内嵌(inline)
+       同行跟同类型标签
+       内容撑开长度
+       不支持宽高
+       不支持内外边距
+       代码换行被解析
+       转换 diaplay:block
+       转换 diaplay:inline-block
+
+     - 块(block)
+       独占一行
+       没有宽度时，撑满一行
+       支持所有CSS命令
+       转换 display:inline
+       转换 display:inline-block
+
+     - 图片(inline-block)
+       块在一行显示
+       行内属性支持宽高
+       没宽度时内容撑开宽度
+   
+   - 光标类型：cursor:pointer/text/move....
+     <标签 title="元素提示信息">
+   
+   - 浮动 float:left/right/none 元素加了浮动，会脱离文档流，按照一定的方向移动，碰到父级的边界或另一个浮动元素停止
+       使块元素在同一行显示
+       使内嵌元素支持宽高
+       没宽度时内容撑开宽度
+       脱离文档流
+       提升层级半级
+       clear:left/right/both/none 元素在某个方向上不能有浮动元素 
+	  
+   - 清浮动
+       给父级加浮动
+       给父级加display:inlin-block
+       在浮动元素下方加清浮动div:(IE6有最小高度问题)
+       <div class="clear"></div>
+       .clear{height:0;font-size:0;clear:both;}
+       在浮动元素下方加 <br clesar="all" /> //不符合W3C标准
+       *推荐？？*给浮动元素父级加上{zoom:1}  :after{content:""; diplay:block; clear:both;}
+	  
+   - overflow
+      给父级加，可以清浮动（IE6不行）
+	overflow:auto 溢出时显示滚动条
+	overflow:auto 默认显示滚动条
+	overflow:auto 溢出时隐藏
+	  
+   - IE6下双边距BUG：块元素浮动和横向margin时，横向margin值放大两倍
+      解决：display:inline
+
+   - 标签嵌套时，p标签里不能嵌套块标签 
+
+   - 相对定位 position:relative
+      a.不影响元素本身特性
+      b.不使元素脱离文档流
+      c.定位元素位置控制 top/bottom/left/right:..px
+
+   - 绝对定位 position:absolute
+      a.使元素完全脱离文档流
+      b.使内嵌支持宽高
+      c.块属性标签内容撑开宽度
+      d.默认后者层级高于前者
+      e.如果有定位父级，绝对定位相对于定位父级偏移，没有则相对于整个文档偏移
+
+   - 定位层级 z-index:[number]   z-index:1;使元素出来
+
+   - 滤镜
+     标准 不透明度：opacity:0~1
+     IE私有滤镜 filter:alpha(opacity=0~100)  
+    
+   - 表格
+     重置默认样式：
+	th,td{padding:0;}
+        table{border-collapse:collapse}
+     table标签的基本特性是display:table
+     table决定了整个表格的宽度
+     表格里每一列必须要宽度，单元格宽度转换成百分比
+     合并：colspan, rowspan
+	  
+   - 表单
+     重置默认样式：
+      form{margin:0}
+      input{padding:0;margin:0;}
+      select{margin:0;}
+      textarea{margin:0;padding:0;resize:none;overflow:auto;outline:none(焦点线)}
+     解决input背景滚动：加div
+
+** HTML5
+*** 语义化标签
+   - <header>页面头部</header>
+   - <footer>页面底部</footer>
+   - <nav>导航</nav>
+   - <hgroup>标题组合</hgroup>
+   - <section>区域划分</section>
+   - <article>主体，独立的一块内容，帖子</article>
+   - <aside>和主题相关的附属信息</aside>
+   - <figure>媒体元素,图片视频  <figcaption>文字描述</figcaption> </figure>
+   - <time></time>
+
+   - <input type="text" list="valList">
+   - <datalist id="valList">text的提示信息
+        <option value="css">css</option>
+        <option></option>
+     </datalist>
+   - <details open> 详情信息
+       <summary></summary>
+       <p></p>
+     </details>
+   - <address>作者信息</address>
+   - <mark></mark>  <keygen>公钥</keygen>
+   - <progress max="" value="">进度条
+        <span>70</span>% 保证兼容性
+     </progress>
+   - 自定义标签：兼容低版本IE
+   - <script>document.creatElement("")</script>
+   - 或使用插件：html5shiv.js
+
+*** 新增表单控件
+   - <input type="email"/>
+   - <input type="tel"/>
+   - <input type="url"/>
+   - <input type="search"/>
+   - <input type="range" step="2" min="0" max="10" value="4"/> 数值选择器
+   - <input type="number"/>
+   - <input type="color"/>
+   - <input type="datatime"/> UTC时间
+   - <input type="datatime-local"/>
+   - <input type="time"/>时分秒
+   - <input type="data"/>年月日
+   - <input type="week"/><input type="month"/>
+
+*** 特效和属性函数
+   - <input type="text" placeholder="请输入用户名"/>提示信息
+   - <input type="text" placeholder="请输入用户名" autocomplete="off" />是否保存输入值的提示
+   - <input type="password" autofocus/>自动获得焦点
+   - <input type="password" requred pattern="\d{1,5}"/>不能为空,正则校验
+   - formaction="url",保存至草稿箱
+
+*** 表单验证反馈
+   - 新选择器
+     document.querySelector(".div")
+   - eval:可以解析任何字符串变成json
+   - parse:只能解析JSON形式的符串变成json，更安全
+   - stringify:把json转成字符串。
+
+   [看到2.2 json的新方法]
+** CSS3
+   - 圆角：border-radius:20px 40px;
+   - 椭圆：border-radius:x轴半径/y轴半径;或用百分比
+
+** JS初级
+   - 动态给元素加class,改变样式：oP.className='red';
+   - 不允许条件判断：img路径，链接，颜色，innerHTML
+   - oDiv.style['width'],方括号中值可修改。
+       js中允许把"."换成"[]"
+   - 数组
+       var arr=[];
+       arr.push();往数组最后加数据。
+   - getElementByTagName 动态方法：
+       找到标签元素的集合，即使有一个，也要加[0],前面不一定用document，根据需要用父级查找。
+   - document.title='';
+   - document.body.innerHTML='';
+   - 用js修改css样式，相当于加行间样式，行间样式比外部样式优先级高，故可修改，当使用多个时，后者覆盖前者。cssText只能设置一次！！！！！！！
+       oDiv.style.width='100px';或
+       oDiv.style.cssText='width:100px;height:100px;....';
+   - 开关的作用onOFF
+       this：指的是调用当前方法函数的对象。
+       一个开关只能控制一组，多组需要用自定义属性。
+       循环中用this来查找当前对象！
+   - 索引：aBtn[i].index=i;将一组相同标签与index匹配。
+   - js中的数据类型：
+       数字、字符串、布尔、函数、对象(obj、[]、{}、null)、未定义
+       Number();字符串转数字：json,未定义，函数无法转，其他可以转。
+       parseInt(a,10);从左往右一个个转换成数字，遇到非数字结束，认识加减号空格，不认小数点。(10表示转的进制)
+       pareFloat();认识小数点。
+       可将parseInt和parseFloat结合判断是整数还是小数。
+   - NaN:不是数字的数字类型。
+       NaN是假，NaN表示进行了非法运算，NaN和自己不相等。
+       isNaN();判断某些值是不是数字。true：不是数字；false：是数字。
+       内部依据number转换。
+   - 函数传参：重用代码。
+     * 尽量保证 HTML 代码结构一致，可以通过父级选取子元素
+     * 把核心主程序实现，用函数包起来
+     * 把每组里不同的值找出来，通过传参实现
+   - JS作用域：“JS解析器”
+     * “找一些东西”：var  function 参数
+       a = ...	所有的变量，在正式运行代码之前，都提前赋了一个值：未定义
+       fn1 = function fn1(){ alert(2); }所有的函数，在正式运行代码之前，都是整个函数块
+       JS 的预解析,遇到重名的：只留一个;变量和函数重名了，就只留下函数。
+     * 逐行解读代码：表达式：= + - * / % ++ -- ! 参数……;表达式可以修改预解析的值！
+   - 运算符和流程控制。
+      取模：i%=5（0，1，2，3，4）：循环上色，时间转换。
+      ‘200’==200，200===200（类型数值全等）
+      ！：反选。	
+      Break(跳出循环) 	continue(跳过本次)
+   - 函数详解
+   - Arguments：实参的集合，不写形参也可以，函数参数个数无法确定时用。
+   - 获取样式：
+      getComputedStyle();获取浏览器计算后的样式。//IE6,7,8不兼容
+      $(‘div’).currentStyle.width  标准浏览器不兼容。
+      结合使用：
+      If($(‘div’).currentStyle){
+	 alert($(‘div’).currentStyle.width);
+      }else{
+	 alert(getComputedStyle($(‘div1’)).width);;
+      }
+      注意：不要获取复合样式，获取单一样式，不要有空格。
+   - 定时器：
+     * Var timer = setInterval(函数，毫秒) 重复执行
+       clearInterval(timer)  清除
+       先清除定时器，再开，避免开多个定时器。
+     * var timer = setTimeout(函数，毫秒); 执行一次。
+       clearInterval(timer)  清除
+   - 系统时间对象,全部是Number类型。
+       var myTime = new Date();
+       var iYear = myTime.getFullYear();//getMonth+1(月份要加一),getDay,getDate(日)
+       getDay();//星期
+   - 字符串
+      str.charAt();
+      str.charCodeAt();根据汉字找编码。
+      String.fromCharCode(21678);根据编码返回汉字。//0~9：48~57 //a~z:97~122 //A~Z:65~90
+      str.indexOf(‘m’); 从头开始找。
+      str.indexOf(‘m’, 5);从第5位开始找。//找不到字符串返回-1
+      str.lastIndexOf(); 从后往前找。
+      字符串比较：比第一个字符的unicode编码。
+      str.substring(0,2); 截取字符串, 负数当作0，交换位置
+      str.slice(0,2); 截取字符串,不交换位置,负数从后往前取。
+      str.toUpperCase(); 转成大写
+      str.toLowerCase(); 转成小写
+      str.split(‘.’, 3); 以点为分隔符，划分为数组,后一个参数为截取几段，可选。
+      str.split(‘’, 3); 分割每个字母。 
+      str.join(); 把数组连接成字符串，中间有逗号。
+      str.join(‘’); 把数组连接成字符串，中间没有逗号。参数为连接符。 
+      oP.innerHTML.split(str).join(‘<span>’+str+’</span>’); 查找替换。
+   - Json与数组
+      var json1 = { name’: ‘Leo’, ‘age’: 23};
+      var arr = [{‘name’: ‘Leo’, ‘age’: 23},{‘name’: ‘Kinney, ‘age’: 24}];
+      for (var attr in json1) {alert(json1.attr)};//j2son1[attr]
+      json只能用for in遍历，数组既可以用for循环也可以用for in。
+      var arr = new Array(4); //创建长度为4的数组。
+      arr.length 可读可写，  arr.length=0 //清空数组
+      数组最后添加：arr.push(); 返回值为数组的长度。
+      数组前面添加：arr.unshift(); 返回值为数组的长度,IE67不兼容返回值。
+      数组删除最后一个：arr.pop(); //返回值为删掉的元素
+      数组删除第一个：arr.shift(); ///返回值为删掉的元素
+      arr.unshift(arr.pop()); //把最后一个移到最前面。往后移动
+      arr.push(arr.shift()); //把最前一个移到最后。往前移动
+      数组的splice方法：
+      arr.splice( 0, 2 ) //从第0位开始删2两个。返回删除的内容
+      arr.splice( 0, 2, ‘kinney’ ); //替换前两个为kinney。返回删除的内容
+      arr.splice( 1, 0, ‘kinney’ ); //在第1位前添加kinney。返回为空。
+      数组排序：
+      arr.sort(function (a,b) {
+        return a-b; //从小到大排序
+        return b-a; //从大到小排序   //原理：a,b为随机从数组中依次取的值，相减大于0，则交换位置。	
+      } );
+      数组打乱：
+      arr.sort(function(){
+        return Math.random()-0.5; //Math.random()随机产生0~1之间的数字。
+      });
+      Math方法：
+      Math.round(); 四舍五入。
+      返回x~y之间的随机数：
+      Math.round( Math.random()*(y-x)+x );
+      返回 0~x之间随机数：Math.round( Math.random()*x );
+      返回 1~x之间随机数：Math.ceil( Math.random()*x ); //向上取整
+      连接两个数组：arr1.concat(arr2);
+      颠倒数组元素位置：arr.reverse();
+      字符串字符颠倒：
+       var str = “abcdefg”; str.split(‘’).reverse().join(‘’);
+
+** JS中级
+   - DOM操作
+      文档对象模型
+      childNodes：子节点列表集合，只读属性。有兼容性问题（不推荐！）
+      标准(Chorm,FireFox,IE9)下包含文本节点和元素节点和非法嵌套的子节点，非标准下只包含元素节点。
+      attributes：只读属性，属性列表集合。
+      元素.attributes[0].name/value
+   - NodeType：只读属性，当前元素的节点类型。
+   - children：子节点列表集合，只读属性。标准下，只包含元素类型的节点（允许非法嵌套）。非标准下，只包含元素类型的节点（非法嵌套解析为子节点）。
+   - firstChild:类似childNodes，第一个节点，有兼容性问题。
+   - firstElementChild:第一个元素节点。(标准下)
+   - 结合使用：var oFirst = oUl.firstElementChild || oUl.firstChild;
+   - 推荐使用 children[0]
+   - lastChild, lastElementChild
+   - nextSibling, nextElementSibling 下一个兄弟节点
+   - previousSibling, previous ElementSibling 类似！！ 上一个兄弟节点。
+   - parentNode 当前节点的父节点，没有兼容问题。
+   - offsetParent 离当前元素最近的有定位的父节点，默认body。Ie7以下，当前元素有定位，为html。
+   - offsetLeft/offsetTop: 只读属性 当前元素到定位父级的距离。
+   - ie7及以下：如果自己没有定位，offset…是到body的距离。
+     自己有定位，到定位父级的距离。没有定位父级，到html的距离。
+   - 宽高取值
+     oDiv .style.width 样式宽，有单位
+     oDiv.clientWidth 可视区宽（样式宽+padding），没有单位。
+     oDiv.offsetWidth 占位宽（样式宽+padding+border）没有单位。
+     获取元素到页面的绝对定位：
+     var iTop = 0；var obj = oDiv3; while(obj) { iTop += obj.offsetTop; obj = obj.offsetParent; }
+     封装成getPos函数
+   - 动态创建元素
+     document.createElement('');
+   - appendChild 插入子节点
+   - insertBefore
+     父级.insertbefore(新元素，被插入的元素)
+     ie下被插入节点不存在时，报错。
+     if(oUl.children[0]){
+        oUl.insertBefore(oLi,oUl.children[0])
+     }else{
+        oUl.appendChild(oLi);
+     }
+   - removeChild 删除节点
+     父级.removechild
+   - repalceChild 替换子节点
+     父级.replaceChild(新节点，被替换节点)
+   - getElementsByClassName 
+
+** 注意：
+ 1. 注意是否加引号，获取的对象不加，属性名称要加。alert( getStyle( oDiv, 'marginLeft' ) );
+    只能return一个值！判断用哪种方式获取元素，然后return一个。
+ 2. 要修改的样式值需要在css样式中存在。Left值的问题
+ 3. if else和else if的问题，if else非此则彼，else if条件满足才执行！

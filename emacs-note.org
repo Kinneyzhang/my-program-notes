@@ -1,0 +1,66 @@
+** 文件操作
+  * C-x d 进入Dired-mode
+  * + 新建文件夹
+  * C-x C-f 新建文件
+  * C 复制
+  * D 删除
+  * d 标记删除，x执行，u取消
+  * R 重命名文件
+  * C-x C-j 打开当前文件的目录
+  * C-c p f 在当前git中查找
+
+    
+** 列表
+1) [-] 总任务[25%]
+   1) [X] 子任务1
+      + [X] 
+      + [X] 
+   2) [ ] 子任务2
+      + [ ] 
+      + [ ] 
+      + [ ] 
+   3) [ ] 子任务3
+   4) [ ] 子任务4
+
+** 表格
+| Name | Phone | sub1 | sub2 | total |
+|------+-------+------+------+-------|
+|      |       |      |      |       |
+
+C-c | 通过输入大小的方式插入表格
+C-c C-c 对齐表格
+Tab 调到右边一个表格
+enter 跳到下方的表格
+M-up/right/left/right 上下左右移动行（列）
+M-S-up/right/left/right 向上下左右插入行（列）
+
+** 链接
+[[http://orgmode.org/orgguide.pdf][grgguid.pdf]]
+[file:/Users/kinney/Desktop/屏幕快照\2018-08-10\19.33.36.png][链接写法]
+直接显示的图片在Emacs里默认不显示，需按C-c C-x C-v才能显示，在输出成其他格式（html、pdf……）后也能看到.常用快捷键:- C-c C-x C-v 直接预览图片。
+
+** 待做列表
+*** DONE [ ] 任务1
+*** TODO 
+一些常用操作如下： - C-c C-t 变换TODO的状态 - C-c / t以树的形式展示所有的 TODO - C-c C-c 改变 checkbox状态 - C-c, 设置优先级（方括号里的ABC） - M-S-RET 插入同级TODO标签
+
+** 标签tags                                                      :work:learn:
+** 时间
+输入C-c . 会出现一个日历，我们点选相应的时间即可插入。
+DEADLINE: <2018-08-10 Fri>
+SCHEDULED: <2018-08-18 Sat>
+
+** 特殊文本格式
+*bold*
+/italic/
+_underline_
+=code=
+~verbatim~
++strike-through+
+
+** 富文本导出
+# +BEGIN_COMMENT
+这里的注视不会被导出
+# +END_COMMENT
+..........................
+来源参考：http://www.fuzihao.org/blog/2015/02/19/org-mode教程/
