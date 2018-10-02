@@ -4,3 +4,24 @@
    * 课程内容：
      * 网络程序设计 TCP/IP
      * 协议与实现
+** 第二章
+   * 字节顺序：网络字节次序：大头优先;
+   * 函数 gethostname 返回计算机名称
+   * 函数 gethostbyname 域名解析的相关信息
+   * 函数 memset 缓冲区清零
+   * 上机作业：域名解析，解析www.sina.com,得到正式名称，别名，ip地址列表
+     email:
+      主题：学号-姓名-作业名
+   
+   * TCP C/S通信模型
+     * 函数socket
+       创建一个为绑定的socket
+
+       #+BEGIN_SRC python
+         def hello():
+             all = [1,2,3,4]
+             for a in all:
+                 print("hello world!")
+         hello()
+       #+END_SRC
+

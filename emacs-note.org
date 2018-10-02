@@ -9,7 +9,6 @@
   * C-x C-j 打开当前文件的目录
   * C-c p f 在当前git中查找
 
-    
 ** 列表
 1) [-] 总任务[25%]
    1) [X] 子任务1
@@ -32,7 +31,13 @@ C-c C-c 对齐表格
 Tab 调到右边一个表格
 enter 跳到下方的表格
 M-up/right/left/right 上下左右移动行（列）
-M-S-up/right/left/right 向上下左右插入行（列）
+M-S-up/right/left/right 移动当前行（列）,并插入空行
+
+|     学号 | 姓名   | 性别   | 年级 |        电话 |
+|----------+--------+--------+------+-------------|
+| 19150133 | kinney | male   |   15 | 15651802531 |
+| 19120122 | nancy  | female |   15 | 15651802531 |
+|          |        |        |      |             |
 
 ** 链接
 [[http://orgmode.org/orgguide.pdf][grgguid.pdf]]

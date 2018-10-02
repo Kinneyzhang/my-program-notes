@@ -337,37 +337,37 @@
        var str = “abcdefg”; str.split(‘’).reverse().join(‘’);
 
 ** JS中级
-   - DOM操作
+   * DOM操作
       文档对象模型
       childNodes：子节点列表集合，只读属性。有兼容性问题（不推荐！）
       标准(Chorm,FireFox,IE9)下包含文本节点和元素节点和非法嵌套的子节点，非标准下只包含元素节点。
       attributes：只读属性，属性列表集合。
       元素.attributes[0].name/value
-   - NodeType：只读属性，当前元素的节点类型。
-   - children：子节点列表集合，只读属性。标准下，只包含元素类型的节点（允许非法嵌套）。非标准下，只包含元素类型的节点（非法嵌套解析为子节点）。
-   - firstChild:类似childNodes，第一个节点，有兼容性问题。
-   - firstElementChild:第一个元素节点。(标准下)
-   - 结合使用：var oFirst = oUl.firstElementChild || oUl.firstChild;
-   - 推荐使用 children[0]
-   - lastChild, lastElementChild
-   - nextSibling, nextElementSibling 下一个兄弟节点
-   - previousSibling, previous ElementSibling 类似！！ 上一个兄弟节点。
-   - parentNode 当前节点的父节点，没有兼容问题。
-   - offsetParent 离当前元素最近的有定位的父节点，默认body。Ie7以下，当前元素有定位，为html。
-   - offsetLeft/offsetTop: 只读属性 当前元素到定位父级的距离。
-   - ie7及以下：如果自己没有定位，offset…是到body的距离。
+   * NodeType：只读属性，当前元素的节点类型。
+   * children：子节点列表集合，只读属性。标准下，只包含元素类型的节点（允许非法嵌套）。非标准下，只包含元素类型的节点（非法嵌套解析为子节点）。
+   * firstChild:类似childNodes，第一个节点，有兼容性问题。
+   * firstElementChild:第一个元素节点。(标准下)
+   * 结合使用：var oFirst = oUl.firstElementChild || oUl.firstChild;
+   * 推荐使用 children[0]
+   * lastChild, lastElementChild
+   * nextSibling, nextElementSibling 下一个兄弟节点
+   * previousSibling, previous ElementSibling 类似！！ 上一个兄弟节点。
+   * parentNode 当前节点的父节点，没有兼容问题。
+   * offsetParent 离当前元素最近的有定位的父节点，默认body。Ie7以下，当前元素有定位，为html。
+   * offsetLeft/offsetTop: 只读属性 当前元素到定位父级的距离。
+   * ie7及以下：如果自己没有定位，offset…是到body的距离。
      自己有定位，到定位父级的距离。没有定位父级，到html的距离。
-   - 宽高取值
+   * 宽高取值
      oDiv .style.width 样式宽，有单位
      oDiv.clientWidth 可视区宽（样式宽+padding），没有单位。
      oDiv.offsetWidth 占位宽（样式宽+padding+border）没有单位。
      获取元素到页面的绝对定位：
      var iTop = 0；var obj = oDiv3; while(obj) { iTop += obj.offsetTop; obj = obj.offsetParent; }
      封装成getPos函数
-   - 动态创建元素
+   * 动态创建元素
      document.createElement('');
-   - appendChild 插入子节点
-   - insertBefore
+   * appendChild 插入子节点
+   * insertBefore
      父级.insertbefore(新元素，被插入的元素)
      ie下被插入节点不存在时，报错。
      if(oUl.children[0]){
@@ -375,11 +375,15 @@
      }else{
         oUl.appendChild(oLi);
      }
-   - removeChild 删除节点
+   * removeChild 删除节点
      父级.removechild
-   - repalceChild 替换子节点
+   * repalceChild 替换子节点
      父级.replaceChild(新节点，被替换节点)
-   - getElementsByClassName 
+   * getElementsByClassName
+   * addClass函数
+   * removeClass函数
+   * 表格操作
+     * 
 
 ** 注意：
  1. 注意是否加引号，获取的对象不加，属性名称要加。alert( getStyle( oDiv, 'marginLeft' ) );
