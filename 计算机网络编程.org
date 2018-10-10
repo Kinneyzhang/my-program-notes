@@ -15,13 +15,21 @@
    
    * TCP C/S通信模型
      * 函数socket
-       创建一个为绑定的socket
+       SOCKET socket
+     * 函数bind
+       * 绑定操作的5种组合方式:服务器2种，客户端3种
+       * 客户端一般自动绑定
+     * 函数listen
+       * 将一个已经成功绑定的socket转换为倾听socket
 
-       #+BEGIN_SRC python
-         def hello():
-             all = [1,2,3,4]
-             for a in all:
-                 print("hello world!")
-         hello()
-       #+END_SRC
+	 #+BEGIN_SRC C
+	   int listen(SOCKET sockfd, int backlog);
+	 #+END_SRC
+
+       * TCP三次握手在listen函数调用后才执行
+       * listen函数内部有两个队列，一个半打开socket队列，一个完全打开的socket队列,
+         三次握手成功后，半打开转到完全打开，accept及时取走
+     * accept函数
+     * 函数closesocket:优雅的关闭
+     * 函数connect
 
