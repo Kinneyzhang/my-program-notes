@@ -1,0 +1,14 @@
+* Linux学习视频
+** linux特点
+   * 免费 开源
+   * 支持多线程，多用户
+   * 安全性好
+   * 对内存和文件管理优越
+** 基础命令
+   * root 登陆root
+   * logout 注销用户
+   * startx 启用图形界面
+   * shutdown -h now 立刻关机
+   * shutsown -r now/reboot 立刻重启
+** VI的使用
+   * Vi Hello.java

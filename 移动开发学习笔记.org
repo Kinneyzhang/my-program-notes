@@ -1,0 +1,14 @@
+* 移动开发学习笔记
+** Android开发类型
+   * 移植开发手机系统
+   * 应用程序开发
+   * Android系统开发
+** Android五大组件
+   * Activity:负责加载view，继承Activity类
+   * Service:在系统后台运行,完成一些无需与用户进行交互的功能，继承Service类
+   * BroadcastReceiver:发送系统级的消息
+   * ContentProvider:数据库接口
+   * Intent:很重要
+
+** 物联网基础
+   * 
