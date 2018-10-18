@@ -11,4 +11,10 @@
    * Intent:很重要
 
 ** 物联网基础
-   * 
+
+** 目录结构
+   * app
+     * manifests目录：AndroidManifest.xml，所有组件的注册信息
+     * java目录
+     * res目录：资源文件（drawable:自定义形状，背景选择器, layout:布局, mipmap:图片图标, values:颜色，尺寸，样式，字符串等）
+     * Gradle Scripts：生成工程的脚本

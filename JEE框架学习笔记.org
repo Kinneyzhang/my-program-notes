@@ -37,7 +37,6 @@
     
 //看到第六讲21:00
 
-
 * spring笔记
 ** 概念：
    * spring是一个容器框架，可以配置各种bean(action,service,domain,dao)，并维护bean与bean之间的关系，可以通过getBean(id)获取
