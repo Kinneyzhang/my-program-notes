@@ -10,10 +10,15 @@
    * ContentProvider:数据库接口
    * Intent:很重要
 
-** 物联网基础
 ** 目录结构
    * app
      * manifests目录：AndroidManifest.xml，所有组件的注册信息
      * java目录
      * res目录：资源文件（drawable:自定义形状，背景选择器, layout:布局, mipmap:图片图标, values:颜色，尺寸，样式，字符串等）
      * Gradle Scripts：生成工程的脚本
+** 物联网基础
+   * RFID基础知识
+     * 利用无线射频信号空间耦合的方式，实现无接触的信息自动传输
+     * RFID标签工作原理：
+       * 无源：使用阅读器，通过电磁感应让内部的电路工作
+       * 有源：可发送和接收数据，eg:ETC(不停车电子收费系统)
