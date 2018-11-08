@@ -10,5 +10,32 @@
    * startx 启用图形界面
    * shutdown -h now 立刻关机
    * shutsown -r now/reboot 立刻重启
-** VI的使用
-   * Vi Hello.java
+   * Ctrl-D 回退
+** 启动级别
+   * 0：关机
+   * 1:单用户
+   * 2:多用户无网络
+   * 3:多用户有网络
+   * 4:系统未使用保留给用户
+   * 5:图形界面
+   * 6:系统重启
+** 用户与组
+   * 创建用户并加入组：useradd -m <username> -g <groupname>
+   * 给用户分配密码：passwd <username>
+   * 删除用户和目录：userdel -r <username>
+   * root修改用户所在组：usermod -g <groupname> <username> 
+   * 创建组：groupadd <groupname>
+   * 组的信息在/etc/group中，用户信息在/etc/passwd 中
+   * 文件权限 -rw-r--r--
+     * 第一位为：文件类型
+     * 接下来三位为：文件所有者对文件的权限
+     * 接下来三位为：文件所在组对文件的权限
+     * 最后三位为：其他组的用户对文件的权限
+     * 权限值：r:4, w:2, x:1
+     * 修改权限：chmod <value> <username>, value用三位，分别表示所有者，组用户，其他组用户
+     * 修改文件所有者：chown
+     * 修改文件所在组：chgrp
+     * 对文件和文件夹权限的理解：
+       * r：查看文件中的内容，列出文件夹中的文件(ls)
+       * w：修改文件内容，在文件夹中删除，添加或者重命名文件夹
+       * x：文件可以作为程序执行，cd到文件夹
