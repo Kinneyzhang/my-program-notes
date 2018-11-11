@@ -62,6 +62,20 @@
    * env:查看当前系统的环境变量，可以看到当前使用的shell
    * 改变使用的shell: chsh -s <shellname>
    * 查看之前使用的命令：history
+   * 建立链接文件：ln -s <源文件> <目标文件>
+   * find <目录> -name <文件名>
+   * find <目录> -size +1000k
+   * grep -n "查找内容" <目录>
+   * 重定向：> 覆盖写，>> 追加写
+   * 管道命令：| ,把左边的执行结果交给右边的命令
+   * 把日期存入变量：time=`date +%y%m%d`
+   * 取变量的值：$time
+   * 临时加入一个路径：export PATH=$PATH:/root
+   * 显示变量内容：echo $SHELL, echo $PATHS
+   * 通配符：* 多个字母或数字，？一个字母或数字，[1-6] 特定范围的数字
+   * 给命令取别名：alias <别名>='<命令>'
+   * 压缩：zip <压缩名> <文件名>，-r:压缩文件夹，-m:删除原文件
+   * 解压缩：unzip <文件名>
 ** linux网络配置
 ** RPM包管理
    * 查询是否安装：rpm -q <包名>
@@ -121,3 +135,14 @@
     * 恢复：mysql -u root -p <密码> <数据库名> < data.bak, 恢复数据库前需要先建立一个空数据库
     * quit
 ** SSH
+   * shell命令：ssh -p 22 <name>@<ip地址>
+** linux启动过程分析
+   * BIOS自检
+   * 启动GRIB/LILO
+   * 运行linux内核便检测硬件
+   * 启动第一个进程init
+   * init读取系统引导配置文件/etc/inittab中的信息进行初始化
+   * /etc/rc.d/rc.sysinit 系统初始化脚本
+   * /etc/rc.d/rcX.d/[KS]* 根据运行级别X配置服务，终止以K开头的服务，启动以S开头的服务
+   * /etc/rc.d/rc.local 执行本地特殊配置
+   * 其他特殊服务
