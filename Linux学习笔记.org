@@ -62,3 +62,62 @@
    * env:查看当前系统的环境变量，可以看到当前使用的shell
    * 改变使用的shell: chsh -s <shellname>
    * 查看之前使用的命令：history
+** linux网络配置
+** RPM包管理
+   * 查询是否安装：rpm -q <包名>
+   * 安装包：rpm -ivh 包的全路径
+   * 卸载包：rpm -e <包名>
+** samba(windows和linux文件共享)
+   * 安装
+     * 提前下载好samba相关的包(三个)，然后挂载安装都Linux, 或者在linux下直接安装
+     * 新建一个共享用户，可以不用设置密码
+     * 添加用户设置samba密码：smbpasswd -a <username>
+     * service smb start, service smb stop, service smb restart....
+** 任务调度
+   * 打开设置任务窗口：crontab -e
+   * 设置时间：* * * * *，分别对应分，时，日，月，星期，'*'表示任意
+   * 调度多个任务：把所有的任务写入一个可执行文件(shell编程)
+   * 终止任务：crontab -r
+   * 列出当前调度任务：crontab -l
+** 进程
+   * 进程：正在运行的程序，进程有独立的地址空间
+   * 线程：
+     * 轻量级的进程
+     * 线程没有独立的地址空间
+     * 线程不能独立存在，它是由进程创建的
+     * 相对来说，线程耗费cpu小于进程
+   * 查看进程：ps -aux
+   * 终止进程：kill <进程号>
+   * 强制终止进程：kill -9 <进程号>
+   * 查看动态进程：top
+     * 监听特定用户：u,输入用户名
+     * 终止指定进程：k,输入进程id号
+     * 指定系统状态更新：top -d 10 (10s)
+   * 更改系统时间：date MMDDHHMMCCYY.SS
+   * 查看月历：cal 4 2018
+** 网络监控 
+   * 网络端口状态监控：netstat -an
+   * 显示端口监听的进程号：netstat -anp
+   * 追踪路由：traceroute
+   * 查看路由表：route
+** mysql数据库
+*** 安装
+    * 创建mysql组
+    * 创建mysql用户并加入mysql组
+    * 初始化数据库：scripts/mysql_install_db --user=mysql
+    * 修改文件所有者为root
+    * 修改data文件夹的所有者为mysql
+    * 修改文件的所在组为mysql
+    * 启动服务器：bin/mysqld_safe --user=mysql &
+    * 修改环境变量：在.bash_profile的path中添加bin目录路径
+    * mysql驱动放在jdk主目录的/jre/lib/ext下面
+*** 使用
+    * create database <databaseName>;
+    * show databases;
+    * use <databaseName>;
+    * show tables;
+    * 查看表字段：desc <tableName>
+    * 备份：mysqldump -u root -p <密码> <数据库名> > data.bak 
+    * 恢复：mysql -u root -p <密码> <数据库名> < data.bak, 恢复数据库前需要先建立一个空数据库
+    * quit
+** SSH
