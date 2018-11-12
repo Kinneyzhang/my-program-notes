@@ -41,7 +41,6 @@
        * x：文件可以作为程序执行，cd到文件夹
 ** JEE环境搭建
    * 环境变量文件：/etc/profile
-   * 安装tar.gz文件：tar -zxvf <filename>
 ** linux分区
    * 主分区加拓展分区数量小于等于4
    * 拓展分区不能直接使用，需要分成逻辑分区
@@ -76,7 +75,19 @@
    * 给命令取别名：alias <别名>='<命令>'
    * 压缩：zip <压缩名> <文件名>，-r:压缩文件夹，-m:删除原文件
    * 解压缩：unzip <文件名>
+   * 安装tar.gz文件：tar -zxvf <filename>
 ** linux网络配置
+   * 配置方式
+     * 静态指定
+       * ifcfg: ifconfig, route
+       * ip: link, addr route
+       * 编辑配置文件：system-config-network-tui(setup)
+       * centos7: nmcli, nmtui
+     * 动态分配
+       * DHCP
+   * 配置网络接口
+     * 接口命名方式
+       * centos6:以太网 eth[0,1,2,3...]
 ** RPM包管理
    * 查询是否安装：rpm -q <包名>
    * 安装包：rpm -ivh 包的全路径
