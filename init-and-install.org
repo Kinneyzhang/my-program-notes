@@ -1,0 +1,23 @@
+* mac初始化设置
+** HomeBrew
+   * /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+** iterm2+oh-my-zsh
+   * [[https://www.iterm2.com/][iterm2官网]]
+   * chsh -s /bin/zsh
+   * sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+   * 在.zshrc中修改：ZSH_THEME="bira"
+
+** Vim
+   * git clone https://github.com/Kinneyzhang/vimplus.git ~/.vimplus
+   * cd ~/.vimplus
+   * ./install.sh
+
+** emacs
+   * git clone https://github.com/Kinneyzhang/.emacs.d.git ~/.emacs.d
+
+** 工作文件
+   * git clone https://github.com/Kinneyzhang/program_work.git ~/program_work
+   * git clone https://github.com/Kinneyzhang/program_org.git ~/program_org
+
+* Shell脚本
