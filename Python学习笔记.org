@@ -260,22 +260,38 @@
 ** python面向对象编程指南
 *** __init__()方法
 ** Django开发
-   * virtualenv <name_env> --python=python3(将本地的python库拷贝一份在当前目录下)
-   * source <name_env>/bin/activate
-   * deactivate
-   * pip install Django(本地已安装则无需执行)
-   * django-admin.py startproject <project_name> .
-   * python manage.py migrate
-   * python manage.py runserver
-   * 修改settings.py中的DATABASES配置
-     * 'ENGINE': 'django.db.backends.mysql',
-     * 'NAME': 'Test',
-     * 'USER': 'root',
-     * 'PASSWORD': '123',
-     * 'HOST': '127.0.0.1',
-     * 'POST': '3306',
-   * [[https://www.cnblogs.com/TaleG/p/6735099.html][修改相关配置，让python3支持MySQLdb.]]
-     * import pymysql
-     * pymysql.install_as_MySQLdb()
-   * 在app/models.py中添加数据库相关操作
-
+   * 环境准备与工程创建
+     * virtualenv <name_env> --python=python3(将本地的python库拷贝一份在当前目录下)
+     * source <name_env>/bin/activate, deactivate
+     * pip install Django(本地已安装则无需执行)
+     * django-admin.py startproject <project_name> .
+   * 连接数据库
+     * 修改settings.py中的DATABASES配置(先建一个空数据库)
+       * 'ENGINE': 'django.db.backends.mysql',
+       * 'NAME': 'Test',
+       * 'USER': 'root',
+       * 'PASSWORD': '123',
+       * 'HOST': '127.0.0.1',
+       * 'POST': '3306',
+     * [[https://www.cnblogs.com/TaleG/p/6735099.html][修改相关配置，让python3支持MySQLdb.]]
+       * import pymysql
+       * pymysql.install_as_MySQLdb()
+     * python manage.py migrate
+   * 运行服务器
+     * python manage.py runserver (port)
+   * 创建app
+     * python manage.py startapp <app_name>
+     * 在工程目录settings.py中将app名称添加到INSTALLED_APPS元组
+   * 为app添加模型
+     * 模型中的属性决定了表中的字段及相关属性，并在数据库中自动生成
+     * [[https://docs.djangoproject.com/en/1.8/ref/models/fields/][django模型字段查询]]
+     * python manage.py makemigrations testApp1
+     * python manage.py migrate
+   * 向管理网站注册模型
+     * python manage.py createsuperuser 创建管理网站的超级用户
+     * from <app_name>.models import <model_name>
+     * admin.site.register(<model_name>)
+   * 创建网页
+     * 定义url：在项目的urls.py中定义app的url集合，在app的urls.py中定义不同视图的url
+     * 编写试图：在app的views.py中定义模版的展示方式
+     * 编写模版：html页面
