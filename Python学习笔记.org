@@ -259,3 +259,23 @@
 
 ** python面向对象编程指南
 *** __init__()方法
+** Django开发
+   * virtualenv <name_env> --python=python3(将本地的python库拷贝一份在当前目录下)
+   * source <name_env>/bin/activate
+   * deactivate
+   * pip install Django(本地已安装则无需执行)
+   * django-admin.py startproject <project_name> .
+   * python manage.py migrate
+   * python manage.py runserver
+   * 修改settings.py中的DATABASES配置
+     * 'ENGINE': 'django.db.backends.mysql',
+     * 'NAME': 'Test',
+     * 'USER': 'root',
+     * 'PASSWORD': '123',
+     * 'HOST': '127.0.0.1',
+     * 'POST': '3306',
+   * [[https://www.cnblogs.com/TaleG/p/6735099.html][修改相关配置，让python3支持MySQLdb.]]
+     * import pymysql
+     * pymysql.install_as_MySQLdb()
+   * 在app/models.py中添加数据库相关操作
+

@@ -16,6 +16,10 @@
 ** emacs
    * git clone https://github.com/Kinneyzhang/.emacs.d.git ~/.emacs.d
 
+** cmake
+   * [[https://cmake.org/download/][cmake官网]]
+   * sudo "/Applications/CMake.app/Contents/bin/cmake-gui" --install
+
 ** 工作文件
    * git clone https://github.com/Kinneyzhang/program_work.git ~/program_work
    * git clone https://github.com/Kinneyzhang/program_org.git ~/program_org
