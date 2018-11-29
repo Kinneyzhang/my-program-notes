@@ -1,0 +1,45 @@
+* bootscrap
+** 概述
+   * 在head中链接css包：<link rel="stylesheet" href="css/bootscrap.min.css"/>
+   * 在body中引入js相关包：
+     * <script src="js/jquery.min.js"></script>
+     * <script src="js/bootscrap.min.js"></script>
+** 内联元素
+   * <mark></mark> 添加标记
+   * 各种加线条文本
+     * <del></del> 删除的文本
+     * <s></s> 无用的文本
+     * <ins></ins> 插入的文本
+     * <u></u> 下划线文本
+   * 各种强调的文本
+     * <small></small> 标准字号的85%
+     * <strong></strong> 加粗700
+     * <em></em> 倾斜
+   * 对齐方式
+     * 居左：text-left
+     * 居中：text-center
+     * 居右：text-right
+     * 不换行：text-nowrap
+   * 大小写
+     * 小写：text-lowercase
+     * 大写：text-uppercase
+     * 首字母大写：text-capitalize
+   * 引用文本
+     * 左边线 <blockquote></blockquote>
+     * 右边线 <blockquote class="blockquote-reverse"></blockquote>
+   * 列表排版
+     * 移除默认样式：list-unstyled
+     * 设置成内联：list-inline
+     * 水平排列描述列表：
+       #+BEGIN_SRC css
+	 <dl class="dl-horizontal">
+	   <dt>Bootstrap</dt>
+	   <dd>Bootstrap 提供了一些常规设计好的页面排版的样式供开发者使用。</dd>
+	 </dl>
+       #+END_SRC
+   * 代码
+     * 内联代码：<code></code>
+     * 按键显示：<kbd></kbd>
+     * 代码块：<pre></pre>
+   * 表格
+     * 基本格式：table
