@@ -20,6 +20,10 @@
    * [[https://cmake.org/download/][cmake官网]]
    * sudo "/Applications/CMake.app/Contents/bin/cmake-gui" --install
 
+** keyboard
+   * git clone https://github.com/Kinneyzhang/keyboard.git ~/.keyboard
+   * 根据系统情况修改app启动快捷键
+
 ** 工作文件
    * git clone https://github.com/Kinneyzhang/program_work.git ~/program_work
    * git clone https://github.com/Kinneyzhang/program_org.git ~/program_org
