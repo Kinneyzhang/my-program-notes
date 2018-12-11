@@ -29,3 +29,4 @@
    * git clone https://github.com/Kinneyzhang/program_org.git ~/program_org
 
 * Shell脚本
+  * hello this is my first time to use hhkb, I am so excited now. hahahah
