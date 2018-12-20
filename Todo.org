@@ -1,0 +1,15 @@
+* Something I wanna learn
+** git, github, gitlab
+** emacs lisp and hacking emacs by myself
+** bootstrap and some other front-end frame
+** python scrapy
+** efficient apps in OS X
+** improve my English level
+
+* Something I wanna do 
+** write a blog.
+** Have my own website
+** Travelling or Work outside
+
+* Something I wanna buy
+** Mac mini
