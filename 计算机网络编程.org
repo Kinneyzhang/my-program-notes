@@ -48,9 +48,20 @@
 ** mypin程序的基本步骤
 * 复习
   * 哪四层，每一层协议
+    * 应用层(ftp,http,dns,smtp,snmp,Telnet)，传输层(Tcp,udp)，网络层(ip,icmp,igmp)，链路层(以太网，令牌环网，FDDI，IEEE802.3)
   * 表示一次连接的要求
   * tcp socket 
+
+    #+BEGIN_SRC C
+      SOCKET WSAAPI socket(int af, int type, int protocol);
+    #+END_SRC
+
   * udp socket
+
+    #+BEGIN_SRC C
+
+    #+END_SRC
+
   * tcp通信模型，单线程，多线程
   * udp通信模型，循环服务器
   * 服务器方的两种绑定的含义区别，绑定的代码片段
@@ -64,7 +75,7 @@
   * 基于tcp的网络通信程序，传递一个参数，返回质数的个数；给一个串，找出多少个英文单词
   * 简单的基于tcp的远程遥控程序，几个命令
   * 基于udp的网络通信程序，给一个字。。。
-  * 定时器在局域网每隔几秒广播一个消息，定时广播，老消息
+  * 定时器在局域网每隔几秒播一个消息，定时广播，老消息
   * 组播程序，向组里发一个消息，组中成员打印消息
   * 画图。ip的分片填图，源路由填图，记录路由填图、
   * 路径MTU发现算法思考
