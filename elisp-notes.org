@@ -1,0 +1,100 @@
+* Emacs lisp note
+** Intro 
+
+   #+BEGIN_SRC emacs-lisp
+     2345.56456
+
+     (+ 3 4 (- 8 3))
+
+     (defun square (x) (* x x))
+     (square 5)
+
+     (defun add (a b) (+ a b))
+     (add )
+   #+END_SRC
+
+** Variables, Booleans and Lists
+
+   #+BEGIN_SRC emacs-lisp
+     (setq my-var 5)
+     (setq my-var1 3 my-varr2 4)
+
+     (null nil) ;; => t
+     (null t) ;; => nil
+
+     ;; lists
+     '(1 2 3 4)
+
+     (setq my-list '(1 2 3 4))
+     my-list ;; => (1 2 3 4)
+
+     (add-to-list 'my-list 5)
+     my-list ;; => (5 1 2 3 4)
+
+     (cons 6 my-list) ;; => (6 5 1 2 3 4)
+     my-list ;; => (5 1 2 3 4)
+
+     ;;get the first of list
+     (car my-list) ;; => 5
+     ;;get the rest of list
+     (cdr my-list) ;; => (1 2 3 4)
+     ;;get by index
+     (nth 0 my-list) ;; => 5
+     (nth 3 my-list) ;; => 3
+
+     ;;whether exist in list
+     (member 3 my-list) ;; => (3 4)
+     (member 7 my-list) ;; => nil
+
+     (defun whether-exist (number some-list) (member number some-list))
+     (whether-exist (2 my-list)) ;; => (2 3 4)
+
+     ;;ert test
+     (require 'ert)
+     (ert-deftest check-number ()
+       (should (whether-exist 5 '(3 5 6 7))) ;; => t
+       (should (whether-exist 5 '(1 2 3 4))) ;; => t
+       )
+   #+END_SRC
+
+** Looping and Local Variables
+
+   #+BEGIN_SRC emacs-lisp
+     ;; looping
+     (setq my-list '(1 2 3 4))
+
+     (dolist (num my-list)
+       (when (= (mod num 2) 0)
+	 (print num)))
+
+     ;; variable not defined is nil
+     (let (my-var)
+       (if (null my-var)
+	   (message "var is null")
+	 (message "var is not null")
+       ))
+
+
+     (defun sum-evens (some-list)
+       (let ((sum 0))
+	 (dolist (num some-list)
+	   (when (= (mod num 2) 0)
+	     (setq sum (+ sum num))))
+	 sum))
+     (sum-evens my-list)
+   #+END_SRC
+
+** Interactive Functions
+
+   #+BEGIN_SRC emacs-lisp
+     (defun cheap-count-words ()
+       (interactive)
+       (let ((words 0))
+	 (save-excursion
+	   (goto-char (point-min))
+	   (while (forward-word)
+	     (setq words (1+ words))))
+	 (message (format "words in buffer: %s" words))
+	 words))
+   #+END_SRC
+

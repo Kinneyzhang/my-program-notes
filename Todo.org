@@ -5,7 +5,6 @@
 ** python scrapy
 ** efficient apps in OS X
 ** improve my English level
-
 * Something I wanna do 
 ** write a blog.
 ** Have my own website
