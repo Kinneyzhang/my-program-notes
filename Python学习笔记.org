@@ -29,56 +29,56 @@
 
     * 遍历字典，获得一对对键，值
       for key, value in dic.items(): 
-          print("\nKey: " + key)
-          print("Value: " + value)
+      print("\nKey: " + key)
+      print("Value: " + value)
     * 遍历键，获得键的列表
       for name in dic.keys():
-          print(name.title())
+      print(name.title())
 
     * #按序遍历键
       for name in sorted(dic.keys()):
-          print(name.title())
+      print(name.title())
 
     * #遍历值，获得值的列表
       for value in dic.values():
-          print(value.title())
+      print(value.title())
 
     * #遍历值，去除重复项
       for value in set(dic.values()):
-          print(value.title())
+      print(value.title())
 
     * #a list of dic
-       alien_0 = {'color': 'green', 'points': 5}
-       alien_1 = {'color': 'yellow', 'points': 10}
-       alien_2 = {'color': 'red', 'points': 15}
-       ualiens = [alien_0, alien_1, alien_2]
-       for alien in aliens:
-           print(alien)
+      alien_0 = {'color': 'green', 'points': 5}
+      alien_1 = {'color': 'yellow', 'points': 10}
+      alien_2 = {'color': 'red', 'points': 15}
+      ualiens = [alien_0, alien_1, alien_2]
+      for alien in aliens:
+      print(alien)
 
     * #a list in a dic
-       pizza = {
-	'crust': 'thick',
-	'toppings': ['mushrooms', 'extra cheese'],
-	}
+      pizza = {
+      'crust': 'thick',
+      'toppings': ['mushrooms', 'extra cheese'],
+      }
 
     * #a dic in a dic
-       users = {
-         'aeinstein': {
-           'first': 'albert',
-           'last': 'einstein',
-           'location': 'princeton',
-           },
-	 'mcurie': {
-            'first': 'marie',
-            'last': 'curie',
-            'location': 'paris',
-            },
-       }
+      users = {
+      'aeinstein': {
+      'first': 'albert',
+      'last': 'einstein',
+      'location': 'princeton',
+      },
+      'mcurie': {
+      'first': 'marie',
+      'last': 'curie',
+      'location': 'paris',
+      },
+      }
 
     * 字典，列表中存在中文直接打印时的处理：
-	设置全局编码 # encoding=utf-8
-	import json
-	p1 = json.dumps(p1,ensure_ascii=False)
+      设置全局编码 # encoding=utf-8
+      import json
+      p1 = json.dumps(p1,ensure_ascii=False)
     * 打印时，可以把列表转成字符串：str(list);
 
 *** 函数
@@ -86,14 +86,14 @@
       准确的指定形参的类型，顺序便无所谓
 
     * 默认值：def describe_pet(pet_name, /*animal_type='dog'*/):
-         describe_pet('willie')
-         describe_pet('willie'，'cat')
-         describe_pet(pet_name='harry', animal_type='hamster')
+      describe_pet('willie')
+      describe_pet('willie'，'cat')
+      describe_pet(pet_name='harry', animal_type='hamster')
       形参中有默认值时，默认值写在后面，实参调用时，可以重新修改默认值。
 
     * 实参可选：def get_formatted_name(first_name, last_name, *middle_name=''*):
-         musician = get_formatted_name('jimi', 'hendrix')
-         musician = get_formatted_name('john', 'hooker', 'lee')
+      musician = get_formatted_name('jimi', 'hendrix')
+      musician = get_formatted_name('john', 'hooker', 'lee')
       可选的形参赋值为空，放在最后，可以实现在实参调用时可选
 
     * 函数中修改列表(不改变原列表)：
@@ -101,19 +101,19 @@
       如：print_models(unprinted_designs[:], completed_models)
 
     * 传递任意数量的实参：def make_pizza(*toppings):
-         make_pizza('mushrooms', 'green peppers', 'extra cheese')
+      make_pizza('mushrooms', 'green peppers', 'extra cheese')
       实际上 toppings 是一个元组
 
     * 使用任意数量的关键字实参：def build_profile(first, last, **user_info):
-         for key, value in user_info.items():
-            profile[key] = value
+      for key, value in user_info.items():
+      profile[key] = value
       实际上 user_info 是一个字典
 
     * 导入模块
       - 导入整个模块：import pizza #模块名与模块的文件名一致
-           pizza.make_pizza(16, 'pepperoni') #通过点号调用模块中的函数
+        pizza.make_pizza(16, 'pepperoni') #通过点号调用模块中的函数
       - 导入特定函数：from pizza import make_pizza
-           make_pizza(16, 'pepperoni') #不用点号，直接使用函数
+        make_pizza(16, 'pepperoni') #不用点号，直接使用函数
       - 使用 as 给函数指定别名：from pizza import make_pizza as mp
       - 使用 as 给模块指定别名：import pizza as p
       - 不建议导入模块中的所有函数，建议按需选择或者导入整个模块，防止命名冲突
@@ -127,27 +127,27 @@
     - 读写文件：
       * 读全部文件
 	with open('pi_digits.txt') as file_object:
-         contents = file_object.read()
-         print(contents.rstrip()) #末尾多一空行
+        contents = file_object.read()
+        print(contents.rstrip()) #末尾多一空行
 	with 表示让 python 自己决定打开和关闭的状态
 
       * 逐行读文件
 	filename='aa.txt'
 	with open(filename) as file_object:
-           for line in file_object:
-              print(line.rstrip()) #末尾多两行(文件和 print)
+        for line in file_object:
+        print(line.rstrip()) #末尾多两行(文件和 print)
 
       * 将文件的每一行保存在列表中：readlines()函数
 	filename = 'pi_digits.txt'
 	with open(filename) as file_object:
-           lines = file_object.readlines()
-           for line in lines:
-              print(line.rstrip())
+        lines = file_object.readlines()
+        for line in lines:
+        print(line.rstrip())
 
       * 写文件
 	filename = 'programming.txt'
 	with open(filename, 'w') as file_object:
-           file_object.write("I love programming.")
+        file_object.write("I love programming.")
 	多行写时，字符连在一起，用\n 换行
 	写数字时，用 str()转成字符
 
@@ -159,20 +159,20 @@
       * FileNotFoundError
       * 使用 try-except-else 代码块
 	try:
-           answer = int(first_number) / int(second_number)
+        answer = int(first_number) / int(second_number)
 	except ZeroDivisionError: 
-           print("You can't divide by 0!")
+        print("You can't divide by 0!")
 	else: 
-           print(answer)
-       ----------------------------------------------------
+        print(answer)
+	----------------------------------------------------
 	try:
-           with open('pi_digits.txt') as file_object:
+        with open('pi_digits.txt') as file_object:
 	except FileNotFoundError:
-           msg = "Sorry, the file " + filename + " does not exist." 
-           print(msg)
+        msg = "Sorry, the file " + filename + " does not exist." 
+        print(msg)
 	else:
-           contents = file_object.read()
-           print(contents.rstrip())
+        contents = file_object.read()
+        print(contents.rstrip())
 
     - 存储数据
       * 使用 json.dump()和 json.load()
@@ -182,48 +182,48 @@
       * 存储用户的信息
 	filename = 'username.json'
 	try:
-           with open(filename) as f_obj:
-              username = json.load(f_obj)
+        with open(filename) as f_obj:
+        username = json.load(f_obj)
 	except FileNotFoundError:
-           username = input("What is your name? ")
-           with open(filename, 'w') as f_obj:
-              json.dump(username, f_obj)
-              print("We'll remember you when you come back, " + username + "!")
+        username = input("What is your name? ")
+        with open(filename, 'w') as f_obj:
+        json.dump(username, f_obj)
+        print("We'll remember you when you come back, " + username + "!")
 	else:
-              print("Welcome back, " + username + "!")
+        print("Welcome back, " + username + "!")
 
       * 重构：根据功能划分成不同的函数
 
     - 测试代码
       *
 *** 注意点：
-   * 在打印时注意格式的转换，字符串，数字，列表等类型要转成一致
-   * 引号前用"\"进行转义，一句话前用"r"对"\"进行转义
-   * 注意 input()与 raw_input()的区别
-     *Python 2.x 写法*
-       input 必须输入 python 表达式，形如 qwer 非法，必须加引号，且表达式类型与原类型一致
-       raw_input()的输入一律当作 str 类型处理！
-     *Python 3.x 写法*
-       input()的一切输入当作字符类型处理，并返回字符类型！
-       不存在 raw_input!
+    * 在打印时注意格式的转换，字符串，数字，列表等类型要转成一致
+    * 引号前用"\"进行转义，一句话前用"r"对"\"进行转义
+    * 注意 input()与 raw_input()的区别
+      *Python 2.x 写法*
+      input 必须输入 python 表达式，形如 qwer 非法，必须加引号，且表达式类型与原类型一致
+      raw_input()的输入一律当作 str 类型处理！
+      *Python 3.x 写法*
+      input()的一切输入当作字符类型处理，并返回字符类型！
+      不存在 raw_input!
 
-   * 注意继承在不同版本中的区别
-     *Python 2.x*
-       父类括号中要写(object)
-       super()括号中要写(Function_name,self)
-     *Python 3*
-       以上两个括号中均为空！
+    * 注意继承在不同版本中的区别
+      *Python 2.x*
+      父类括号中要写(object)
+      super()括号中要写(Function_name,self)
+      *Python 3*
+      以上两个括号中均为空！
 
-   * 给形参指定默认值和调用实参时，等号两边不要有空格:
-       def function_name(parameter_0, parameter_1='default value')
-       function_name(value_0, parameter_1='value')
+    * 给形参指定默认值和调用实参时，等号两边不要有空格:
+      def function_name(parameter_0, parameter_1='default value')
+      function_name(value_0, parameter_1='value')
 
 ** 网络爬虫
    - BeautifulSoup 对象
      * find()和 findAll()
-        通过标签的名称和属性来查找标签
-        findAll(tag, attributes, recursive, text, limit, keywords)
-        find(tag, attributes, recursive, text, keywords)
+       通过标签的名称和属性来查找标签
+       findAll(tag, attributes, recursive, text, limit, keywords)
+       find(tag, attributes, recursive, text, keywords)
    
      * 导航数
        - 子标签和后代标签：.children，.descendants
@@ -231,12 +231,12 @@
        - 父标签：.parent, .parens
    
      * 正则表达式
-	 import re
-	 re.compile("\.\.\/img\/gifts/img.*\.jpg")
+       import re
+       re.compile("\.\.\/img\/gifts/img.*\.jpg")
 
      * 获取属性
-	 myImgTag.attrs["src"]
-	 返回一个字典
+       myImgTag.attrs["src"]
+       返回一个字典
 
      * Lambda 表达式
 
@@ -257,41 +257,144 @@
 
 *** 
 
-** python面向对象编程指南
-*** __init__()方法
 ** Django开发
-   * 环境准备与工程创建
-     * virtualenv <name_env> --python=python3(将本地的python库拷贝一份在当前目录下)
-     * source <name_env>/bin/activate, deactivate
-     * pip install Django(本地已安装则无需执行)
-     * django-admin.py startproject <project_name> .
-   * 连接数据库
-     * 修改settings.py中的DATABASES配置(先建一个空数据库)
-       * 'ENGINE': 'django.db.backends.mysql',
-       * 'NAME': 'Test',
-       * 'USER': 'root',
-       * 'PASSWORD': '123',
-       * 'HOST': '127.0.0.1',
-       * 'POST': '3306',
-     * [[https://www.cnblogs.com/TaleG/p/6735099.html][修改相关配置，让python3支持MySQLdb.]]
-       * import pymysql
-       * pymysql.install_as_MySQLdb()
-     * python manage.py migrate
-   * 运行服务器
-     * python manage.py runserver (port)
-   * 创建app
-     * python manage.py startapp <app_name>
-     * 在工程目录settings.py中将app名称添加到INSTALLED_APPS元组
-   * 为app添加模型
-     * 模型中的属性决定了表中的字段及相关属性，并在数据库中自动生成
-     * [[https://docs.djangoproject.com/en/1.8/ref/models/fields/][django模型字段查询]]
-     * python manage.py makemigrations testApp1
-     * python manage.py migrate
-   * 向管理网站注册模型
-     * python manage.py createsuperuser 创建管理网站的超级用户
-     * from <app_name>.models import <model_name>
-     * admin.site.register(<model_name>)
-   * 创建网页
-     * 定义url：在项目的urls.py中定义app的url集合，在app的urls.py中定义不同视图的url
-     * 编写试图：在app的views.py中定义模版的展示方式
-     * 编写模版：html页面
+*** 开发流程
+    * 环境准备与工程创建
+      * virtualenv <name_env> --python=python3(将本地的python库拷贝一份在当前目录下)
+      * source <name_env>/bin/activate, deactivate
+      * pip install Django(本地已安装则无需执行)
+      * django-admin.py startproject <project_name> .
+    * 连接数据库
+      * 修改settings.py中的DATABASES配置(先建一个空数据库)
+	* 'ENGINE': 'django.db.backends.mysql',
+	* 'NAME': 'Test',
+	* 'USER': 'root',
+	* 'PASSWORD': '123',
+	* 'HOST': '127.0.0.1',
+	* 'POST': '3306',
+      * [[https://www.cnblogs.com/TaleG/p/6735099.html][修改相关配置，让python3支持MySQLdb.]]
+	* import pymysql
+	* pymysql.install_as_MySQLdb()
+      * python manage.py migrate
+    * 运行服务器
+      * python manage.py runserver (port)
+    * 创建app
+      * python manage.py startapp <app_name>
+      * 在工程目录settings.py中将app名称添加到INSTALLED_APPS元组
+    * 为app添加模型
+      * 模型中的属性决定了表中的字段及相关属性，并在数据库中自动生成
+      * [[https://docs.djangoproject.com/en/1.8/ref/models/fields/][django模型字段查询]]
+      * python manage.py makemigrations testApp1
+      * python manage.py migrate
+    * 向管理网站注册模型
+      * python manage.py createsuperuser 创建管理网站的超级用户
+      * from <app_name>.models import <model_name>
+      * admin.site.register(<model_name>)
+    * 创建网页
+      * 定义url：在项目的urls.py中定义app的url集合，在app的urls.py中定义不同视图的url
+      * 编写试图：在app的views.py中定义模版的展示方式
+      * 编写模版：html页面
+	
+*** 精通Django
+**** 视图与URL配置
+     * Django处理请求过程
+       * 请求url
+       * 查看ROOT_URLCONF找到根url配置
+       * 进行url模式匹配
+       * 调用对应的视图函数
+       * 视图函数返回HttpResponse对象
+       * 将HttpResponse对象转换为HTTP响应，得到网页
+     * 视图函数：视图函数第一个参数总是HttpRequest对象, 返回值总是HttpResponse对象
+     * 动态内容：调用python的datatime模块
+     * 动态URL：通过正则匹配实现
+
+**** Django模版
+     * 介绍：模版是一些文本字符串，作用是把文本的表现和数据分开。模版定义一些占位符和基本的逻辑(模版标签)，规定如何显示文档。通常模版用于生成HTML，不过Django模版也可以生成任何基于文本的格式。Django模版系统的目的是呈现表现而不是逻辑。
+
+     * 基本用法
+       * 编写模版字符串
+       * 创建Template对象
+       * 创建Context对象
+       * 调用render对象
+
+       #+BEGIN_SRC python
+	 from django import template
+	 t = template.Template('my name is {{ name }}')
+	 c = template.Context({'name': 'kinney'})
+	 print (t.render(c))
+       #+END_SRC
+
+     * 上下文变量查找
+       * 查找顺序
+	 * 字典查找
+	 * 属性查找
+	 * 方法调用
+	 * 列表索引查找
+
+     * 模版标签和过滤器
+       * if/else
+       * for: forloop.counter, forloop.first, forloop.last, forloop.parentloop
+       * ifequal/ifnotequal: 参数只能是模版变量，字符串，整数，小数
+       * 单行注释: {# this is a comment #}
+       * 多行注释:
+	 {% comment %}
+	 This is multi-line
+	 comment.
+	 {% endcomment %}
+       * 过滤器：{{ name|lower }}, 转义{{ value|addslashes }}, {{ my_list|first|upper}}
+
+     * 模版加载机制
+       * 模版的配置在settings.py的Templates中
+       * backaned定义使用的模版引擎类型
+       * dirs中放置模版源文件
+       * 项目根目录下放置模版：'DIRS': [os.path.join(BASE_DIR, 'templates')]
+       * app_dirs定义是否在安装的应用中查找模版，默认在应用的templates目录中查找
+       * options是针对后端的设置
+
+     * render函数：使用get_template()加载模版，但可以更简单，使用django.shortcuts的render函数，返回HttpResponse对象。render(request, 'current_datetime.html', {'current_date': now}
+
+     * 模版继承
+       * 创建base.html模版，定义网站的整体外观
+       * 为网站中的各个区域创建base_SECTION.html，包含区域专属的样式和设计
+       * 为各个页面创建单独的模版
+
+**** Django模型
+     * 配置：数据库的配置在settings.py的DATABASES中
+     * 命令
+       * python manage.py sqlmigrate <app_name> 0001 在屏幕显示对应的SQL语句
+       * python manage.py migrate 把迁移的数据库信息写入数据库中
+       * python manage.py makemigrations <app_name> 生成模型的数据库的模型迁移文件
+     * 基本数据访问
+
+**** Django后台管理
+     * python manage.py createsuperuser
+     * 在app目录的admin.py中注册模型：admin.site.register(<model_name>)
+     * 把字段设置为可选：blank=True; 把日期和数值字段设置为可选：blank=true, null=True
+     * 自定义管理后台的内容展示：使用ModelAdmin类
+       * 自定义修改列表:
+	 * 定义继承自ModelAdmin的子类
+	 * 添加list_display属性，值为字段的元组
+	 * admin.site.register()的第一个参数为模型名，第二个参数即为定义的ModelAdmin的子类
+       * 添加搜索框：设置search_fields属性，值为用于搜索的字段的元组
+       * 添加过滤器：设置list_filter属性，值为/超过两个值的字段/的元组，包括DataFiled,BooleanField,ForeignKey等
+       * 日期层级导航栏的日期过滤器：data_hierarachy，其值是一个字符串，使用ordering属性进行排序,其值为元组，字段名前加‘-’表示倒序
+       * 自定义编辑表单：
+	 * 使用fields属性，值为元组，按照指定的顺序显示字段，同时排除特定的字段，禁止编辑
+	 * 定制多对多关系字段：设置filter_horizontal或filter_vertical，当数据量很大时，考虑用raw_id_fields
+     * 权限管理
+       * Active：是否激活
+       * Staff status：是否允许用户登陆管理界面
+       * Superuser status：所有权限
+
+**** Django表单
+     * 在app目录下新建forms.py建立表单
+     * from django import forms, 建立表单类，继承自forms.Form;如果表单的字段与模型字段类似, 继承自forms.ModelForm
+     * 表单类中的属性字段定义与模型类类似。required=False设置可选字段
+     * 表单对象验证数据，字典传入Form对象
+     * 具有有效数据的表单实例有个cleaned_data属性，它的值是一个字典，存储着清理后的提交数据。Django的表单不仅验证数据，还会清理数据，把值转换为适当的python类型
+     * 改变字段的渲染方式：使用widget参数，wedget=forms.Textarea
+     * 设定最大长度：max_length
+     * 设定初始值：使用initial参数，其值是一个字典，传入创建的表单对象，form=ContactForm(initial={'subject':'I love Emacs'})
+     * 自定义验证规则：
+     * 指定标注：使用label参数
+     * 自定义表单外观：

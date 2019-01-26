@@ -98,3 +98,5 @@
 	 words))
    #+END_SRC
 
+* Writing GNU Emacs Extensions
+** Customizing Emacs
