@@ -100,3 +100,18 @@
 
 * Writing GNU Emacs Extensions
 ** Customizing Emacs
+   * What is emacs?
+     #+BEGIN_SRC text
+       It's missing the point to say that Emacs is just a programmable text editor. It's also, for instance, a C code editor. That may seem like nitpicking, but editing C code and editing text are two very different activities, and Emacs accommodates the differences by being two different editors. When editing code, you don't care about paragraph structure. When editing text, you don't care about indenting each line according to its syntax.
+
+       Emacs is also a Lisp code editor. It's also a hexadecimal binary file editor. It's also a structured outline editor. It's also a directory editor, a tar file editor, an email editor, and a hundred others. Each kind of editor is an Emacs mode, a chunk of Lisp code that combines Emacs's primitive types and operations in some new way. Each mode is therefore an extension of Emacs, which means that when you strip away all those modes—when you remove the extensions and you're left with just the core of Emacs—you don't have any editors at all; you have the raw materials for making editors. You have an editor-builder.
+     #+END_SRC
+   * Binding keystrokes to commands,
+     * such as (global-set-key keysequence command)
+     * denoting key in Strings.
+     * to get a special string, precede it with a backslash, such as double quote, some key abbreviation.
+     * eg:"\M-x", "I said, \"hello, kinney\"".....
+   * About lisp expression
+     * If a symbol appears in the first position of a list, it's the name of the function to excute.
+     * If it appears elsewhere, it's a variable whose value needs to be retrieved.
+     * How to retrieve the value? use quote "'".

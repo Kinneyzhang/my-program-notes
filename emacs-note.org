@@ -1,3 +1,4 @@
+#+STARTUP:overview
 * emacs notes
 ** 文件操作
   * C-x d 进入Dired-mode
@@ -70,3 +71,19 @@ _underline_
 # +END_COMMENT
 ..........................
 来源参考：http://www.fuzihao.org/blog/2015/02/19/org-mode教程/
+#+BEGIN_CENTER
+the content in this block will be in the center.
+#+END_CENTER
+** Org-mode
+*** 内部链接
+    * #+NAME:
+    * <<text>>
+    * file:::255, file:::target, file:::*target, file:::#custom-id, file:::/regexp/
+*** org-clock
+    * org-clock-in(C-c C-x C-i)
+    * org-clock-out(C-c C-x C-o)
+    * org-clock-display(C-c C-x C-d)
+    * org-clock-cancle(C-c C-x C-q)
+    * org-clock-report(C-c C-x C-r)
+    * org-dblock-update(C-c C-c), 光标放在#+Begin位置
+*** org-timer
