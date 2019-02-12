@@ -17,20 +17,18 @@
   + [[毕业设计]] 
     
 * 未来记录
-** 3~6月
-   ○ 毕业设计
-   ○ 找工作
+  ● 实现bujo-mode
 
 * 月度记录
 ** 2月
    | Date  | 日历页          | 任务页           |
    |-------+-----------------+------------------|
-   | 1 五  | 高三同学聚餐    | > 毕设网站框架   |
+   | 1 五  | 高三同学聚餐    | > [[*Feb 12 Tue][毕设网站框架]]   |
    | 2 六  |                 | ● 使用bujo.org   |
    | 3 日  |                 | ● 学习Vue.js     |
    | 4 一  |                 | ● 学习emacs lisp |
-   | 5 二  | 春节            | ● 设计bujo-mode  |
-   | 6 三  |                 | ● 跑步           |
+   | 5 二  | 春节            | > [[*Feb 12 Tue][设计bujo-mode]] |
+   | 6 三  |                 |                  |
    | 7 四  |                 |                  |
    | 8 五  |                 |                  |
    | 9 六  |                 |                  |
@@ -57,35 +55,41 @@
 * 每日记录
 ** 2月
 *** Feb 10 Sun
-    :LOGBOOK:
-    CLOCK: [2019-02-11 Mon 22:17]--[2019-02-11 Mon 22:19] =>  0:02
-    :END:
     × 学习bujo
        × 整理bujo笔记
        × 摘录bujo好句
     × bujo结合orgmode
 
 *** Feb 11 Mon
-    :LOGBOOK:
-    CLOCK: [2019-02-11 Mon 22:10]--[2019-02-11 Mon 22:15] =>  0:05
-    CLOCK: [2019-02-11 Mon 22:02]--[2019-02-11 Mon 22:07] =>  0:05
-    :END:
-     ● 整理《子弹笔记》“实践”章节笔记
+     > 整理《子弹笔记》“实践”章节笔记
      > [[毕业设计][运用bootstrap搭建毕设框架]]
      × 完善bujo.org细节
 	× 使用org-pomodoro
-           - org-clock-in(C-C C-x C-i):进入项目
-	   - org-clock-out(C-c C-x C-o):离开项目
-	   - org-pomodoro(C-c o p):开启/关闭定时器
 	× 完善内部链接跳转
 	× 思考其他bujo与org的结合
 	× 取消orgmode的代码缩进设置
-     ● org与omnifocus结合
-     ● 设计bujo-mode
-     ● 定期备份bujo.org
+     > org与omnifocus结合
+     > 设计bujo-mode
+     > 定期备份bujo.org
+
      - 事情复杂到一定程度时，单独形成一个集子
      - 专业性的笔记不记录在bujo中
      - 每天精力有限，把最好的精力用在最重要的事情上
+
+*** Feb 12 Tue
+    :LOGBOOK:
+    CLOCK: [2019-02-12 Tue 11:34]--[2019-02-12 Tue 11:42] =>  0:08
+    CLOCK: [2019-02-12 Tue 11:05]--[2019-02-12 Tue 11:07] =>  0:02
+    :END:
+    ● 整理《子弹笔记》“实践”章节笔记
+    ● org与omnifocus结合
+    ● org mode绘图
+    ● 定期备份bujo.org
+    > [[毕业设计][毕设网站框架]]
+    > [[设计bujo-mode]]
+    < [[未来记录][实现bujo-mode]]
+
+    - 记录daily log时考察三部分：脑中所想，昨日记录，月度记录
 
 * 清单列表
 ** 阅读清单
@@ -146,9 +150,9 @@
     |    7 |        |       |     |
     |    8 |        |       |     |
     |    9 |        |       |     |
-    |   10 |   9:00 | 24:30 | 9h  |
-    |   11 |   9:30 |       |     |
-    |   12 |        |       |     |
+    |   10 |   9:00 | 00:30 | 9h  |
+    |   11 |   9:30 | 01:30 | 9h  |
+    |   12 |  10:30 |       |     |
     |   13 |        |       |     |
     |   14 |        |       |     |
     |   15 |        |       |     |
@@ -166,7 +170,6 @@
     |   27 |        |       |     |
     |   28 |        |       |     |
 * 毕业设计
-  #+NAME: 毕业设计
   ● 毕设网站框架
      - 使用bootstrap前端框架
      - 使用Django做服务器框架
@@ -175,16 +178,59 @@
   ● 开题报告
   ● 查找文献资料
 
-#+BEGIN: clocktable :scope file :maxlevel 3
-#+CAPTION: Clock summary at [2019-02-11 Mon 22:34]
-| Headline         |   Time |      |      |
-|------------------+--------+------+------|
-| *Total time*     | *0:16* |      |      |
-|------------------+--------+------+------|
-| 每日记录         |   0:12 |      |      |
-| \_  2月          |        | 0:12 |      |
-| \_    Feb 10 Sun |        |      | 0:02 |
-| \_    Feb 11 Mon |        |      | 0:10 |
-| 读书笔记         |   0:04 |      |      |
-| \_  《子弹笔记》 |        | 0:04 |      |
-#+END:
+* 设计bujo-mode
+  :LOGBOOK:
+  CLOCK: [2019-02-12 Tue 12:26]--[2019-02-12 Tue 13:38] =>  1:12
+  CLOCK: [2019-02-12 Tue 11:47]--[2019-02-12 Tue 12:20] =>  0:33
+  :END:
+  - bujo-agenda
+     - F:bujo-agenda-future-view 未来记录(Future Log)
+     - M:bujo-agenda-month-view 月度记录(Monthly Log)
+     - D:bujo-agenda-ady-view 每日记录(Daily Log)
+     - a:bujo-agenda-task-abort
+     - d:bujo-agenda-task-done => × (done)
+     - m:bujo-agenda-task-migrated => > (migrated)
+       - task状态变为“>”
+       - 选择要迁移到的日期或新集子
+     - s:bujo-agenda-task-sheculed => < (schedule)
+       - task状态变为“<”
+       - 在未来记录中添加该task
+     - n:bujo-agenda-next-line
+     - p:bujo-agenda-previous-line
+     - f:bujo-agenda-later
+     - b:bujo-agenda-earlier
+     - .:bujo-agenda-goto-today
+     - j:bujo-agenda-goto-date
+     - r:bujo-agenda-refresh
+     - Tab bujo-agenda-goto
+     - q:bujo-agenda-quit
+     - x:bujo-agenda-exit
+  - bujo-agenda-file
+     - 自动生成特定格式的bujo.org
+     - 解析bujo.org, 实现bujo.org和bujo agenda的双向动态更新
+  - bujo-select
+     - keybinding: C-c b
+       | Select a capture template |
+       |---------------------------|
+       | [t]  Task                 |
+       | [e]  Event                |
+       | [n]  Note                 |
+  - point
+     - bujo-select选择t的时候将窗口分成左右两列，左边默认为bujo-agenda，显示昨天的记录，方便迁移
+     - 只有task状态可变。自动对task的状态进行排序，依次为：todo-migrated-scheduled-done-abort，r刷新
+     - bujo-agenda打开的默认展示为当天的Daily Log，分为三类：task, event, note
+       - n, p上下移动；task可改变状态：t(todo), m(migrate), s(scheduled), d(done), a(abort)
+       - f, b向前向后切换记录，“.”回到当天记录，j调用日历跳转到指定日期的日记录
+     - 按键M显示月度记录页，分三列
+       | Date  | Event    | Task    |
+       |-------+----------+---------|
+       | 1 Wes | ○ thing1 | ● task1 |
+       | 2 Thu | ○ thing2 | ● task2 |
+       | 3 Fri | ○ thing3 |         |
+       | 4 Sta |          |         |
+       | 5 Sun |          |         |
+       | ..... | .....    | .....   |
+       - 同理n,p,f,b,.,j,t,m,s,d,a
+     - 按键F显示未来记录, 简单的task列表
+       
+       

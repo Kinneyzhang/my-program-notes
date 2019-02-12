@@ -87,3 +87,5 @@ the content in this block will be in the center.
     * org-clock-report(C-c C-x C-r)
     * org-dblock-update(C-c C-c), 光标放在#+Begin位置
 *** org-timer
+*** 光标标题间跳转
+    * C-c C-n / C-c C-p
