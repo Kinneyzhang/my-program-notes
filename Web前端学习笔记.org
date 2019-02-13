@@ -483,3 +483,7 @@
     * 只触发一次
    
    
+** vue中css样式
+*** 使用class样式
+    * 使用数组：<p :class="['thin', 'italic', 'red']">this is content</p>
+    * 三元比哦啊大式：<p :class="['thin', flag'red']">this is content</p>
