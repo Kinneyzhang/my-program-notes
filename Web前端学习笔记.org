@@ -466,6 +466,18 @@
     * 双向数据绑定
     * 只能用在表单元素上
 
+*** v-for
+    * 循环数组：<p v-for="(item, i) in list">索引：{{i}}---值：{{item}}</p>
+    * 循环对象数组：.....
+    * 循环对象：<p v-for="(val, key) in user">值：{{val}}---键：{{key}}</p>
+    * 循环数字：值从1开始
+    * 在组件中使用v-for时，key属性是必须的
+      * key只能用number.string
+      * 使用v-bind指定key的值
+      * <p v-for="item in list" :key="item.id"></p>
+*** v-if & v-show
+    * v-if每次都会重新删除创建元素，切换性能消耗较高(元素需要频繁切换不使用)
+    * v-show只是改变了元素的display:none属性，初始渲染消耗较高(元素不显示时不使用)
 ** 事件修饰副符
 *** stop
     * 阻止冒泡
@@ -481,9 +493,66 @@
     * 只阻止自己的冒泡，捕获，不阻止其他元素
 *** once
     * 只触发一次
-   
-   
 ** vue中css样式
 *** 使用class样式
     * 使用数组：<p :class="['thin', 'italic', 'red']">this is content</p>
-    * 三元比哦啊大式：<p :class="['thin', flag'red']">this is content</p>
+    * 三元组：<p :class="['thin', flag?'red':'']">this is content</p>
+    * 数组嵌套对象：<p :class="['thin', {'active':flag}]">this is content</p>, (flags数据保存在vue中)
+    * 直接使用对象：<p :class="classObj"></p>
+      #+BEGIN_SRC js
+	    <p :class="classObj">content</p>
+	    data: {
+		classObj: {
+		    thin: true,
+		    red: true,
+		    active: false,
+		}
+	    }
+      #+END_SRC
+*** 使用style内联样式
+    * 直接绑定style：<p :style="{color:'red', 'font-weight':200}">content</p>
+    * 将第一个的style中的对象移到vue的data中
+    * 绑定多个对象：<p :style="[style1, style2]">content</p>
+** 自定义过滤器
+   #+BEGIN_SRC js
+     Vue.filter('msgFormat', function(msg, arg){
+	 return msg.replace('/单纯/g', arg)
+     })
+   #+END_SRC
+   * function第一个参数为要处理的变量，后面的参数为过滤器传递的参数
+   * 全局过滤器在script标签下定义
+   * 私有过滤器定义在Vue实例中，用filters属性表示
+   * 填充日期：(dt.getMonth()+1).toString().padStart(2, '0')
+** 自定义按键修饰符
+   * @keyup.enter="add",(键盘事件后为按键名或键盘码)
+   * 自定义按键修饰符：Vue.config.keyCodes.f2 = 113
+** 自定义指令
+   * 定义v-focus, 自动获取焦点
+     #+BEGIN_SRC js
+       Vue.directive('focus', { //第一个参数为指令名称，调用时加“v-”
+	   bind: function(el, bingding){ //第一个参数永远是el，表示绑定指令的元素
+	       el.focus()  //和样式相关的行为
+	   },
+	   inserted: function(el){
+	       el.focus()  //和js行为相关的操作
+	   },
+	   updated: function(){
+	   //节点更新时调用
+	   }
+       })
+     #+END_SRC
+   * 定义私有指令：vue实例中添加directives属性
+   * 简写：将名称后面的对象换成函数(默认写到bind和updated中)
+** 生命周期
+   * beforeCreate()执行时, data,methods都未被初始化
+   * created()执行时，都已经初始化
+   * beforeMount()执行时，模版已经在内存编译完成，但尚未渲染到页面
+   * mounted()执行时，内存中模版已经挂载到vue，用户可以看到渲染好的页面。实例已经被完全创建完成
+   * beforeUpdate(), 数据被改变，页面没有更新
+   * updated(), 页面更新
+   * beforeDestroy(), 所有的data,methods,filter,指令...都处于可用状态
+   * destroy(), 组建完全销毁
+** 发送数据请求
+   * 使用vue-resource包
+
+
