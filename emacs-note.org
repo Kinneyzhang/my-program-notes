@@ -86,6 +86,7 @@ the content in this block will be in the center.
     * org-clock-cancle(C-c C-x C-q)
     * org-clock-report(C-c C-x C-r)
     * org-dblock-update(C-c C-c), 光标放在#+Begin位置
-*** org-timer
 *** 光标标题间跳转
     * C-c C-n / C-c C-p
+** how to study emacs
+   * https://emacs-china.org/t/emacs/7532/16?u=kinneyzhang

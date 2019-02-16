@@ -554,5 +554,77 @@
    * destroy(), 组建完全销毁
 ** 发送数据请求
    * 使用vue-resource包
+   * this.$http.get('url').then(function(result){})
+   * this.$http.get('url').then(result => {})
+   * ajax在created()方法中调用
+     #+BEGIN_SRC js
+       getAllList(){
+	   this.$http.post('url',
+			   {name, this.name},
+			   {emulateJSON: true}
+			  ).then(result => {
+			      if(result,body.status == 0){
+				  //成功
+				  this.getAllList()
+			      }else{
+				  //失败
+				  alert('添加失败！')
+			      }
+			  })
+       }
+     #+END_SRC
+   * 设置根路径
+     * Vue.http.options.root = 'http://vue/root/'
+     * 单独请求的url不加斜杠
+   * 全局启用emulateJSON：Vue.http.options.emulateJSON = true
+** Vue中的动画
+** Vue组件
+   * 作用：拆分vue实例代码量
+   * 创建组件
+     * 创建组件：使用Vue.extend
+       #+BEGIN_SRC js
+	 var com1 = Vue.extend({
+	     template: '<h3>这是通过vue.extend创建的组件</h3>'
+	 })
+	 Vue.component('myCom1', com1) //驼峰命名使用‘-’
+	 //html中应用<my-com1></my-com1>
+       #+END_SRC
+     * 创建组件：直接使用Vue.component
+       #+BEGIN_SRC js
+	 Vue.component('myCom2', {
+	     template: '<h3>创建组件的第二种方式</h3>'
+	 })
+       #+END_SRC
+     * 创建组件：使用<template></template>标签
+       #+BEGIN_SRC js
+	 Vue.component('myCom3', {
+	     template: '#temp1'
+	 })
+       
+	 <template id="temp1">
+	     <h3>这是创建组件最好的方式</h3>
+	 </template>
+       #+END_SRC
+     * 也可以在实例内部定义私有组件，使用使用components属性
+   * 组件的data和methos
+     * 组件可以有自己的data
+     * 组件中的data必须是一个方法
+     * data方法必须返回一个对象，使用方式与实例一致
+       #+BEGIN_SRC js
+	 Vue.component('mycom', {
+	     template: '<h3>{{ msg }}</h3>',
+	     data: function(){
+		 return {
+		     msg: '组件data定义的数据'
+		 }
+	     }
+	 })
+       #+END_SRC
+   * 组件切换：
+     * v-if, v-else
+     * 使用component标签 <component :is="comName"></component>
+   * 父子组件
+     * 子组件无法访问父组件的data和methods
+     * 可以在引用子组件的时候通过属性绑定把数据传递给子组件
 
 
