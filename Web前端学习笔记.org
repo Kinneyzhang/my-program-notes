@@ -625,6 +625,72 @@
      * 使用component标签 <component :is="comName"></component>
    * 父子组件
      * 子组件无法访问父组件的data和methods
-     * 可以在引用子组件的时候通过属性绑定把数据传递给子组件
+     * 可以在引用子组件的时候通过属性绑定把数据传递给子组件，然后在子组件内部props数组中定义
+     * 子组件的*data*数据是自身私有的，比如从ajax请求的数据。
+     * 子组件的*props*数据是父组件传递的
+     * data数据可读可写，props数据只读
+   * 父组件传递方法给子组件
+     * 在子组件的引用中通过事件绑定 @func="show"
+     * 在子组件的模版中定义事件
+     * 在组件对象字面量的methods属性中调用方法：this.$emit('func')
+     * 可以向父组件传参
+   * 获取dom元素：在标签身上加ref属性，如：<h3 ref='myh3'>content</h3>, 调用this.$refs.myh3.innerText
+   * ref放在组件的引用上，可以获取组件的data和methods
+** Vue路由
+   * 前端路由：通过hash实现，在单页面跳转
+     #+BEGIN_SRC js
+       var login = {
+	   template: '<h2>登陆组件</h2>'  //定义模版对象
+       }
+       var routerObj = new VueRouter({
+	   routes: [
+	       {path: '/', redirect: '/login'}, //重定向
+	       {path: '/login', component: login},
+	       {path: '/register', component: register} //component能是名称的属性值必须是属性模版对象
+	   ] //routes属性为数组对象
+       })
+       var vm = new Vue({
+	   router: routerObj //在vm实例注册路由对象
+       })
+
+       //使用router-view标签在页面加载
+       // <router-view></router-view>
+     #+END_SRC
+
+   * 路由链接
+     #+BEGIN_SRC js
+       <router-link to="/login">登陆</router-link> //默认渲染为a
+       <router-link to="/login" tag="span">登陆</router-link> //通过tag改变渲染成的标签类型
+     #+END_SRC
+
+   * 路由标签样式
+     * 在路由的构造选项中修改 linkActiveClass的值(可使用bootstrap默认类或自定义)
+     * 直接使用的默认的类 router-link-active,设置其样式即可
+   
+   * 路由传参
+     * 在路由中使用query查询字符串：path不用变，路由要变：<router-link to="/login?id='12'>登陆<router-link> 获取id：this.$route.query.id
+     * 在路由中使用params传参：{path: 'login/:id/:name'}，路由：<router- link to="/login/12>登陆<router-link> 获取id：this.$route.params.id
+   
+   * 路由嵌套
+     * 在路由构造选项中增加children属性，其值也是一个数组对象，在数组中加入子路由path，path前面不加'/',否则以根路径请求
+
+   * 路由命名视图
+     * 同一个路由对应多个组件，在<router-view></router-view>中通过name属性区分
+
+   * watch属性监视data中指定数据的变化，触发watch中的处理函数
+
+   * watch监视路由地址的改变
+
+     #+BEGIN_SRC js
+       watch: {
+	   '$route.path': function(newVal, oldVal){}
+       }
+     #+END_SRC
+
+   * computed计算属性
+     * 计算属性在引用的时候不用加括号
+     * 只要function内部数据发生变化，计算属性就会重新求值
+     * 计算属性的求值结果会被缓存，方便下次直接使用
+
 
 
