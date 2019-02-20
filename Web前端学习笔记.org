@@ -695,9 +695,6 @@
      * 计算属性在引用的时候不用加括号
      * 只要function内部数据发生变化，计算属性就会重新求值
      * 计算属性的求值结果会被缓存，方便下次直接使用
-
-
-
 ** Webpack
    * 项目结构构建
      * npm init -y
@@ -821,10 +818,13 @@
 		     { test: /\.css$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
 		     { test: /\.(jpg|png|bmp|gif|jpeg)$/, user: 'url-loader?limit=7631&name=[hash:8]-[name]-[ext]' },//原名输出，前面加hash值
 		     //limit给定的值是图片的大小，单位是byte。如果使用的图片大小大于等于limit值，则按给定的url处理，否则转换为base64(小文件会转为base64)
+		     { test: /\.(ttf|eot|svg|woff|woff2)$/, use: 'url-loader' }, //处理字体文件
 		 ]
 	     }
 	 }
        #+END_SRC
+
+     * 引入bootstrap
 
 
 
