@@ -699,7 +699,14 @@
 
 
 ** Webpack
-   * 依赖安装
+   * 项目结构构建
+     * npm init -y
+     * 创建文件夹src
+     * 创建文件夹dist
+     * 在/src创建index.html
+     * 在/src创建main.js，项目的js入口文件
+     * 安装webpack-dev-server，在根路径下创建配置文件webpack.config.js，在package.json中添加webpack-dev-server脚本
+     * 安装html-webpack-plugin，并在webpack.config.js 中配置
      * npm i webpack -g/-D
    * 概念：基于node.js开发的前端项目构建工具
    * 要解决的问题：页面静态资源较多时，1)导致加载速度慢，2)资源之间的依赖关系复杂
@@ -812,6 +819,8 @@
 		     { test: /\.css$/, use: ['style-loader', 'css-loader'] },
 		     { test: /\.less$/, use: ['style-loader', 'css-loader', 'less-loader'] },
 		     { test: /\.css$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
+		     { test: /\.(jpg|png|bmp|gif|jpeg)$/, user: 'url-loader?limit=7631&name=[hash:8]-[name]-[ext]' },//原名输出，前面加hash值
+		     //limit给定的值是图片的大小，单位是byte。如果使用的图片大小大于等于limit值，则按给定的url处理，否则转换为base64(小文件会转为base64)
 		 ]
 	     }
 	 }
