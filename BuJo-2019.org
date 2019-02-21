@@ -1,4 +1,3 @@
-
 #+STARTUP: overview
 #+AUTHOR: Kinney
 * 索引
@@ -139,10 +138,22 @@
     ─ 给任务加上时间的限制，以番茄钟为时间单位(1个番茄始终=40min)
 
 *** Feb 20 Wed
-    ● 编写毕设页面 (4◔)
+    > 编写毕设页面 (4◔)
     × 学习vue.js (3◔)
-    ● 阅读《杀死一只知更鸟》(1◔)
+    > 阅读《杀死一只知更鸟》(1◔)
     ✪ 王者荣耀 (2◔)
+
+*** Feb 21 Thu
+    ●★ 编写毕设页面
+    ●  学习vue.js
+    ●  阅读《杀死一只知更鸟》
+    ●  完善bujo笔记本
+    ●! 思考人生
+
+    ─ 将“夜反思”日常化，在回顾每天时，写上那么几句
+    ─ you have a choice for every little thing and every little thing is meaningful.
+
+    ○ 寒假里第一次自主在7:30起床
 
 * 阅读记录
   × 月亮与六便士 2019.02

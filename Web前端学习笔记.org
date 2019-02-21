@@ -388,7 +388,7 @@
       只能return一个值！判断用哪种方式获取元素，然后return一个。
    2. 要修改的样式值需要在css样式中存在。Left值的问题
    3. if else和else if的问题，if else非此则彼，else if条件满足才执行！
-* Vue.js 学习笔记
+* Vue.js学习笔记
 ** 初识Vue.js
    * vue采用了MVVM设计模式(模型-视图-视图模型)
    * 基本开发模式：引入vue.js框架后，在body的底部使用new Vue()方法创建一个实例
@@ -698,6 +698,7 @@
 ** Webpack
    * 项目结构构建
      * npm init -y
+     * npm i webpack -D
      * 创建文件夹src
      * 创建文件夹dist
      * 在/src创建index.html
@@ -711,14 +712,14 @@
      * 2)requireJS 或者 Webpack
    * 作用
      * 处理js文件之间的互相依赖关系
-     * 处理js的兼容问题，把浏览器可以识别高版本的语法
+     * 处理js的兼容问题，把浏览器可以识别高版本的语法，使用Babel
        
        #+BEGIN_SRC js
 	 //main.js
 	 import $ from 'jquery'
 	 $(function(){
-	     $('li':odd).css('backgroundColor', 'yellow'),
-	     $('li':even).css('backgroundColor', function () {
+	     $('li:odd').css('backgroundColor', 'yellow'),
+	     $('li:even').css('backgroundColor', function () {
 		 return '#' + 'D97634'
 	     })
 	 })
@@ -781,7 +782,7 @@
 	     plugins: [
 		 new htmlWebpackPlugin({
 		     template: path.join(__dirname, './src/index.html'), //磁盘上的文件
-		     filename: 'index123.html' //内存中的文件，是一份拷贝
+		     filename: 'index.html' //内存中的文件，是一份拷贝，在根目录下
 		 })
 	     ]
 	 }
@@ -807,24 +808,117 @@
        * 找到则调用对应的loader处理
        * 调用loader的时候从后往前，并把结果依次向前一个loader传递
        * 最后传递给webpack打包合并
-     * 其他类型css文件的配置：less, scss(只能用cnpm安装)
+
+   * 其他类型文件的处理：less, scss(只能用cnpm安装)，图片字体，高级js语法
+
+     #+BEGIN_SRC js
+       module.exports = {
+	   module: { //配置所有第三方模块加载器
+	       rules: [ //配置第三方模块的匹配规则
+		   { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+		   { test: /\.less$/, use: ['style-loader', 'css-loader', 'less-loader'] },
+		   { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
+		   { test: /\.(jpg|png|bmp|gif|jpeg)$/, user: 'url-loader?limit=7631&name=[hash:8]-[name]-[ext]' },//原名输出，前面加hash值
+		   //limit给定的值是图片的大小，单位是byte。如果使用的图片大小大于等于limit值，则按给定的url处理，否则转换为base64(小文件会转为base64)
+		   { test: /\.(ttf|eot|svg|woff|woff2)$/, use: 'url-loader' }, //处理字体文件: 需要两个loader: file-loader, url-loader
+		   { test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ }, //处理js高级语法
+	       ]
+	   }
+       }
+     #+END_SRC
+
+   * 配置babel
+     * 处理js的高级语法，需要安装两套包：(1)babel-core, babel-loader, babel-plugin-transform-runtime. (2)babel-preset-env, babel-preset-stage-0
+     * 在项目根目录，创建babel的配置文件.babelrc文件，这个文件是json格式，不能有注释，字符串必须使用双引号
+     * 注意babel-loader 与 babel-core的版本兼容问题
 
        #+BEGIN_SRC js
-	 module.exports = {
-	     module: { //配置所有第三方模块加载器
-		 rules: [ //配置第三方模块的匹配规则
-		     { test: /\.css$/, use: ['style-loader', 'css-loader'] },
-		     { test: /\.less$/, use: ['style-loader', 'css-loader', 'less-loader'] },
-		     { test: /\.css$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
-		     { test: /\.(jpg|png|bmp|gif|jpeg)$/, user: 'url-loader?limit=7631&name=[hash:8]-[name]-[ext]' },//原名输出，前面加hash值
-		     //limit给定的值是图片的大小，单位是byte。如果使用的图片大小大于等于limit值，则按给定的url处理，否则转换为base64(小文件会转为base64)
-		     { test: /\.(ttf|eot|svg|woff|woff2)$/, use: 'url-loader' }, //处理字体文件
-		 ]
-	     }
+	 {
+	     "presets": ["env", "stage-0"], //语法
+	     "plugins": ["transform-runtime"] 
 	 }
        #+END_SRC
 
-     * 引入bootstrap
+   * 在webpack中使用vue
+     * 安装：npm i vue -S
+     * 在main.js中 import Vue from 'vue'，这种方式引入的vue功能不完整
+     * 包的查找规则：
+       * 在项目根目录查找node_module
+       * 在node_module中根据包名，找对应的vue文件夹
+       * 在vue文件夹中，找package.json包配置文件
+       * 在package.json中查找main属性(main属性指定了包被加载时的入口文件)
+       * 发现main中的名称不是vue.js,所以不可用
+     * 解决方案
+       1) 写完整路径：import Vue from ../node_modules/vue/dist/vue.js
+       2) 在webpack.config.js中配置:
 
+	  #+BEGIN_SRC js
+	    module.exports = {
+		resolve: {
+		    alias: {
+			"vue$": "vue/dist/vue.js"
+		    }
+		}
+	    }
+	  #+END_SRC
+     * webpack推荐使用.vue文件，处理.vue文件：npm i vue-loader vue-template-compiler -D
+     * 增加配置项：{test: /\.vue$/, use: 'vue-loader'}
+     * 15版本之后，vue-loader还需要配置[[https://vue-loader.vuejs.org/guide/#vue-cli][VueLoaderplugin]]
+     * 在webpack中渲染组件，可以使用vm实例中的render函数(把el挂载的元素中的内容清空重新渲染)：render: c => c(login)
+     * .vue文件的使用
+       * 作用：定义组件
+       * 三部分组成：template, script, style
+       * 可以在script标签中定义组件的私有数据和方法等等，使用export default定义对象
+       * 关于包的导入和导出
+	 * ES6: 导入用import, 导出用export default和export。
+	   * export default可以导出一个对象，使用任意变量来接收，一个模块只能导出一次
+	   * export 可以导出一个变量成员，只能使用固定的名称接收，以插值表达式的形式，可以导出多次
+	 * NodeJs: 导入用require, 导出用module.exports
 
+	   #+BEGIN_SRC js
+	     //ES6的导入与导出
+	     import inf, {title as t, content} from './test.js' //使用as给成员起别名
 
+	     var info = { //或者直接把“var info =”换成export default
+		 data(){
+		     return '123'
+		 },
+		 methods: {
+		     show(){
+			 console.log('hello')
+		     }
+		 }
+	     }
+
+	     export default = 'info'
+	     export var title = 'this is a title'
+	     export var content = 'this is content'
+
+	     //NodeJs导入与导出
+	     var 名称 = require('模块标识符')
+	     module.exports(详见webpack.config.js) 或 exports
+
+	   #+END_SRC
+
+     * 总结：
+       * 安装vue包
+       * 安装.vue文件的loader
+       * 在main.js导入vue模块
+       * 定义.vue结尾的vue组件
+       * 导入组件
+       * 创建vue实例，使用render函数渲染
+       * 创建vue控制区域html
+
+   * 在webpack中使用vue-router
+     * 安装：npm i vue-router -S
+     * 导包并使用：import VueRouter from 'vue-router'; Vue.use(VueRouter);
+     * app组件是通过vm实例的render函数渲染出来的，会被放到el控制的元素内部
+     * account和goodlist这两个组件是由路由监听调用的，放到app的组件中
+     
+   * .vue中组件的css样式
+     * 保证css样式只应用于当前组件，在style标签加scoped属性
+     * 使用scss,less等css拓展语言，在style标签加lang="less"属性
+
+   * 封装路由模块：把与路由相关的代码单独放在router.js文件中，在main.js中引入
+
+   * 
