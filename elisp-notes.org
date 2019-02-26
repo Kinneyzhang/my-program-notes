@@ -98,7 +98,7 @@
 	 words))
    #+END_SRC
 
-* Writing GNU Emacs Extensions
+* Writing GNU Emacs Extension
 ** Customizing Emacs
    * What is emacs?
      #+BEGIN_SRC text
@@ -115,3 +115,6 @@
      * If a symbol appears in the first position of a list, it's the name of the function to excute.
      * If it appears elsewhere, it's a variable whose value needs to be retrieved.
      * How to retrieve the value? use quote "'".
+* Elisp reference
+  * (current-buffer)
+  * ?\d
