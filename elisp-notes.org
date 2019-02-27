@@ -116,5 +116,35 @@
      * If it appears elsewhere, it's a variable whose value needs to be retrieved.
      * How to retrieve the value? use quote "'".
 * Elisp reference
-  * (current-buffer)
-  * ?\d
+
+  #+BEGIN_SRC emacs-lisp
+    (current-buffer)
+    ?\d
+    (lsh 5 1) 位运算，数字5左移1位
+    (ash -5 -2) ??
+    (round 1.2)
+    (% 9 3)
+    (mod 9 3)
+    (sin 0.5)
+    (random 666)
+
+    (string-width "qdqferfw 11 ")
+    (stringp "qqw") (string-or-null-p nil) (char-or-string-p ?w)
+    (make-string 5 ?4) (string 1 ?a ?1) (substring "qwdwecwed" 1 5) (substring "qwertxwscedc" 3 nil) (substring "qwertyu" -4 -1)
+    (concat "hello " "emacs" "!")
+    (split-string " hello emacs ! ")
+    (split-string " hello  emacs ! "
+		  split-string-default-separators)
+    (split-string "Soup is good food !" "o") (split-string "Soup is good food !" "o+")
+    (split-string "Soup is good food !" "" t)
+
+    (char-equal 11 11)
+    (string= "qwe" "qw") (string-prefix-p "qw" "qwed23") (string-suffix-p "df" "14wdefdf")
+    (compare-strings "qwxr123" 1 4 "qwx2123" 1 4)
+    (number-to-string 1344) (string-to-number "123") (char-to-string ?S) (string-to-char "w")
+    (append "1" "q" "ww" "12")
+    (format-message "the buffer name is %s" (current-buffer))
+    (format "%2$d %1$d %3$s" 3 1 "q")
+
+    ;;to 4.8
+  #+END_SRC
