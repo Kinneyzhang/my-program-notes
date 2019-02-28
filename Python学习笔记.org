@@ -253,9 +253,7 @@
        像平常一样安装包，比如：$ pip install requests
        $ deactivate
 
-   - API 
-
-*** 
+   - API
 
 ** Django开发
 *** 开发流程

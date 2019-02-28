@@ -128,6 +128,7 @@
     (sin 0.5)
     (random 666)
 
+    ;;string 
     (string-width "qdqferfw 11 ")
     (stringp "qqw") (string-or-null-p nil) (char-or-string-p ?w)
     (make-string 5 ?4) (string 1 ?a ?1) (substring "qwdwecwed" 1 5) (substring "qwertxwscedc" 3 nil) (substring "qwertyu" -4 -1)
@@ -146,5 +147,55 @@
     (format-message "the buffer name is %s" (current-buffer))
     (format "%2$d %1$d %3$s" 3 1 "q")
 
-    ;;to 4.8
+    (downcase "Emacs is VERY cool!") (upcase "Emacs is VERY cool!")
+    (capitalize "EMACS is very cool") (upcase-initials "EMACS is very cool")
+
+    ;;case table
+    (current-case-table)
+
+    ;;;========================Lists=========================
+    (consp '(1 2 3)) (consp nil)
+    (atom '123) (not (consp 'qwe)) (atom nil)
+    (listp '(q 1 3))
+    (null '())
+    (car '(a b c))
+    (cdr '(a b c))
+    (car-safe '123) (cdr-safe 'qwe) ;;非cons不报错，显示nil
+    (let ((x '(1 2)))
+      (if (consp x)
+	  (car x)
+	nil))
+
+    (caar '((a b) c d)) (cadr '(a b c d)) (cdar '((a b c) d e)) (cddr '(a b c e))
+
+    (setq list '(a b c))
+    (pop list)
+    list
+
+    (setq list '(x y z))
+    (push 'c list)
+    list
+
+    (nth 2 '(a b cx d))
+    (nthcdr 2 '(a b c d e))
+    (last '(a b c))
+
+    (butlast '(a b c d))
+    (safe-length '(a b c de))
+
+    (cons 'x '(a b c)) (cons 1 2) (cons 1 ())
+    (list 1 2 '(a b) 3 4) (make-list 3 'pigs)
+
+    (append '(a b c) 'x)
+
+    (number-sequence 2 8 2)
+    (number-sequence 8 2 -1)
+
+    (setq foo '(1 2 3))
+    (add-to-list 'foo 4)
+    foo
+
+    (add-to-ordered-list 'foo 's 4)
+
+    ;;5.6 Modifying Existing List Structure
   #+END_SRC
