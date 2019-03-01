@@ -552,31 +552,33 @@
    * updated(), 页面更新
    * beforeDestroy(), 所有的data,methods,filter,指令...都处于可用状态
    * destroy(), 组建完全销毁
-** 发送数据请求
+** 发送数据请求Ajax(jsonp)
    * 使用vue-resource包
    * this.$http.get('url').then(function(result){})
    * this.$http.get('url').then(result => {})
    * ajax在created()方法中调用
      #+BEGIN_SRC js
        getAllList(){
-	   this.$http.post('url',
-			   {name, this.name},
-			   {emulateJSON: true}
-			  ).then(result => {
-			      if(result,body.status == 0){
-				  //成功
-				  this.getAllList()
-			      }else{
-				  //失败
-				  alert('添加失败！')
-			      }
-			  })
+	   this.$http.post(
+	       'url',
+	       {name: this.name},
+	       {emulateJSON: true}
+	   ).then(result => {
+	       if(result,body.status == 0){
+		   //成功
+		   this.getAllList()
+	       }else{
+		   //失败
+		   alert('添加失败！')
+	       }
+	   })
        }
      #+END_SRC
    * 设置根路径
      * Vue.http.options.root = 'http://vue/root/'
      * 单独请求的url不加斜杠
    * 全局启用emulateJSON：Vue.http.options.emulateJSON = true
+   * jsonp请求：除了get,post请求等，vue还支持jsonp请求，目的在于解决跨域的问题，因为浏览器对ajax跨域请求有限制
 ** Vue中的动画
 ** Vue组件
    * 作用：拆分vue实例代码量

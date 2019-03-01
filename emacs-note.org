@@ -90,3 +90,6 @@ the content in this block will be in the center.
     * C-c C-n / C-c C-p
 ** how to study emacs
    * https://emacs-china.org/t/emacs/7532/16?u=kinneyzhang
+** 查找替换
+   * [[./img/emacs-search-replace.png]]
+   * M-%
