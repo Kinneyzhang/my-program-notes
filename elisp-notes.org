@@ -201,4 +201,16 @@
     (setq x '(a b c))
     (setcar x 'd)
     x
+    ;memq member delete remove
+
+    ;;6.Sequences
+    (elt '(a b c d) 2) ;2 is a index ;??eq和equal的区别
+    (setq x '(1 2 3 4))
+    (reverse x)
+    x
+    (nreverse x)
+
+    (setq y [1 2 3 4])
+    (nreverse y)
+    y
   #+END_SRC
