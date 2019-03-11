@@ -213,4 +213,16 @@
     (setq y [1 2 3 4])
     (nreverse y)
     y
+
+    ;; cursor
+    (point)
+    (region-beginning)
+    (region-end)
+    (point-min)
+    (point-max)
+    (goto-char 2200)
+    (forward-char 9)
+    (backward-char 12)
+    (beginning-of-line)
+    (end-of-line)
   #+END_SRC
