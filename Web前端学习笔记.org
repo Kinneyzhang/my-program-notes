@@ -646,7 +646,7 @@
    * 前端路由：通过hash实现，在单页面跳转
      #+BEGIN_SRC js
        var login = {
-	   template: '<h2>登陆组件</h2>'  //定义模版对象
+	   Template: '<h2>登陆组件</h2>'  //定义模版对象
        }
        var routerObj = new VueRouter({
 	   routes: [
@@ -675,7 +675,7 @@
    
    * 路由传参
      * 在路由中使用query查询字符串：path不用变，路由要变：<router-link to="/login?id='12'>登陆<router-link> 获取id：this.$route.query.id
-     * 在路由中使用params传参：{path: 'login/:id/:name'}，路由：<router- link to="/login/12>登陆<router-link> 获取id：this.$route.params.id
+     * 在路由中使用params传参：{path: 'login/:id/:name'}，路由：<router-link to="/login/12>登陆<router-link> 获取id：this.$route.params.id
    
    * 路由嵌套
      * 在路由构造选项中增加children属性，其值也是一个数组对象，在数组中加入子路由path，path前面不加'/',否则以根路径请求

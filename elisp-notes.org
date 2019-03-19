@@ -290,4 +290,17 @@
     (save-buffer)
     (write-file "./newOrg.org")
 
+    (vertical-motion 3)
+    (window-buffer)
+    (get-buffer-create "*kinney-buffer*")
+
+    (switch-to-buffer "*kinney-buffer*")
+
+    (display-buffer-at-bottom
+	  (get-buffer-create "*foo*")
+	  '((display-buffer-reuse-window
+	     display-buffer-pop-up-window
+	     display-buffer-pop-up-frame)
+	    (reusable-frames . 0)
+	    (window-height . 20) (window-width . 40)))
   #+END_SRC
