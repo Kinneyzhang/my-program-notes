@@ -1,4 +1,5 @@
-#+STARTUP: overview
+
+d#+STARTUP: overview
 #+AUTHOR: Kinney
 * 未来记录
   ● 实现bujo-mode
@@ -373,6 +374,11 @@
     > [[毕业设计]]
     > [[跑步瘦身]]
     ● 电子电路作业
+
+*** Mar 23 Sat
+    ● 安装quartus
+    ● 安装archlinux
+    ● 学习elisp
  
 * 跑步瘦身
   × 跑步0303(1.34km, 10'11'', 东区操场)
