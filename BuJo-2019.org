@@ -368,19 +368,26 @@ d#+STARTUP: overview
     > 电子电路作业
 
 *** Mar 22 Fri
+    > 安装quartus
+    > 安装archlinux
+    > 学习elisp
+    > [[毕业设计]]
+    > [[跑步瘦身]]
+    > 电子电路作业
+
+*** Mar 23 Sat
+    > 安装quartus
+    > 安装archlinux
+    > 学习elisp
+
+*** Mar 24 Sun
     ● 安装quartus
     ● 安装archlinux
     ● 学习elisp
     > [[毕业设计]]
     > [[跑步瘦身]]
-    ● 电子电路作业
-
-*** Mar 23 Sat
-    ● 安装quartus
-    ● 安装archlinux
-    ● 学习elisp
  
-* 跑步瘦身
+* 跑步瘦身s
   × 跑步0303(1.34km, 10'11'', 东区操场)
   × 跑步0313(3.14km, 20'18'', 东区操场)
   +● 跑步0314+
