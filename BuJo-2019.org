@@ -1,5 +1,4 @@
-
-d#+STARTUP: overview
+#+STARTUP: overview
 #+AUTHOR: Kinney
 * 未来记录
   ● 实现bujo-mode
@@ -69,7 +68,7 @@ d#+STARTUP: overview
    | 19 二 |                          |                       |                           |
    | 20 三 |                          |                       |                           |
    | 21 四 |                          |                       |                           |
-   | 22 五 |                          |                       |                           |
+   | 22 五 |                          |                       | ● 论文周记                |
    | 23 六 |                          |                       |                           |
    | 24 日 |                          |                       |                           |
    | 25 一 |                          |                       | ─ 模电调课不上课          |
@@ -80,8 +79,8 @@ d#+STARTUP: overview
    | 30 六 |                          |                       |                           |
    | 31 日 |                          |                       |                           |
 
-* 每日记录
-** 2月
+* Daily Log
+** February
 *** Feb 10 Sun
     × 学习bujo
        × 整理bujo笔记
@@ -183,7 +182,7 @@ d#+STARTUP: overview
     ─ you have a choice for every little thing and every little thing is meaningful.
 
     ○ 寒假里第一次自主在7:30起床
-** 3月
+** March
 *** Mar 08 Fri
     +● 开题报告+
     +● 毕设编程+
@@ -381,13 +380,41 @@ d#+STARTUP: overview
     > 学习elisp
 
 *** Mar 24 Sun
-    ● 安装quartus
-    ● 安装archlinux
-    ● 学习elisp
+    > 安装quartus
+    > 安装archlinux
+    > 学习elisp
     > [[毕业设计]]
     > [[跑步瘦身]]
  
-* 跑步瘦身s
+*** Mar 25 Mon
+**** ● 安装archlinux
+     SCHEDULED: <2019-03-25 Mon 10:00>
+     :LOGBOOK:
+     CLOCK: [2019-03-25 Mon 15:17]--[2019-03-25 Mon 16:08] =>  0:51
+     :END:
+**** ● 安装quartus
+     SCHEDULED: <2019-03-25 Mon 10:00>
+     :LOGBOOK:
+     CLOCK: [2019-03-25 Mon 16:54]--[2019-03-25 Mon 17:38] =>  0:44
+     :END:
+**** ● [#B] 计组编程
+     SCHEDULED: <2019-03-25 Mon>
+**** ● 学习elisp
+     SCHEDULED: <2019-03-25 Mon 14:00>
+     - Note taken on [2019-03-25 Mon 10:51] \\
+       学习一门新的编程语言是一个枯燥的过程，有一个实践的目标会让这个过程变得更有目的性和乐趣。我学习elisp的这个目标就是实现bujo-mode.
+**** ● [#A] 毕设登陆系统和细节
+     SCHEDULED: <2019-03-25 Mon 15:00>
+**** ● 跑步
+     SCHEDULED: <2019-03-25 Mon 20:30>
+**** ● 研究org agenda
+     SCHEDULED: <2019-03-25 Mon>
+     :LOGBOOK:
+     CLOCK: [2019-03-25 Mon 18:42]
+     :END:
+**** ─ 日常规划：每天背考研单词
+
+* 跑步瘦身
   × 跑步0303(1.34km, 10'11'', 东区操场)
   × 跑步0313(3.14km, 20'18'', 东区操场)
   +● 跑步0314+
@@ -557,3 +584,4 @@ d#+STARTUP: overview
   | 14 四 |       |     |      | 30 六 |       |     |      |
   | 15 五 |       |     |      | 31 日 |       |     |      |
   | 16 六 |   +66 |     |      | sum   |       |     |      |
+
