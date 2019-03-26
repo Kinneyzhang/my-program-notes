@@ -387,12 +387,12 @@
     > [[跑步瘦身]]
  
 *** Mar 25 Mon
-**** ● 安装archlinux
+**** × 安装archlinux
      SCHEDULED: <2019-03-25 Mon 10:00>
      :LOGBOOK:
      CLOCK: [2019-03-25 Mon 15:17]--[2019-03-25 Mon 16:08] =>  0:51
      :END:
-**** ● 安装quartus
+**** × 安装quartus
      SCHEDULED: <2019-03-25 Mon 10:00>
      :LOGBOOK:
      CLOCK: [2019-03-25 Mon 16:54]--[2019-03-25 Mon 17:38] =>  0:44
@@ -407,11 +407,8 @@
      SCHEDULED: <2019-03-25 Mon 15:00>
 **** ● 跑步
      SCHEDULED: <2019-03-25 Mon 20:30>
-**** ● 研究org agenda
+**** × 研究org agenda
      SCHEDULED: <2019-03-25 Mon>
-     :LOGBOOK:
-     CLOCK: [2019-03-25 Mon 18:42]
-     :END:
 **** ─ 日常规划：每天背考研单词
 
 * 跑步瘦身
