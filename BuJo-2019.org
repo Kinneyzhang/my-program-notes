@@ -496,6 +496,16 @@
     ● 毕设编程
     ● 学习elisp
 
+*** Apr 08 Mon
+**** ● 毕设编程
+     SCHEDULED: <2019-04-08 Mon>
+**** ● 折腾org-capture
+     SCHEDULED: <2019-04-08 Mon>
+**** ● 电子电路复习
+     SCHEDULED: <2019-04-08 Mon>
+**** ● running
+     SCHEDULED: <2019-04-08 Mon>
+
 * 跑步瘦身
   × 跑步0303(1.34km, 10'11'', 东区操场)
   × 跑步0313(3.14km, 20'18'', 东区操场)
