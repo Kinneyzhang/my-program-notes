@@ -497,13 +497,13 @@
     ● 学习elisp
 
 *** Apr 08 Mon
-**** ● 毕设编程
+**** × 毕设编程
      SCHEDULED: <2019-04-08 Mon>
-**** ● 折腾org-capture
+**** × 折腾org-capture
      SCHEDULED: <2019-04-08 Mon>
-**** ● 电子电路复习
+**** > 电子电路复习
      SCHEDULED: <2019-04-08 Mon>
-**** ● running
+**** > running
      SCHEDULED: <2019-04-08 Mon>
 
 * 跑步瘦身
