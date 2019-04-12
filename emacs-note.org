@@ -95,3 +95,7 @@ the content in this block will be in the center.
    * M-%
 ** 标题间跳转
    * C-c C-n/ C-c C-p
+** proced
+   * 查看系统进程情况
+   * m标记，x选择向进程发送的命令
+   * 按键s前缀选择展现方式
