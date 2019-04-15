@@ -521,27 +521,62 @@
      SCHEDULED: <2019-04-11 Thu>
 **** × 阅读《微习惯》
      SCHEDULED: <2019-04-11 Thu>
-**** ─ 每天消费不超过17元
+**** × 每天消费不超过17元
      SCHEDULED: <2019-04-11 Thu>
 **** ─ 晚自习结束后到操场走两圈
      SCHEDULED: <2019-04-11 Thu>
 
 *** Apr 12 Fri
-**** ● 毕设编程
+**** × 毕设编程
      SCHEDULED: <2019-04-12 Fri>
-**** ● Docker入门
+**** × Docker入门
      SCHEDULED: <2019-04-12 Fri>
+**** > 电子电路复习
+     SCHEDULED: <2019-04-12 Fri>
+**** > 论文周记
+     SCHEDULED: <2019-04-12 Fri>
+
+*** Apr 13 Sat
+**** > 电子电路复习
+     SCHEDULED: <2019-04-13 Sat>
+**** > 论文周记
+     SCHEDULED: <2019-04-13 Sat>
+**** × Docker学习
+     SCHEDULED: <2019-04-13 Sat>
+**** × 毕设编程
+     SCHEDULED: <2019-04-13 Sat>
+**** ─ 注意时间意识和也回顾反思
+     SCHEDULED: <2019-04-13 Sat>
+**** × 阅读《微习惯》
+     SCHEDULED: <2019-04-13 Sat>
+     :LOGBOOK:
+     CLOCK: [2019-04-13 Sat 09:32]--[2019-04-13 Sat 10:02] =>  0:30
+     :END:
+    
+*** Apr 14 Sun
+**** > 电子电路复习
+     SCHEDULED: <2019-04-14 Sun>
+**** × 论文周记
+     SCHEDULED: <2019-04-14 Sun>
+**** × 毕设编程
+     SCHEDULED: <2019-04-14 Sun>
+**** × 阅读《微习惯》
+     SCHEDULED: <2019-04-14 Sun>
+
+*** Apr 15 Mon
+**** ● 准备中期检查
+     SCHEDULED: <2019-04-15 Mon>
+**** ● 阅读《微习惯》
+     SCHEDULED: <2019-04-15 Mon>
 **** ● 电子电路复习
-     SCHEDULED: <2019-04-12 Fri>
-**** ● 论文周记
-     SCHEDULED: <2019-04-12 Fri>
+     SCHEDULED: <2019-04-15 Mon>
 
 *** Apr 17 Wed
 **** ● 中期检查@J3-309
      SCHEDULED: <2019-04-17 Wed 13:30>
 **** ● 计组实验
      SCHEDULED: <2019-04-17 Wed>
-
+     
 *** Apr 18 Thu
 **** ● 电子电路实验
      SCHEDULED: <2019-04-18 Thu>

@@ -258,7 +258,7 @@
 ** Django开发
 *** 开发流程
     * 环境准备与工程创建
-      * virtualenv <na me_env> --python=python3(将本地的python库拷贝一份在当前目录下)
+      * virtualenv <name_env> --python=python3(将本地的python库拷贝一份在当前目录下)
       * source <name_env>/bin/activate, deactivate
       * pip install Django(本地已安装则无需执行)
       * django-admin.py startproject <project_name> .
