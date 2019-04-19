@@ -563,31 +563,44 @@
 **** × 中期检查@J3-309
      SCHEDULED: <2019-04-17 Wed 13:30>
 **** × 计组实验
-     SCHEDULED: <2019-04-17 Wed>
+     SCHEDULED: <2019-04-16 Tue>
      
 *** Apr 18 Thu
 **** × 电子电路实验
      SCHEDULED: <2019-04-18 Thu>
-**** ● 高数复习
+**** > 高数复习
      SCHEDULED: <2019-04-18 Thu>
-**** ● 毕设编程
+**** × 毕设编程
      SCHEDULED: <2019-04-18 Thu>
- 
-*** Apr 25 Thu
 
+*** Apr 19 Fri
+**** ● 高数复习
+     SCHEDULED: <2019-04-19 Fri>
+**** ● 毕设编程
+     SCHEDULED: <2019-04-19 Fri>
+
+*** Apr 23 Tue
+**** ● 计组实验
+     SCHEDULED: <2019-04-23 Tue>
+ 
+*** Apr 25 Thu 
 **** ● 高数期中考试
      SCHEDULED: <2019-04-25 Thu>
 
-*** Later
+*** Apr 28 Sun
+**** ● 论文周记第三次
+     SCHEDULED: <2019-04-28 Sun>
 
+*** Apr 30 Tue
+**** ● 计组考试
+     SCHEDULED: <2019-04-30 Tue>
+
+*** Later
 **** ● 实习考察表提交
      DEADLINE: <2019-04-28 Sun 20:00>
 
 **** ● 实习报告
      DEADLINE: <2019-04-30 Tue>
-
-**** ● 论文周记第三次
-     SCHEDULED: <2019-04-28 Sun>
 
 ** May
 *** May 05 Sun
@@ -605,7 +618,8 @@
      DEADLINE: <2019-05-21 Tue>
 **** ● 论文答辩
      DEADLINE: <2019-05-31 Fri> SCHEDULED: <2019-05-27 Mon>
-     
+
+
 * 跑步瘦身
   × 跑步0303(1.34km, 10'11'', 东区操场)
   × 跑步0313(3.14km, 20'18'', 东区操场)
