@@ -574,10 +574,16 @@
      SCHEDULED: <2019-04-18 Thu>
 
 *** Apr 19 Fri
+**** > 高数复习
+     SCHEDULED: <2019-04-19 Fri>
+**** > 毕设编程
+     SCHEDULED: <2019-04-19 Fri>
+
+*** Apr 20 Sat
 **** ● 高数复习
-     SCHEDULED: <2019-04-19 Fri>
+     SCHEDULED: <2019-04-20 Sat>
 **** ● 毕设编程
-     SCHEDULED: <2019-04-19 Fri>
+     SCHEDULED: <2019-04-20 Sat>
 
 *** Apr 23 Tue
 **** ● 计组实验
@@ -618,8 +624,6 @@
      DEADLINE: <2019-05-21 Tue>
 **** ● 论文答辩
      DEADLINE: <2019-05-31 Fri> SCHEDULED: <2019-05-27 Mon>
-
-
 * 跑步瘦身
   × 跑步0303(1.34km, 10'11'', 东区操场)
   × 跑步0313(3.14km, 20'18'', 东区操场)
