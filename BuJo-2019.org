@@ -580,10 +580,16 @@
      SCHEDULED: <2019-04-19 Fri>
 
 *** Apr 20 Sat
+**** > 高数复习
+     SCHEDULED: <2019-04-20 Sat>
+**** > 毕设编程
+     SCHEDULED: <2019-04-20 Sat>
+
+*** Apr 22 Mon
 **** ● 高数复习
-     SCHEDULED: <2019-04-20 Sat>
+     SCHEDULED: <2019-04-22 Mon>
 **** ● 毕设编程
-     SCHEDULED: <2019-04-20 Sat>
+     SCHEDULED: <2019-04-22 Mon>
 
 *** Apr 23 Tue
 **** ● 计组实验
@@ -595,6 +601,8 @@
 
 *** Apr 28 Sun
 **** ● 论文周记第三次
+     SCHEDULED: <2019-04-28 Sun>
+**** ● 电子电路实验(二)
      SCHEDULED: <2019-04-28 Sun>
 
 *** Apr 30 Tue
@@ -615,6 +623,8 @@
 
 *** May 19 Sun
 **** ● 论文周记第五次
+     SCHEDULED: <2019-05-19 Sun>
+**** ● 确定是否参加大组答辩
      SCHEDULED: <2019-05-19 Sun>
 
 *** someday
