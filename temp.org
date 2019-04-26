@@ -69,3 +69,12 @@
 * 参考文献
   * [[http://f.wanfangdata.com.cn/www/融合用户评分和项目属性的协同过滤推荐算法.ashx?isread=true&type=degree&resourceId=D01345538&transaction=%7B%22id%22%3Anull%2C%22transferOutAccountsStatus%22%3Anull%2C%22transaction%22%3A%7B%22id%22%3A%221118126089089081344%22%2C%22status%22%3A1%2C%22createDateTime%22%3Anull%2C%22payDateTime%22%3A1555417008074%2C%22authToken%22%3A%22TGT-556886-fGB5pgb0Fyl9pppckijKCtcfcRoEcBZx5chIqgcAG3wfpCQBrN-my.wanfangdata.com.cn%22%2C%22user%22%3A%7B%22accountType%22%3A%22Group%22%2C%22key%22%3A%22njsfdxtsg%22%7D%2C%22transferIn%22%3A%7B%22accountType%22%3A%22Income%22%2C%22key%22%3A%22ThesisFulltext%22%7D%2C%22transferOut%22%3A%7B%22GTimeLimit.njsfdxtsg%22%3A30.0%7D%2C%22turnover%22%3A30.0%2C%22orderTurnover%22%3A30.0%2C%22productDetail%22%3A%22degree_D01345538%22%2C%22productTitle%22%3Anull%2C%22userIP%22%3A%22153.3.61.121%22%2C%22organName%22%3Anull%2C%22memo%22%3Anull%2C%22orderUser%22%3A%22njsfdxtsg%22%2C%22orderChannel%22%3A%22pc%22%2C%22payTag%22%3Anull%2C%22webTransactionRequest%22%3Anull%2C%22signature%22%3A%22Bzip%2F7Nbzb%2FH8BI%2BgUdFF6Gocy42LY7NqqiNVDsyg3kyZK9MVd818l9Xn5obDetJHP7iD0lxSTh0%5CnG4U6sh5fqoTNwRxqCHizP7bKfI6EWZBBDlK%2BF0o8sVJI2YenYlnpoNEE9opcpvd7tsdYLeiG5FCM%5CnIHvl8XNGbMSEjwbzEgA%3D%22%2C%22delete%22%3Afalse%7D%2C%22isCache%22%3Afalse%7D][融合用户评分和项目属性的协同 过滤推荐算法]]
   *
+* Centos运维相关
+** 防火墙
+   * systemctl start firewalld
+   * systemctl status firewalld
+   * systemctl stop firewalld
+   * firewall-cmd --list-services //查看防火墙允许的服务
+   * firewall-cmd --add-service=ftp --permanent //永久开放ftp服务
+   * firewall-cmd --add-port=21/tcp --permanent //允许外网访问
+   * firewall-cmd --reload //重新载入配置

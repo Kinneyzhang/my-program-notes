@@ -599,22 +599,27 @@
 **** ● 高数期中考试
      SCHEDULED: <2019-04-25 Thu>
 
+*** Apr 26 Fri
+**** ● 毕设编程
+     SCHEDULED: <2019-04-26 Fri>
+**** ● 实习考察表和报告
+     SCHEDULED: <2019-04-26 Fri>
+**** ● 安装tomcat
+     SCHEDULED: <2019-04-26 Fri>
+
+*** Apr 27 Sat
+
 *** Apr 28 Sun
 **** ● 论文周记第三次
      SCHEDULED: <2019-04-28 Sun>
 **** ● 电子电路实验(二)
      SCHEDULED: <2019-04-28 Sun>
 
+*** Apr 29 Mon
+
 *** Apr 30 Tue
 **** ● 计组考试
      SCHEDULED: <2019-04-30 Tue>
-
-*** Later
-**** ● 实习考察表提交
-     DEADLINE: <2019-04-28 Sun 20:00>
-
-**** ● 实习报告
-     DEADLINE: <2019-04-30 Tue>
 
 ** May
 *** May 05 Sun
