@@ -586,25 +586,25 @@
      SCHEDULED: <2019-04-20 Sat>
 
 *** Apr 22 Mon
-**** ● 高数复习
+**** × 高数复习
      SCHEDULED: <2019-04-22 Mon>
-**** ● 毕设编程
+**** × 毕设编程
      SCHEDULED: <2019-04-22 Mon>
 
 *** Apr 23 Tue
-**** ● 计组实验
+**** × 计组实验
      SCHEDULED: <2019-04-23 Tue>
  
 *** Apr 25 Thu 
-**** ● 高数期中考试
+**** × 高数期中考试
      SCHEDULED: <2019-04-25 Thu>
 
 *** Apr 26 Fri
-**** ● 毕设编程
+**** × 毕设编程
      SCHEDULED: <2019-04-26 Fri>
-**** ● 实习考察表和报告
+**** × 实习考察表和报告
      SCHEDULED: <2019-04-26 Fri>
-**** ● 安装tomcat
+**** × 安装tomcat
      SCHEDULED: <2019-04-26 Fri>
 
 *** Apr 27 Sat
@@ -614,9 +614,13 @@
      SCHEDULED: <2019-04-28 Sun>
 **** ● 电子电路实验(二)
      SCHEDULED: <2019-04-28 Sun>
+**** ● 毕设编程
+     SCHEDULED: <2019-04-28 Sun>
+**** ● 计组复习
+     SCHEDULED: <2019-04-28 Sun>
 
 *** Apr 29 Mon
-
+    
 *** Apr 30 Tue
 **** ● 计组考试
      SCHEDULED: <2019-04-30 Tue>
