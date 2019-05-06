@@ -393,7 +393,7 @@
    * vue采用了MVVM设计模式(模型-视图-视图模型)
    * 基本开发模式：引入vue.js框架后，在body的底部使用new Vue()方法创建一个实例
    * 数据驱动DOM是Vue.js的核心理念，所以不到万不得已不要主动操作DOM，只需要维护好数据，DOM的事Vue会帮你优雅的处理
-
+     
 ** 数据绑定
 *** 实例与数据绑定
     * 结构理解
@@ -675,7 +675,7 @@
    
    * 路由传参
      * 在路由中使用query查询字符串：path不用变，路由要变：<router-link to="/login?id='12'>登陆<router-link> 获取id：this.$route.query.id
-     * 在路由中使用params传参：{path: 'login/:id/:name'}，路由：<router-link to="/login/12>登陆<router-link> 获取id：this.$route.params.id
+     * 在路由中使用params传参：{path: 'login/:id/:name'}，路由：<router-link to="/login/12">登陆<router-link> 获取id：this.$route.params.id
    
    * 路由嵌套
      * 在路由构造选项中增加children属性，其值也是一个数组对象，在数组中加入子路由path，path前面不加'/',否则以根路径请求
