@@ -1,0 +1,19 @@
+* C++ Primer
+** 开始
+*** 一个简单的C++程序
+    * g++ -o prog prog.cc
+    * g++为编译器名称
+    * -o指定编译生成的可执行的名称
+    * unix系统的可执行文件没有后缀，windows为.exe
+*** 输入输出
+    * C++标准输入输出库iostream，包括istream和ostream两个基本类型
+    * cin、cout分别为标准输入输出类型的对象，此外还包括cerr、clog
+    * std::cout << "hello emacs!" << std::endl
+    * std::cin >> v1 << v2
+    * endl是操纵符，作用是结束当前行和刷新缓冲区内容到设备中
+    * std是命名空间，标准库定义的所有名字都在std命名空间中
+    * "<<" 和 ">>"本质是运算符，前者将右侧内容写入到ostream的运算对象中，后者将istream对象接收到的内容写入右侧的对象中。
+*** 控制流
+    * 当std::cin >> value作为while的条件时
+      * 本质是检测流的状态
+      * 当遇到文件结束符(windows:C-Z，unix系:C-D)或无效输入(变量类型不一致)时，条件为假，退出循环

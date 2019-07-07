@@ -274,6 +274,7 @@
       * [[https://www.cnblogs.com/TaleG/p/6735099.html][修改相关配置，让python3支持MySQLdb.]]
 	* import pymysql
 	* pymysql.install_as_MySQLdb()
+	* [[https://stackoverflow.com/questions/55657752/django-installing-mysqlclient-error-mysqlclient-1-3-13-or-newer-is-required][the error you may get]]
       * python manage.py migrate
     * 运行服务器
       * python manage.py runserver (port)

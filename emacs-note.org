@@ -1,4 +1,3 @@
-#+STARTUP:overview
 * emacs notes
 ** 文件操作
   * C-x d 进入Dired-mode
