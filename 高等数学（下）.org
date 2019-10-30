@@ -1,12 +1,7 @@
-* 高等数学下
+#+TITLE: 期末复习 
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://members.optusnet.com.au/~charles57/GTD/mystyles.css"/>
 
-** 微分方程
-*** 概念
-    - 微分方程解中未知数的个数与方程的阶数相同
-*** 可分离变量的微分方程
-    * 作业：7-1 4，7 
 * 期末复习
-
 ** 向量代数与空间解析几何
 *** 空间平面方程
     * 概念：特殊的曲面，点的几何轨迹

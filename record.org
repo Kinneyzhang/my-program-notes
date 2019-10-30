@@ -1,22 +1,6 @@
-* about json
-  * json.load() # 将一个存储在文件中的json对象(str)转化为相对应的python对象
-  * json.loads() # 将一个json对象(str)转化为相对应的python对象
-  * json.dump() # 将python的对象转化为对应的json对象(str),并存放在文件中
-  * json.dumps() # 将python的对象转化为对应的json对象(str)
-  * json中的键值必须使用双引号
-  * JSON.stringify(obj)将JSON转为字符串
-  * JSON.parse(string)将字符串转为JSON格式
-
-* about Django
-  * django删除了表的某些记录后，自增的序号乱了怎么办？
-  * django中queryset的序列化用serialize方法，其他基本数据类型用json.dumps()
-  * 可用queryset的api：list()，将queryset转成python列表
-
-* 数据库
-  * 修改表名：ALTER TABLE knowledge_type RENAME TO knowledge_point;
-* 论文周记
+* 论文周记				hellohello
 ** 03.29
-   初次接触我的这个毕业设计题目的时候，我对整个系统的框架以及功能模块，技术细节等是没有概念的。我只知道我需要搭建前端的页面，需要用到js,css等，我需要用到python来写业务逻辑.....虽然这些技术都没有开设相应的课程，但是只是由于个人兴趣，都差不多有自学过，所以还算有把握。
+   初次接触我的这个毕业设计题目的时候，我对整个系统的框架以及功能模块，技术细节等是没有概念的。我只知道我需要搭建前端的页面，需要用到js,css等，我需要用到python来写业务逻辑.....虽然这些技术都没有开设相应的课程，但是只是由于个人兴趣，都差不多有自学过，所以还算有把握。this is a new linethis is a new line
    寒假里和王老师以及同学们的交流后，让我对整个系统有了初步的概念。寒假里主要进行了技术的准备，学习了vue.js和webpack，使前端页面的搭建更加高效；复习巩固了一下Django用来作为后端的服务器框架。在这个过程中有过很多次抓耳挠腮，苦思冥想，但问题最后都解决了。不得不说从零开始学习一种框架真的是有一定的难度，需要反复的理解与巩固，更何况我学了两个，哈哈。
    开学后的几次交流，我让对这个系统的一些细节有个更加深入的理解，了解了我需要实现哪些功能，比如：前后端通信，上传下载，题库设计，智能推荐，分角色登陆，多线程.....这些就是我接下来要做的事情。
    每一块都需要花很多的时间去研究琢磨，一是之前没有做过，而是要考虑如何和Django，vue结合。刚开学的时候我花了很多的时间去研究前后端的数据通信的问题，百度各种博客，看官方的文档，对照理解，解决了。今天，解决了用户的注册登陆问题，使用axios进行数据请求。接下来的时间不多了，需要抓紧时间去研究接下来的很多功能。
@@ -46,63 +30,121 @@
    毫无疑问，在整个毕业设计的过程了，我就是这样的一个“初学者”，虽然我们所做的工作还远远达不到工程的难度。起初，知道自己要做一个系统，但是对这个系统没有概念，知道了系统的定位以及核心功能，但是没有更全面的思考其他需求。后来觉得实现的功能模块太少，才去思考这个问题。写论文的过程中也对一些概念有些混淆。这些都是前期没有研究透彻需求的原因。论文同样如此，一开始的开题报告现在想来还是很重要的。开题报告让我们了解论文研究的背景意义目的，其实就是在给论文的研究内容指明正确的方向。不提前了解清楚这些，就会导致文章主题不明确。技术分析让我们了解论文采用的技术特点与功能，为读者读懂后面的具体实现做铺垫。需求分析就像前面说的很重要，决定着系统需要实现的功能。具体的实现则是核心，完成了哪些工作、重要的算法流程、结果界面的等。
    总之，经过这次毕业设计以及毕业论文的撰写让我这个“初学者”收获很多，至少现在不再是初学者。学了新技术，也对论文研究、系统开发有了自己的理解。
    我一直对计算机方面新的技术很有兴趣也乐于去自学。每当发现做的很漂亮的技术、软件和解决方案就会很兴奋，有的时候一头钻进去竟忘了吃饭。我很清楚这是很好的一种学习的状态，但是有的时候确实会因此耽误事情。事情都有主次之分与轻重缓急，你感兴趣的内容可能并不一定重要，真正紧急的事情可能并不让你感冒。但是该做的事情还是得做，做就要做好。我认为这次毕业设计我做的并不好，首先让老师操心很多，其次自己也很难受，总是在被各种deadline推着前进。希望未来的自己会变得更好。BTW，王老师辛苦了！
-
-* 毕业设计
-** 代码片段
-  #+BEGIN_SRC python
-    # 每页显示10条
-    list_per_page = 10
-
-    # 可编辑字段
-    list_editable = ('auth',)
-
-    # 设置哪些字段可以点击进入编辑界面
-    list_display_links = ('title', 'body')
-
-`    # 过滤器
-    list_filter = ('auth', 'title')
-
-    # 时间分层
-    date_hierarchy = 'create_time'
-  #+END_SRC
-
-** 具体任务
-   * formdata传输文件时带上用户信息
-   * 登陆后界面header的变化
-   * 修改主界面ui，文字展开，样张等
-   * 学生个人信息，练习情况界面
-   * 上传文件夹的分类
-   * 处理题目与知识点的多对多关系
-   * model methods, 模型内的条件约束
-
-*** 功能模块的设计
-**** 头脑风暴
-     * 用户分级头衔，推荐不同难度题目
-     * 试题下载次数，难度，正确率等
-     * 试题的讲解tip，与用户关联
-     * 讨论版
-     * 提供历年计算机等级考试真题
-
-* 参考文献
-  * [[http://f.wanfangdata.com.cn/www/融合用户评分和项目属性的协同过滤推荐算法.ashx?isread=true&type=degree&resourceId=D01345538&transaction=%7B%22id%22%3Anull%2C%22transferOutAccountsStatus%22%3Anull%2C%22transaction%22%3A%7B%22id%22%3A%221118126089089081344%22%2C%22status%22%3A1%2C%22createDateTime%22%3Anull%2C%22payDateTime%22%3A1555417008074%2C%22authToken%22%3A%22TGT-556886-fGB5pgb0Fyl9pppckijKCtcfcRoEcBZx5chIqgcAG3wfpCQBrN-my.wanfangdata.com.cn%22%2C%22user%22%3A%7B%22accountType%22%3A%22Group%22%2C%22key%22%3A%22njsfdxtsg%22%7D%2C%22transferIn%22%3A%7B%22accountType%22%3A%22Income%22%2C%22key%22%3A%22ThesisFulltext%22%7D%2C%22transferOut%22%3A%7B%22GTimeLimit.njsfdxtsg%22%3A30.0%7D%2C%22turnover%22%3A30.0%2C%22orderTurnover%22%3A30.0%2C%22productDetail%22%3A%22degree_D01345538%22%2C%22productTitle%22%3Anull%2C%22userIP%22%3A%22153.3.61.121%22%2C%22organName%22%3Anull%2C%22memo%22%3Anull%2C%22orderUser%22%3A%22njsfdxtsg%22%2C%22orderChannel%22%3A%22pc%22%2C%22payTag%22%3Anull%2C%22webTransactionRequest%22%3Anull%2C%22signature%22%3A%22Bzip%2F7Nbzb%2FH8BI%2BgUdFF6Gocy42LY7NqqiNVDsyg3kyZK9MVd818l9Xn5obDetJHP7iD0lxSTh0%5CnG4U6sh5fqoTNwRxqCHizP7bKfI6EWZBBDlK%2BF0o8sVJI2YenYlnpoNEE9opcpvd7tsdYLeiG5FCM%5CnIHvl8XNGbMSEjwbzEgA%3D%22%2C%22delete%22%3Afalse%7D%2C%22isCache%22%3Afalse%7D][融合用户评分和项目属性的协同 过滤推荐算法]]
-  *
-* Centos运维相关
+* centos7
 ** 防火墙
    * systemctl start firewalld
    * systemctl status firewalld
    * systemctl stop firewalld
+   * firewall-cmd --list-all //查看防火墙安全策略
    * firewall-cmd --list-services //查看防火墙允许的服务
-   * firewall-cmd --add-service=ftp --permanent //永久开放ftp服务
-   * firewall-cmd --add-port=21/tcp --permanent //允许外网访问
-   * firewall-cmd --reload //重新载入配置  
-* temp
-  试题练习模块涉及的流程包括：用户下载操作题素材，用户上传答案文件，系统批阅答案。
-  用户可以进入题库界面可以浏览最近发布的题目。选择试题分类中的不同试题类型，可以浏览该试题类型的知识点综合试题。点击每个题型中的知识点专项可以浏览知识点转项练习。确定需要练习的试题后，点击试题右边的下载图标，即可下载该试题素材文件到本地。素材的文件名默认为试题的编号。
+   * firewall-cmd --list-services //查看系统服务
+   * firewall-cmd --add-service=ftp --permanent //开放ftp服务
+   * firewall-cmd --add-port=21/tcp --permanent //开放端口
+   * firewall-cmd --reload //重新载入配置
+* 数据库
+  * 修改表名：ALTER TABLE knowledge_type RENAME TO knowledge_point;
+  * 注意数据库的编码
+  * macos mysql 安装错误 https://stackoverflow.com/questions/4963171/mysql-server-startup-error-the-server-quit-without-updating-pid-file?page=1&tab=votes#tab-top
+    * 先 kill -9
 
-  为了保证试题名称的唯一性，管理员在上传试题时，系统会根据该试题的特征生成一个试题唯一编号。该编号为7位，第一位字母代码试题类型，"w"代表word操作题，“e”代表excel操作题，"p"代表PPT操作题；第二位数字代表试题难度，分三个等级，分别为1、2、3，难度依次递增；第三位字母代表试题的知识点数，“s”代表该试题为专项知识点，"c"代表综合知识点。后四位为该试题在同类试题中的id号，依次递增。试题编号的作用除了避免文件重名，还可以作为试题的唯一标识，方便用户区分不同试题，也为开发者获取试题相关特征信息提供了方便。试题标号设计的代码如下。
+* Django
+** 代码片段
+   #+BEGIN_SRC python
+     # 每页显示10条
+     list_per_page = 10
 
-系统会根据每道试题用户练习的得分情况计算正确率。具体的算法流程为：
-(1) 遍历所有试题，没有练习记录或者没有批阅的试题的正确率为100%。
-(2) 获取所有已经批阅的试题练习记录，遍历该记录查询集合，用试题得分除以试题总分，累加后除以记录条数，得到平均正确率。
-* 链接
-  * [[http://www.yinwang.org/blog-cn/2012/05/18/user-friendliness][什么是对用户友好--王垠]]
+     # 可编辑字段
+     list_editable = ('auth',)
+
+     # 设置哪些字段可以点击进入编辑界面
+     list_display_links = ('title', 'body')
+
+ `    # 过滤器
+     list_filter = ('auth', 'title')
+
+     # 时间分层
+     date_hierarchy = 'create_time'
+   #+END_SRC
+** 注意点
+   * django删除了表的某些记录后，自增的序号乱了怎么办？
+   * django中queryset的序列化用serialize方法，其他基本数据类型用json.dumps()
+   * 可用queryset的api：list()，将queryset转成python列表
+   * 在Django模版中使用url要加上app名称: 
+
+     #+BEGIN_SRC html
+       <a href="{% url 'blog:urlname' 参数 %}">url</a>
+     #+END_SRC
+
+* Json
+  * json.load() # 将一个存储在文件中的json对象(str)转化为相对应的python对象
+  * json.loads() # 将一个json对象(str)转化为相对应的python对象
+  * json.dump() # 将python的对象转化为对应的json对象(str),并存放在文件中
+  * json.dumps() # 将python的对象转化为对应的json对象(str)
+  * json中的键值必须使用双引号
+  * JSON.stringify(obj)将JSON转为字符串
+  * JSON.parse(string)将字符串转为JSON格式
+* bootstrap
+  * bootstrap使用珊格系统来控制水平方向的位置，所以对删格元素尽量不要使用margin，会影响布局。问题涞源：我的博客在手机上布局问题
+
+* C++
+  * C++头文件的理解
+    * .cpp文件单独编译，.h文件不编译
+    * 编译时，遇到函数调用，寻找函数声明
+    * 函数的声明统一放在.h文件中，通过include宏包含
+    * 编译完成后链接各文件，在对应的文件中寻找函数定义
+  * 头文件包含内容
+    * 函数声明
+    * 全局const或static对象
+    * 内联函数
+    * 类的定义，可以在类的定义中包含成员函数的实现(当作内联)
+  * 头文件保护
+    * #ifndef #define #endif 的作用的防止头文件交叉引用。
+* 月份表格模版
+   | Date  | Event                    | Monthly Task                    |
+   |-------+--------------------------+---------------------------------|
+   | 1 一  |                          | ● 学习elisp                     |
+   | 2 二  |                          | ● 学习驾照                      |
+   | 3 三  |                          | ● 毕业设计                      |
+   | 4 四  | 下午练车@谷峰            | ● 跑步                          |
+   | 5 五  |                          | ● bujo插入函数编写              |
+   | 6 六  |                          | ● org mode与google calendar同步 |
+   | 7 日  |                          |                                 |
+   | 8 一  |                          |                                 |
+   | 9 二  |                          |                                 |
+   | 10 三 | 导师交流                 |                                 |
+   | 11 四 |                          |                                 |
+   | 12 五 |                          |                                 |
+   | 13 六 |                          |                                 |
+   | 14 日 |                          |                                 |
+   | 15 一 |                          |                                 |
+   | 16 二 | 导师交流, 计组实验       |                                 |
+   | 17 三 | 毕设中期检查@J3-309 1:30 |                                 |
+   | 18 四 | 数电实验                 |                                 |
+   | 19 五 |                          |                                 |
+   | 20 六 |                          |                                 |
+   | 21 日 |                          |                                 |
+   | 22 一 |                          |                                 |
+   | 23 二 |                          |                                 |
+   | 24 三 |                          |                                 |
+   | 25 四 |                          |                                 |
+   | 26 五 |                          |                                 |
+   | 27 六 |                          |                                 |
+   | 28 日 |                          |                                 |
+   | 29 一 |                          |                                 |
+   | 30 二 |                          |                                 |
+* ffmpeg
+  * ffmpeg -i ~/Desktop/in.mov -vcodec libx264 -b:v 5000k -minrate 5000k -maxrate 5000k -bufsize 4200k -preset fast -crf 20 -y -acodec libmp3lame -ab 128k ~/Desktop/out.mp4
+  * [[https://xenojoshua.com/2017/11/ffmpeg/][Apple mov转mp4 ffmpeg使用 | Xenojoshua]]
+* 终端代理
+
+  #+BEGIN_SRC shell
+  # 设置使用代理
+  alias setproxy="export https_proxy=http://127.0.0.1:1087; export http_proxy=http://127.0.0.1:1087; export all_proxy=socks5://127.0.0.1:1086; echo 'Set proxy successfully'"
+  # 设置取消使用代理
+  alias unsetproxy="unset http_proxy; unset https_proxy; unset all_proxy; echo 'Unset proxy successfully'"
+
+  # 查ip
+  alias ipcn="curl myip.ipip.net"
+  alias ip="curl ip.sb"
+  #+END_SRC
+

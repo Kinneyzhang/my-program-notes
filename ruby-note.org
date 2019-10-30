@@ -1,0 +1,2 @@
+* ruby note
+** [[https://www.runoob.com/ruby/ruby-syntax.html][Ruby菜鸟教程]]

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2019-10-10 Thu 17:13 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>期末复习</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="KinneyZhang">
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="http://members.optusnet.com.au/~charles57/GTD/mystyles.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<header>
+<h1 class="title">期末复习</h1>
+</header><nav id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgd66d318">1. 期末复习</a>
+<ul>
+<li><a href="#org20b7409">1.1. 向量代数与空间解析几何</a>
+<ul>
+<li><a href="#orgaf1067d">1.1.1. 空间平面方程</a></li>
+<li><a href="#org97e580c">1.1.2. 空间直线方程</a></li>
+<li><a href="#orgf52152e">1.1.3. 曲线与方程</a></li>
+</ul>
+</li>
+<li><a href="#org8f814c3">1.2. 多元函数微分及其定义</a>
+<ul>
+<li><a href="#org6519264">1.2.1. 多元函数基本概念</a></li>
+<li><a href="#org3ca410e">1.2.2. 多元函数连续性</a></li>
+<li><a href="#orgf9f89fe">1.2.3. 偏导数</a></li>
+<li><a href="#org401efd3">1.2.4. 高阶偏导数</a></li>
+<li><a href="#orgff6ac21">1.2.5. 全微分</a></li>
+<li><a href="#org1673e04">1.2.6. 多元复合函数的求导法则</a></li>
+<li><a href="#orgb2ea060">1.2.7. 隐函数的求导法则</a></li>
+<li><a href="#org66f8c33">1.2.8. 多元函数微分学的几何应用</a></li>
+<li><a href="#org9f07393">1.2.9. 方向导数与梯度</a></li>
+</ul>
+</li>
+<li><a href="#orge51080a">1.3. 重积分</a>
+<ul>
+<li><a href="#orgda32eb6">1.3.1. 二重积分</a></li>
+<li><a href="#orgd38cf0c">1.3.2. 计算方法</a></li>
+</ul>
+</li>
+<li><a href="#org144c70d">1.4. 曲线积分与曲面积分</a>
+<ul>
+<li><a href="#org6ff66a9">1.4.1. 对弧长的曲面积分</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+
+<div id="outline-container-orgd66d318" class="outline-2">
+<h2 id="orgd66d318"><span class="section-number-2">1</span> 期末复习</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org20b7409" class="outline-3">
+<h3 id="org20b7409"><span class="section-number-3">1.1</span> 向量代数与空间解析几何</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-orgaf1067d" class="outline-4">
+<h4 id="orgaf1067d"><span class="section-number-4">1.1.1</span> 空间平面方程</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<ul class="org-ul">
+<li>概念：特殊的曲面，点的几何轨迹</li>
+<li>点法式</li>
+<li>一般式
+<ul class="org-ul">
+<li>A=0 法向量垂直与x轴，平面平行于x轴。</li>
+<li>A=0, B=0 平面平行于XOY平面。</li>
+</ul></li>
+<li>截距式</li>
+<li>两平面夹角</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org97e580c" class="outline-4">
+<h4 id="org97e580c"><span class="section-number-4">1.1.2</span> 空间直线方程</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<ul class="org-ul">
+<li>概念：两空间平面的交线</li>
+<li>点向式方程
+<ul class="org-ul">
+<li>直线上一点构成的向量与方向向量平行，对应系数成比例。</li>
+<li>方面向量与两平面的法向量都垂直，叉乘即可。</li>
+</ul></li>
+<li>参数方程</li>
+<li>两直线夹角</li>
+<li>平面与直线夹角（正弦）</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf52152e" class="outline-4">
+<h4 id="orgf52152e"><span class="section-number-4">1.1.3</span> 曲线与方程</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<ul class="org-ul">
+<li>概念：点在空间中的运动几何轨迹</li>
+<li>球面方程</li>
+<li>旋转曲面：旋转轴变量不变，另一个变量变为点到旋转轴的距离。正负根号下平方和。</li>
+<li>柱面：母线平行于下缺少的变量轴，准线为平面上的曲线。</li>
+<li>二次曲面：空间中三元二次方程表示的曲面
+<ul class="org-ul">
+<li>椭圆锥面</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org8f814c3" class="outline-3">
+<h3 id="org8f814c3"><span class="section-number-3">1.2</span> 多元函数微分及其定义</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-org6519264" class="outline-4">
+<h4 id="org6519264"><span class="section-number-4">1.2.1</span> 多元函数基本概念</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<ul class="org-ul">
+<li>聚点：点的去心领域总包含区域的内容（无论区域开闭，聚点的范围都是区域内部加边界）</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3ca410e" class="outline-4">
+<h4 id="org3ca410e"><span class="section-number-4">1.2.2</span> 多元函数连续性</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<ul class="org-ul">
+<li>函数在某点的极限等于在该点的函数值则连续 或 自变量的增量都趋于零时函数的增量为0则连续。</li>
+<li>判断步骤：首先极限存在，再判断第一点。</li>
+<li>多元初等函数在其定义区域内都是连续的。</li>
+<li>连续点求极限，直接带入。</li>
+<li>性质：有界性最值性，界值定理</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf9f89fe" class="outline-4">
+<h4 id="orgf9f89fe"><span class="section-number-4">1.2.3</span> 偏导数</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<ul class="org-ul">
+<li>偏导数针对多元函数</li>
+<li>偏导数是在某一个变量方向上的变化率</li>
+<li>求解：将另一个变量当作常数，求导数</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org401efd3" class="outline-4">
+<h4 id="org401efd3"><span class="section-number-4">1.2.4</span> 高阶偏导数</h4>
+<div class="outline-text-4" id="text-1-2-4">
+<ul class="org-ul">
+<li>在连续的前提下，混合偏导数结果一样，与求偏导数的次序无关。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgff6ac21" class="outline-4">
+<h4 id="orgff6ac21"><span class="section-number-4">1.2.5</span> 全微分</h4>
+<div class="outline-text-4" id="text-1-2-5">
+<ul class="org-ul">
+<li>多元函数的全微分公式：dz = AΔx + BΔy + o(ρ)</li>
+<li>可微一定连续</li>
+<li>可微偏导数一定存在, 所以dz = fx(x,y)Δx + fy(x,y)Δy + o(ρ)</li>
+<li>偏导数连续是可微分的充分条件</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1673e04" class="outline-4">
+<h4 id="org1673e04"><span class="section-number-4">1.2.6</span> 多元复合函数的求导法则</h4>
+<div class="outline-text-4" id="text-1-2-6">
+<ul class="org-ul">
+<li>多元套一元</li>
+<li>多元套多元</li>
+<li>一元套多元</li>
+<li>抽象复合函数求偏导数</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb2ea060" class="outline-4">
+<h4 id="orgb2ea060"><span class="section-number-4">1.2.7</span> 隐函数的求导法则</h4>
+</div>
+<div id="outline-container-org66f8c33" class="outline-4">
+<h4 id="org66f8c33"><span class="section-number-4">1.2.8</span> 多元函数微分学的几何应用</h4>
+</div>
+<div id="outline-container-org9f07393" class="outline-4">
+<h4 id="org9f07393"><span class="section-number-4">1.2.9</span> 方向导数与梯度</h4>
+<div class="outline-text-4" id="text-1-2-9">
+<ul class="org-ul">
+<li>方向导数等于梯度点乘l的单位向量</li>
+<li>梯度：函数变化最快的方向</li>
+<li>梯度的几何含义：空间曲面在某点处的法向量。</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge51080a" class="outline-3">
+<h3 id="orge51080a"><span class="section-number-3">1.3</span> 重积分</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-orgda32eb6" class="outline-4">
+<h4 id="orgda32eb6"><span class="section-number-4">1.3.1</span> 二重积分</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<ul class="org-ul">
+<li>化为两次定积分计算</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd38cf0c" class="outline-4">
+<h4 id="orgd38cf0c"><span class="section-number-4">1.3.2</span> 计算方法</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<ul class="org-ul">
+<li>利用直角坐标计算
+<ul class="org-ul">
+<li>X型区域：先y后x</li>
+<li>Y型区域：先x后y</li>
+</ul></li>
+<li>改变积分次序，可以避免无法求解的二重积分</li>
+<li>利用极坐标计算圆弧的二重积分
+<ul class="org-ul">
+<li>面积元素：r.dr.dθ = dx.dy(r.dθ是弧长)</li>
+<li>积分次序：先对r后对θ</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org144c70d" class="outline-3">
+<h3 id="org144c70d"><span class="section-number-3">1.4</span> 曲线积分与曲面积分</h3>
+<div class="outline-text-3" id="text-1-4">
+</div>
+<div id="outline-container-org6ff66a9" class="outline-4">
+<h4 id="org6ff66a9"><span class="section-number-4">1.4.1</span> 对弧长的曲面积分</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<ul class="org-ul">
+<li>几何意义：曲线下方柱面的面积</li>
+<li>计算：化为定积分计算 ∫Lf(x,y).ds
+<ul class="org-ul">
+<li>参数方程：ds = √φ'<sup>2</sup>(t) + ψ'<sup>2</sup>(t) . dt</li>
+<li>极坐标方程：ds = √r<sup>2</sup>(θ) + r'<sup>2</sup>(θ) . dθ</li>
+<li>直角坐标方程：ds = √1 + y'<sup>2</sup>(x) . dx</li>
+</ul></li>
+<li>利用对称性求解
+<ul class="org-ul">
+<li>被积函数的和可以分开积分</li>
+<li>积分曲线具有对称性时，考察被积函数的奇偶性，可简化曲线积分</li>
+</ul></li>
+</ul>
+<p>
+hello emacs this is kinney
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,3 +1,4 @@
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-bigblow.setup
 * web前端习笔记
 ** PS基础
    - 不同图片格式在网页中的使用：

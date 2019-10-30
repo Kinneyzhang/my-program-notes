@@ -1,12 +1,4 @@
-* Idea
-** 不要把主观的意愿推给客观的原因
+#+DOWNLOADED: file:/Users/kinney/Desktop/mingus.png @ 2019-09-01 22:07:02
 
-** 做一个有趣的人，发现有趣的生活
+[[file:mingus_2019-09-01_22-07-02.png]]
 
-** 目的是什么就直接去做，不要兜弯子
-
-** 很多问题其实并不是技术问题，而是态度问题
-
-** RMS的录音，Gun关于自由软件的理念
-
-** [[https://mp.weixin.qq.com/s/epEr2MvGQxkm3Ftyo7Il2w][中国电影25年]]

@@ -258,18 +258,29 @@
 ** Django开发
 *** 开发流程
     * 环境准备与工程创建
-      * virtualenv <name_env> --python=python3(将本地的python库拷贝一份在当前目录下)
-      * source <name_env>/bin/activate, deactivate
-      * pip install Django(本地已安装则无需执行)
-      * django-admin.py startproject <project_name> .
+
+      #+BEGIN_SRC sh
+	virtualenv <name_env> --python=python3 # 将本地的python库拷贝一份在当前目录下
+	source <name_env>/bin/activate, deactivate
+	pip3 install Django # 本地已安装则无需执行
+	django-admin.py startproject <project_name> .case 
+      #+END_SRC
+
     * 连接数据库
       * 修改settings.py中的DATABASES配置(先建一个空数据库)
-	* 'ENGINE': 'django.db.backends.mysql',
-	* 'NAME': 'Test',
-	* 'USER': 'root',
-	* 'PASSWORD': '123',
-	* 'HOST': '127.0.0.1',
-	* 'POST': '3306',
+
+	#+BEGIN_SRC python
+	  DATABASES = {
+	      'default': {
+		  'ENGINE': 'django.db.backends.mysql',
+		  'NAME': 'geekBlog',
+		  'USER': 'root',
+		  'PASSWORD': '123',
+		  'HOST': '127.0.0.1',
+		  'POST': '3306',
+	      }
+	  }
+	#+END_SRC
       * pip install pymysql
       * [[https://www.cnblogs.com/TaleG/p/6735099.html][修改相关配置，让python3支持MySQLdb.]]
 	* import pymysql
@@ -318,10 +329,10 @@
        * 调用render对象
 
        #+BEGIN_SRC python
-	 from django import template
-	 t = template.Template('my name is {{ name }}')
-	 c = template.Context({'name': 'kinney'})
-	 print (t.render(c))
+       from django import template
+       t = template.Template('my name is {{ name }}')
+       c = template.Context({'name': 'kinney'})
+       print (t.render(c))
        #+END_SRC
 
      * 上下文变量查找
@@ -351,7 +362,7 @@
        * app_dirs定义是否在安装的应用中查找模版，默认在应用的templates目录中查找
        * options是针对后端的设置
 
-     * render函数：使用get_template()加载模版，但可以更简单，使用django.shortcuts的render函数，返回HttpResponse对象。render(request, 'current_datetime.html', {'current_date': now}
+     * render函数：使用get_template()加载模版，但可以更简单，使用django.shortcuts的render函数，返回HttpResponse对象。render(request, 'current_datetime.html', {'current_date': now})
 
      * 模版继承
        * 创建base.html模版，定义网站的整体外观
@@ -398,4 +409,3 @@
      * 自定义验证规则：
      * 指定标注：使用label参数
      * 自定义表单外观：
-       
