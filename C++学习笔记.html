@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2020-01-09 Thu 17:29 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C++ Primer</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Kinney Zhang">
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://blog.geekinney.com/static/ostyle.css"/>
+<link rel="stylesheet" type="text/css" href="https://blog.geekinney.com/static/ostyle2.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<header>
+<h1 class="title">C++ Primer</h1>
+</header><nav id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgd656898">1. 开始</a>
+<ul>
+<li><a href="#org329311b">1.1. 一个简单的C++程序</a></li>
+<li><a href="#orgd1469f2">1.2. 输入输出</a></li>
+<li><a href="#org706953b">1.3. 控制流</a></li>
+<li><a href="#org168eb6e">1.4. 类简介</a></li>
+</ul>
+</li>
+<li><a href="#orgaa9d9d0">2. 变量和基本类型</a>
+<ul>
+<li><a href="#org30b3f06">2.1. 基本内置类型</a>
+<ul>
+<li><a href="#org0c65938">2.1.1. 算术类型</a></li>
+<li><a href="#org3f75c47">2.1.2. 类型转换</a></li>
+<li><a href="#org02a6f09">2.1.3. 字面值常量</a></li>
+</ul>
+</li>
+<li><a href="#org8d70287">2.2. 变量</a>
+<ul>
+<li><a href="#org5dcf2af">2.2.1. 变量定义</a></li>
+<li><a href="#org728b019">2.2.2. 变量声明和定义的关系</a></li>
+<li><a href="#org9086b5b">2.2.3. 标识符</a></li>
+<li><a href="#orgf06d879">2.2.4. 名字的作用域</a></li>
+</ul>
+</li>
+<li><a href="#org54ecb2e">2.3. 复合类型</a>
+<ul>
+<li><a href="#org04c4c84">2.3.1. 引用</a></li>
+<li><a href="#org7b12e4b">2.3.2. 指针</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+<div id="outline-container-orgd656898" class="outline-2">
+<h2 id="orgd656898"><span class="section-number-2">1</span> 开始</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org329311b" class="outline-3">
+<h3 id="org329311b"><span class="section-number-3">1.1</span> 一个简单的C++程序</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>g++ -o prog prog.cc</li>
+<li>g++为编译器名称</li>
+<li>-o指定编译生成的可执行的名称</li>
+<li>unix系统的可执行文件没有后缀，windows为.exe</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd1469f2" class="outline-3">
+<h3 id="orgd1469f2"><span class="section-number-3">1.2</span> 输入输出</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>C++标准输入输出库iostream，包括istream和ostream两个基本类型</li>
+<li>cin、cout分别为标准输入输出类型的对象，此外还包括cerr、clog</li>
+<li>std::cout &lt;&lt; "hello emacs!" &lt;&lt; std::endl</li>
+<li>std::cin &gt;&gt; v1 &lt;&lt; v2</li>
+<li>endl是操纵符，作用是结束当前行和刷新缓冲区内容到设备中</li>
+<li>std是命名空间，标准库定义的所有名字都在std命名空间中</li>
+<li>"<a id="org9392056"></a>"本质是运算符，前者将右侧内容写入到ostream的运算对象中，后者将istream对象接收到的内容写入右侧的对象中。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org706953b" class="outline-3">
+<h3 id="org706953b"><span class="section-number-3">1.3</span> 控制流</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>当std::cin &gt;&gt; value作为while的条件时
+<ul class="org-ul">
+<li>本质是检测流的状态</li>
+<li>当遇到文件结束符(windows:C-Z，unix系:C-D)或无效输入(变量类型不一致)时，条件为假，退出循环</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org168eb6e" class="outline-3">
+<h3 id="org168eb6e"><span class="section-number-3">1.4</span> 类简介</h3>
+<div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>类定义了一个类型以及关联的一组操作</li>
+<li>标准头文件使用 <code>&lt; &gt;</code> ，自定义的头文件使用 <code>" "</code></li>
+<li>书店程序？</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgaa9d9d0" class="outline-2">
+<h2 id="orgaa9d9d0"><span class="section-number-2">2</span> 变量和基本类型</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org30b3f06" class="outline-3">
+<h3 id="org30b3f06"><span class="section-number-3">2.1</span> 基本内置类型</h3>
+<div class="outline-text-3" id="text-2-1">
+</div>
+<div id="outline-container-org0c65938" class="outline-4">
+<h4 id="org0c65938"><span class="section-number-4">2.1.1</span> 算术类型</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<ul class="org-ul">
+<li>不同类型所占的比特数在不同机器上有所差别。C++标准规定了最小尺寸。</li>
+<li><p>
+布尔类型的取值为 true 或 false
+</p>
+
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">类型</th>
+<th scope="col" class="org-left">含义</th>
+<th scope="col" class="org-left">最小尺寸</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">bool</td>
+<td class="org-left">布尔类型</td>
+<td class="org-left">未定义</td>
+</tr>
+
+<tr>
+<td class="org-left">char</td>
+<td class="org-left">字符</td>
+<td class="org-left">8位</td>
+</tr>
+
+<tr>
+<td class="org-left">wchar<sub>t</sub></td>
+<td class="org-left">宽字符</td>
+<td class="org-left">16位</td>
+</tr>
+
+<tr>
+<td class="org-left">char16<sub>t</sub></td>
+<td class="org-left">Unicode字符</td>
+<td class="org-left">16位</td>
+</tr>
+
+<tr>
+<td class="org-left">char32<sub>t</sub></td>
+<td class="org-left">unicode字符</td>
+<td class="org-left">32位</td>
+</tr>
+
+<tr>
+<td class="org-left">short</td>
+<td class="org-left">短整型</td>
+<td class="org-left">16位</td>
+</tr>
+
+<tr>
+<td class="org-left">int</td>
+<td class="org-left">整型</td>
+<td class="org-left">16位</td>
+</tr>
+
+<tr>
+<td class="org-left">long</td>
+<td class="org-left">长整型</td>
+<td class="org-left">32位</td>
+</tr>
+
+<tr>
+<td class="org-left">long long</td>
+<td class="org-left">长整型</td>
+<td class="org-left">64位</td>
+</tr>
+
+<tr>
+<td class="org-left">float</td>
+<td class="org-left">单精度浮点型</td>
+<td class="org-left">6位有效数字</td>
+</tr>
+
+<tr>
+<td class="org-left">double</td>
+<td class="org-left">双精度浮点型</td>
+<td class="org-left">10位有效数字</td>
+</tr>
+
+<tr>
+<td class="org-left">long double</td>
+<td class="org-left">拓展精度浮点型</td>
+<td class="org-left">10位有效数字</td>
+</tr>
+</tbody>
+</table></li>
+
+<li>在整型前面加"unsigned"可得到对应的无符号类型。</li>
+<li>字符型分为"char", "signed char", "unsigned char"三种。表现形式只有两种：带符号和无符号，"signed char"表现为哪种由编译器决定。</li>
+<li>无符号类型的所有比特用来存储值。带符号类型应近两年平衡正负值的数量。（一般为 -128~127）</li>
+<li>如何选择类型
+<ul class="org-ul">
+<li>明确不为负时，选用无符号类型</li>
+<li>范围超过int时，使用long long</li>
+<li>算术运算中不要使用char或bool。需要表示不大的整数时，明确指定signed char或unsigned char。</li>
+<li>浮点运算通常选double，范围大，速度快。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3f75c47" class="outline-4">
+<h4 id="org3f75c47"><span class="section-number-4">2.1.2</span> 类型转换</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<p>
+赋值转换规则:
+</p>
+<ul class="org-ul">
+<li>布尔 &lt;= 非布尔，0为 <b>false</b> ，其余为 <b>true</b></li>
+<li>非布尔 &lt;= 布尔， <b>false</b> 为0， <b>true</b> 为1</li>
+<li>整型 &lt;= 浮点型，仅保留整数部分</li>
+<li>浮点型 &lt;= 整型，小数部分取0，整数超过浮点数容量，精度损失</li>
+<li>赋给无符号类型超过范围的值，结果是初始值对无符号类型取模后的余数
+<ul class="org-ul">
+<li>例：-10赋给无符号数（int为32位）结果为 <b>2<sup>32</sup> - 10</b></li>
+</ul></li>
+<li>赋给无符号类型超过范围的值，未定义</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org02a6f09" class="outline-4">
+<h4 id="org02a6f09"><span class="section-number-4">2.1.3</span> 字面值常量</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<ul class="org-ul">
+<li>整型字面值
+<ul class="org-ul">
+<li>十进制（带符号），八进制（可带可不带），十六进制（可带可不带）</li>
+<li>十进制字面值类型是所能容纳数值的 int, long, long long 中最小的。十进制负号不在字面值内。</li>
+<li>八进制和十六进制字面值类型是所能容纳数值的 int, unsigned init, long, unsigned long, long long, unsigned long long 中最小的。</li>
+</ul></li>
+<li>浮点型字面值
+<ul class="org-ul">
+<li>用小数或科学计数法(E)表示</li>
+<li>默认类型为double，其他类型见表2.2(p37)</li>
+</ul></li>
+<li>字符字符串字面值
+<ul class="org-ul">
+<li>字符字面值：单引号</li>
+<li>字符串字面值：双引号
+<ul class="org-ul">
+<li>字符串字面值实际是常量字符构成的数组，结尾处添加 <code>'\0'</code> 空字符。</li>
+<li>两字符串字面值位置相邻且由空格、缩进和换行符分隔，实际是一个整体。</li>
+</ul></li>
+</ul></li>
+<li><p>
+转义序列
+</p>
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">含义</th>
+<th scope="col" class="org-left">符号</th>
+<th scope="col" class="org-left">含义</th>
+<th scope="col" class="org-left">符号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">换行符</td>
+<td class="org-left">\n</td>
+<td class="org-left">纵向制表符</td>
+<td class="org-left">\v</td>
+</tr>
+
+<tr>
+<td class="org-left">反斜杠</td>
+<td class="org-left">\\</td>
+<td class="org-left">回车符</td>
+<td class="org-left">\r</td>
+</tr>
+
+<tr>
+<td class="org-left">横向制表符</td>
+<td class="org-left">\t</td>
+<td class="org-left">退格符</td>
+<td class="org-left">\b</td>
+</tr>
+
+<tr>
+<td class="org-left">问号</td>
+<td class="org-left">\?</td>
+<td class="org-left">进纸符</td>
+<td class="org-left">\f</td>
+</tr>
+
+<tr>
+<td class="org-left">报警符</td>
+<td class="org-left">\a</td>
+<td class="org-left">双引号</td>
+<td class="org-left">\"</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>
+指定字面值类型
+<b>字符和字符串字面值</b>
+</p>
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">前缀</th>
+<th scope="col" class="org-left">含义</th>
+<th scope="col" class="org-left">类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">u</td>
+<td class="org-left">Unicode 16字符</td>
+<td class="org-left">char16<sub>t</sub></td>
+</tr>
+
+<tr>
+<td class="org-left">U</td>
+<td class="org-left">Unicode 16字符</td>
+<td class="org-left">char32<sub>t</sub></td>
+</tr>
+
+<tr>
+<td class="org-left">L</td>
+<td class="org-left">宽字符</td>
+<td class="org-left">wchar<sub>t</sub></td>
+</tr>
+
+<tr>
+<td class="org-left">u8</td>
+<td class="org-left">UTF-8(仅用于字符串字面常量)</td>
+<td class="org-left">char</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<b>整型字面值</b>
+</p>
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">后缀</th>
+<th scope="col" class="org-left">最小匹配类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">u or U</td>
+<td class="org-left">unsigned</td>
+</tr>
+
+<tr>
+<td class="org-left">l or L</td>
+<td class="org-left">long</td>
+</tr>
+
+<tr>
+<td class="org-left">ll or LL</td>
+<td class="org-left">long long</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<b>浮点型字面值</b>
+</p>
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">后缀</th>
+<th scope="col" class="org-left">类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">f or F</td>
+<td class="org-left">float</td>
+</tr>
+
+<tr>
+<td class="org-left">l or L</td>
+<td class="org-left">long double</td>
+</tr>
+</tbody>
+</table></li>
+
+<li>布尔和指针字面值
+true和false是布尔字面值；nullptr是指针字面值</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org8d70287" class="outline-3">
+<h3 id="org8d70287"><span class="section-number-3">2.2</span> 变量</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-org5dcf2af" class="outline-4">
+<h4 id="org5dcf2af"><span class="section-number-4">2.2.1</span> 变量定义</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<ul class="org-ul">
+<li>初始化和赋值不是一回事。初始化指创建变量是赋予了一个新的值；赋值指把对象当前的值擦出代以一个新的值。</li>
+<li><p>
+几种初始化方式
+</p>
+
+<div class="col-auto">
+<pre><code class="C++"><span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">units_sold</span> = 0;
+<span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">units_sold</span> = {0};
+<span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">units_sold</span> {0};
+<span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">units_sold</span> (0);
+</code></pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org728b019" class="outline-4">
+<h4 id="org728b019"><span class="section-number-4">2.2.2</span> 变量声明和定义的关系</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<ul class="org-ul">
+<li>变量只能被定义一次，但可以被多次声明</li>
+<li>当需要在多个文件中使用同一个变量时，需要变量声明</li>
+<li>声明变量使用 <code>extern</code> 关键字</li>
+<li>不带 <code>extern</code> 关键字或赋了一个初值则为变量定义</li>
+<li>函数体内部不能初始化一个 <code>extern</code> 关键字变量</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9086b5b" class="outline-4">
+<h4 id="org9086b5b"><span class="section-number-4">2.2.3</span> 标识符</h4>
+<div class="outline-text-4" id="text-2-2-3">
+<ul class="org-ul">
+<li>字母、数字、下划线组成，以字母或下划线开头，大小写敏感</li>
+<li>除去保留关键字、不能出现连续两个下划线或下划线连着大写字母。</li>
+<li>函数体外不能以下划线开头</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf06d879" class="outline-4">
+<h4 id="orgf06d879"><span class="section-number-4">2.2.4</span> 名字的作用域</h4>
+<div class="outline-text-4" id="text-2-2-4">
+<ul class="org-ul">
+<li>C++中作用域一般以花括号分隔</li>
+<li>内层作用域可以访问外层作用域的变量</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org54ecb2e" class="outline-3">
+<h3 id="org54ecb2e"><span class="section-number-3">2.3</span> 复合类型</h3>
+<div class="outline-text-3" id="text-2-3">
+</div>
+<div id="outline-container-org04c4c84" class="outline-4">
+<h4 id="org04c4c84"><span class="section-number-4">2.3.1</span> 引用</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<ul class="org-ul">
+<li>引用就是为对象起了另外一个名字</li>
+<li>引用本身不是一个对象</li>
+<li>形如： int i = 1024; int &amp;r = i;</li>
+<li>r称为i的引用</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7b12e4b" class="outline-4">
+<h4 id="org7b12e4b"><span class="section-number-4">2.3.2</span> 指针</h4>
+<div class="outline-text-4" id="text-2-3-2">
+<ul class="org-ul">
+<li>与“引用”类似，可以对其他对象间接访问</li>
+<li>指针本身就是一个对象，允许赋值和拷贝</li>
+<li>在指针的生命周期内，可以先后指向几个不同的对象</li>
+<li>指针无需在定义时赋值，指针中存放某个对象的地址</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="orge320330"></a>获取对象地址<br>
+<div class="outline-text-5" id="text-2-3-2-1">
+<div class="col-auto">
+<pre><code class="C++"><span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">ival</span> = 42;
+<span style="color: #ECBE7B;">int</span> *<span style="color: #dcaeea;">p</span> = &amp;ival;
+
+<span style="color: #ECBE7B;">double</span> <span style="color: #dcaeea;">dval</span>;
+<span style="color: #ECBE7B;">double</span> *<span style="color: #dcaeea;">pd</span> = &amp;dval;
+<span style="color: #ECBE7B;">double</span> *<span style="color: #dcaeea;">dp2</span> = pd;
+
+<span style="color: #ECBE7B;">int</span> *<span style="color: #dcaeea;">pi</span> = pd; <span style="color: #5B6268;">//</span><span style="color: #5B6268;">&#31867;&#22411;&#38169;&#35823;</span>
+pi = &amp;dval; <span style="color: #5B6268;">//</span><span style="color: #5B6268;">&#31867;&#22411;&#38169;&#35823;</span>
+</code></pre>
+</div>
+</div>
+</li>
+<li><a id="orgf8888c0"></a>指针值<br>
+<div class="outline-text-5" id="text-2-3-2-2">
+<p>
+指针值应属于4种状态之一
+</p>
+<ul class="org-ul">
+<li>指向一个对象</li>
+<li>指向紧邻对象所占空间的下一个位置</li>
+<li>空指针，没有指向任何对象</li>
+<li>无效指针</li>
+</ul>
+</div>
+</li>
+<li><a id="org3dccf00"></a>利用指针访问对象<br>
+<div class="outline-text-5" id="text-2-3-2-3">
+<ul class="org-ul">
+<li><p>
+可以使用“解引用符”(*)访问指针指向的对象
+</p>
+
+<div class="col-auto">
+<pre><code class="C++"><span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">ival</span> = 42;
+<span style="color: #ECBE7B;">int</span> *<span style="color: #dcaeea;">p</span> = &amp;ival;
+cout &lt;&lt; *p; <span style="color: #5B6268;">// </span><span style="color: #5B6268;">42</span>
+
+*p = 0;
+cout &lt;&lt; *p <span style="color: #5B6268;">// </span><span style="color: #5B6268;">0</span>
+</code></pre>
+</div></li>
+</ul>
+</div>
+</li>
+<li><a id="orgdbde531"></a>空指针<br>
+<div class="outline-text-5" id="text-2-3-2-4">
+<p>
+三种定义方法：
+</p>
+
+<div class="col-auto">
+<pre><code class="C++"><span style="color: #ECBE7B;">int</span> *<span style="color: #dcaeea;">p1</span> = <span style="color: #a9a1e1;">nullptr</span>;
+<span style="color: #ECBE7B;">int</span> *<span style="color: #dcaeea;">p2</span> = 0;
+<span style="color: #ECBE7B;">int</span> *<span style="color: #dcaeea;">p3</span> = <span style="color: #a9a1e1;">NULL</span>; <span style="color: #5B6268;">// </span><span style="color: #5B6268;">&#38656;&#35201;&#20808; #include cstdlib</span>
+</code></pre>
+</div>
+
+<p>
+建议初始化所有指针
+</p>
+</div>
+</li>
+<li><a id="orga5b554c"></a>赋值和指针<br></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+
+<div id="disqus_thread"></div>
+<script>
+function loadDisqus() {
+  // Disqus 安装代码
+  var d = document, s = d.createElement('script');
+  s.src = 'https://geekinney-blog.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+}
+
+// 通过检查 window 对象确认是否在浏览器中运行
+var runningOnBrowser = typeof window !== "undefined";
+// 通过检查 scroll 事件 API 和 User-Agent 来匹配爬虫
+var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
+// 检查当前浏览器是否支持 IntersectionObserver API
+var supportsIntersectionObserver = runningOnBrowser && "IntersectionObserver" in window;
+
+// 一个小 hack，将耗时任务包裹在 setTimeout(() => { }, 1) 中，可以推迟到 Event Loop 的任务队列中、等待主调用栈清空后才执行，在绝大部分浏览器中都有效
+// 其实这个 hack 本来是用于优化骨架屏显示的。一些浏览器总是等 JavaScript 执行完了才开始页面渲染，导致骨架屏起不到降低 FCP 的优化效果，所以通过 hack 将耗时函数放到骨架屏渲染完成后再进行。
+setTimeout(function () {
+  if (!isBot && supportsIntersectionObserver) {
+    // 当前环境不是爬虫、并且浏览器兼容 IntersectionObserver API
+    var disqus_observer = new IntersectionObserver(function(entries) {
+      // 当前视窗中已出现 Disqus 评论框所在位置
+      if (entries[0].isIntersecting) {
+        // 加载 Disqus
+        loadDisqus();
+        // 停止当前的 Observer
+        disqus_observer.disconnect();
+      }
+    }, { threshold: [0] });
+    // 设置让 Observer 观察 #disqus_thread 元素
+    disqus_observer.observe(document.getElementById('disqus_thread'));
+  } else {
+    // 当前环境是爬虫、或当前浏览器其不兼容 IntersectionObserver API
+    // 直接加载 Disqus
+    loadDisqus();
+  }
+}, 1);
+</script>
+
+<p class="author">Author: Kinney Zhang (<a href="mailto:kinneyzhang666@gmail.com">kinneyzhang666@gmail.com</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.1.9)</p>
+</div>
+</body>
+</html>

@@ -3,10 +3,18 @@
    * /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 ** iterm2+oh-my-zsh
-   * [[https://www.iterm2.com/][iterm2官网]]
-   * chsh -s /bin/zsh
-   * sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-   * 在.zshrc中修改：ZSH_THEME="bira"
+   * https://iterm2.com/downloads/stable/latest
+   #+BEGIN_SRC shell
+   # oh my zsh
+   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+   chsh -s /bin/zsh
+   # zsh-autosuggestions
+   git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+   # zsh-syntax-highlighting
+   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+   # dracula theme
+   git clone https://github.com/dracula/iterm.git # import color preference
+   #+END_SRC
 
 ** Vim
    * git clone https://github.com/Kinneyzhang/vimplus.git ~/.vimplus
@@ -21,7 +29,8 @@
    * sudo "/Applications/CMake.app/Contents/bin/cmake-gui" --install
 
 ** keyboard
-   * git clone https://github.com/Kinneyzhang/keyboard.git ~/.keyboard 
+   * git clone https://github.com/Kinneyzhang/keyboard.git ~/.keyboard
+   * https://pqrs.org/osx/karabiner/files/Karabiner-Elements-12.7.0.dmg
    * 根据系统情况修改app启动快捷键
 
 ** 工作文件
