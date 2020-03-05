@@ -1,0 +1,25 @@
+#+TITLE: SICP学习笔记
+#+DATE: 
+#+CATEGORY: SICP
+#+STARTUP: showall
+#+OPTIONS: toc:nil H:2 num:2
+#+INCLUDE: ../code/post-info.org
+#+TOC: headlines:2
+
+* lisp概览
+计算机科学的本质是控制大型系统复杂度的技术：
+ * black-box abstraction 黑盒抽象
+ * conventional interfaces 约定接口
+ * meta-linguistic abstraction 元语言抽象
+
+对一门新语言的思考：
+ * 构成语言的基本元素有哪些？
+ * 如何将基本元素组合在一起？
+ * 如何进行黑盒抽象？
+
+   #+BEGIN_SRC scheme
+   (define (square x) (* x x)) ;; 语法糖
+   (define square (lambda (x) (* x x)))
+   (square 5)
+   #+END_SRC
+ 

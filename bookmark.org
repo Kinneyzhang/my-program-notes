@@ -1,0 +1,151 @@
+#+TITLE: 书签收藏
+#+STARTUP: content
+#+OPTIONS: toc:nil H:1 num:0 title:nil
+
+* SSR节点
+** *IP*: 119.28.186.136
+** *Port*: 673
+
+* Emacs
+** [[https://emacs.zeef.com/ehartc][Emacs by Ernst de Hart | ZEEF]]
+** [[https://www.gnu.org/software/emacs/manual/][GNU Emacs Manuals Online]]
+** [[https://orgmode.org/org.html][The Org Manual]]
+** [[https://www.youtube.com/playlist?list=PLVtKhBrRV_ZkPnBtt_TD1Cs9PJlU0IIdE][OrgMode Tutorial by Rainer König]]
+** [[http://doc.norang.ca/org-mode.html][Org Mode - Organize Your Life In Plain Text!]]
+** [[https://orgmode.org/manual/CSS-support.html#CSS-support][Org Mode Css Support Manual]]
+** [[https://emacs-china.org/t/emacs/7532/16][emacs学习的几条曲线 by lazycat]]
+** [[https://github.com/alphapapa/org-ql][org-ql|An Org-mode query language, search command, and agenda-like view]]
+   :PROPERTIES:
+   :CREATED:  [2019-10-03 Thu 10:03]
+   :END:
+
+** [[http://members.optusnet.com.au/~charles57/GTD/orgmode.html#sec-2][Using Emacs org-mode for GTD]]
+   :PROPERTIES:
+   :CREATED:  [2019-10-03 Thu 23:22]
+   :END:
+
+** [[https://coldnew.github.io/6a7aa5c1/][在 emacs 下使用 mu4e 收發郵件 | coldnew's blog]]
+   :PROPERTIES:
+   :CREATED:  [2019-10-09 Wed 11:18]
+   :END:
+** [[http://members.optusnet.com.au/~charles57/GTD/gtd_workflow.html][How I use Emacs and Org-mode to implement GTD]]
+   :PROPERTIES:
+   :CREATED:  [2019-10-10 Thu 16:54]
+   :END:
+
+** [[https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-ledger.html][Using Ledger for Accounting in Org-mode with Babel]]
+   :PROPERTIES:
+   :CREATED:  [2019-10-13 Sun 13:39]
+   :END:
+
+** [[https://emacs.cafe/emacs/orgmode/gtd/2017/06/30/orgmode-gtd.html][Orgmode for GTD | Emacs café]]
+   :PROPERTIES:
+   :CREATED:  [2019-10-14 Mon 10:48]
+   :END:
+
+** [[https://emacs-china.org/t/org-mode-html/10120][有没有办法让org-mode导出的html页面漂亮一点？ - Emacs-general - Emacs China]]
+   :PROPERTIES:
+   :CREATED:  [2019-10-21 Mon 12:13]
+   :END:
+
+** [[http://ergoemacs.org/index.html][ErgoEmacs | Xah Emacs]]
+   :PROPERTIES:
+   :CREATED:  [2019-10-27 Sun 16:19]
+   :END:
+
+** [[https://github.com/chrisdone/elisp-guide][chrisdone/elisp-guide: A quick guide to Emacs Lisp programming]]
+   :PROPERTIES:
+   :CREATED:  [2019-11-17 Sun 19:23]
+   :END:
+** [[https://beepb00p.xyz/pkm-search.html][Building personal search infrastructure for your knowledge and code | Mildly entertainingᵝ]]
+** [[http://juanjose.garciaripoll.com//blog/org-mode-html-templates/index.html][An HTML template system for org-mode]]
+* Toturial
+** [[http://zetcode.com/gui/pyqt5/][PyQt5 tutorial - learn GUI programming with Python and PyQt5]]
+* Solution
+** [[https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html][Django migrations reset]]
+** [[https://www.zmrenwu.com/courses/django-blog-tutorial/][Django博客教程]]
+** [[https://computingforgeeks.com/install-configure-mpd-ncmpcpp-macos/][Install and configure mpd and ncmpcpp on MacOS]]
+** [[https://segmentfault.com/a/1190000008313904][用Org-Mode和Jekyll写博客]]
+** [[http://xshaun.github.io/jekyll-bootstrap/2014/08/27/jekyllbootstrap5-jekyll-introduction][Jekyll 简介及工作原理]]
+   :PROPERTIES:
+   :CREATED:  [2019-09-27 Fri 22:06]
+   :END:
+
+** [[https://xenojoshua.com/2017/11/ffmpeg/][Apple mov转mp4 ffmpeg使用 | Xenojoshua]]
+   :PROPERTIES:
+   :CREATED:  [2019-10-04 Fri 10:19]
+   :END:
+
+** [[https://d.sb/2016/11/gpg-inappropriate-ioctl-for-device-errors][Fixing GPG "Inappropriate ioctl for device" errors — Daniel15]]
+   :PROPERTIES:
+   :CREATED:  [2019-10-07 Mon 10:22]
+   :END:
+
+** [[http://www.ruanyifeng.com/blog/2013/07/gpg.html][GPG入门教程 - 阮一峰的网络日志]]
+   :PROPERTIES:
+   :CREATED:  [2019-10-09 Wed 10:53]
+   :END:
+
+** [[http://maskray.me/blog/2016-02-12-gmail-offlineimap-xoauth2][Gmail的OfflineIMAP XOAUTH2认证 | MaskRay]]
+   :PROPERTIES:
+   :CREATED:  [2019-10-09 Wed 16:20]
+   :END:
+
+** [[https://zero4drift.github.io/posts/ledger--ledger-mode-xue-xi-zhi-shi-dian-zong-jie/][Ledger & ledger-mode 学习知识点总结 - 找一个吃麦旋风的理由]]
+   :PROPERTIES:
+   :CREATED:  [2019-10-10 Thu 09:32]
+   :END:
+
+** [[https://www.flinty.moe/proxifier-guide/][macOS 下对特定软件使用科学代理]]
+   :PROPERTIES:
+   :CREATED:  [2019-10-28 Mon 21:03]
+   :END:
+
+** [[http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html][理解OAuth 2.0 - 阮一峰的网络日志]]
+   :PROPERTIES:
+   :CREATED:  [2019-10-28 Mon 21:02]
+   :END:
+
+* Article
+** [[http://juanjose.garciaripoll.com//][‎juanjose.garciaripoll.com]]
+** [[https://sachachua.com/blog/2013/08/write-about-what-you-dont-know-5-tips-to-help-you-do-research-for][Sacha Chua's blog]]
+** [[https://letterstoanewdeveloper.com][Letters To A New Developer]]
+** [[https://designepiclife.com][design epic life]]
+** [[https://m.guancha.cn/politics/2017_06_10_412579.shtml][香港不适用西方政党制度 行政主导未得到发挥]]
+** [[https://nullprogram.com/][null program]]
+   :PROPERTIES:
+   :CREATED:  [2019-09-29 Sun 12:51]
+   :END:
+** [[https://medium.com/@thomas_summon/%25E6%25B5%2585%25E8%25B0%2588vpn-vps-proxy%25E4%25BB%25A5%25E5%258F%258Ashadowsocks%25E4%25B9%258B%25E9%2597%25B4%25E7%259A%2584%25E8%2581%2594%25E7%25B3%25BB%25E5%2592%258C%25E5%258C%25BA%25E5%2588%25AB-b0198f92db1b][浅谈vpn、vps、Proxy以及shadowsocks之间的联系和区别 - Thomas Xu - Medium]]
+   :PROPERTIES:
+   :CREATED:  [2019-10-27 Sun 17:08]
+   :END:
+** [[https://zhuanlan.zhihu.com/p/62099222][心肺复苏，应对心脏骤停的“黄金4分钟”！ - 知乎]]
+* Utility
+** [[https://github.com/SukkaW/DisqusJS][SukkaW/DisqusJS: Alternative Disqus - Render comments with Disqus API]]
+** [[https://github.com/BlueSky-07/Shuang][BlueSky-07/Shuang: :pencil2: 双拼练习]]
+** [[http://www.fontawesome.com.cn/faicons/][font-awesome 图标库]]
+** [[https://getbootstrap.net/docs/utilities/shadows/][bootstrap 4]]
+** [[https://github.com/darknessomi/musicbox][musicbox——网易云音乐CLI]]
+** [[https://github.com/Binaryify/NeteaseCloudMusicApi][网易云音乐API]]
+** [[https://xkeditor.ixk.me][XK-Editor--markdown和富文本编辑器]]
+** [[https://www.cssmatic.com/][The ultimate CSS tools for web designers | CSSmatic]]
+   :PROPERTIES:
+   :CREATED:  [2019-10-03 Thu 13:14]
+   :END:
+
+** [[https://highlightjs.org/][highlight.js]]
+   :PROPERTIES:
+   :CREATED:  [2019-10-21 Mon 12:15]
+   :END:
+
+** [[https://github.com/julienXX/terminal-notifier][julienXX/terminal-notifier: Send User Notifications on macOS from the command-line.]]
+   :PROPERTIES:
+   :CREATED:  [2019-10-29 Tue 17:53]
+   :END:
+
+* Misc
+** [[https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts][GitHub中文排行榜!]]
+   :PROPERTIES:
+   :CREATED:  [2019-10-26 Sat 18:23]
+   :END:

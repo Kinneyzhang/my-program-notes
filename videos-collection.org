@@ -1,0 +1,12 @@
+#+TITLE: 视频收藏
+#+DATE: 2019-12-15
+#+STARTUP: content
+#+OPTIONS: toc:t H:0 num:0 title:nil
+
+*God knows 英文版*
+
+ #+BEGIN_EXPORT html
+ <div class="iframe-container">
+   <iframe id=sbrxp src="//player.bilibili.com/player.html?aid=18070082" allowfullscreen="true"></iframe>
+ </div>
+ #+END_EXPORT
